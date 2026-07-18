@@ -389,7 +389,9 @@
     justify-content: center;
   }
 
-  .photo-viewer-img img {
+  .photo-viewer-img img,
+  .photo-viewer-img picture,
+  .photo-viewer-img picture img {
     @apply w-full h-full object-contain;
     max-height: 80vh;
   }
@@ -553,7 +555,9 @@
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   }
 
-  .collection-hero-item img {
+  .collection-hero-item img,
+  .collection-hero-item picture,
+  .collection-hero-item picture img {
     @apply w-full h-full object-cover;
   }
 
@@ -596,7 +600,12 @@
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   }
 
-  .carousel-item img {
+  .carousel-item img,
+  .carousel-item picture {
+    @apply w-full h-full;
+  }
+  .carousel-item img,
+  .carousel-item picture img {
     @apply w-full h-full object-cover;
   }
 
@@ -687,11 +696,15 @@
     }
   }
 
-  .collection-card-cover img {
+  .collection-card-cover img,
+  .collection-card-cover picture,
+  .collection-card-cover picture img {
     @apply w-full h-full object-cover transition-transform duration-500;
   }
 
-  .collection-card:hover .collection-card-cover img {
+  .collection-card:hover .collection-card-cover img,
+  .collection-card:hover .collection-card-cover picture,
+  .collection-card:hover .collection-card-cover picture img {
     transform: scale(1.05);
   }
 
@@ -840,7 +853,9 @@
     animation: expandPhotoIn 0.4s ease-out forwards;
   }
 
-  .expand-photo img {
+  .expand-photo img,
+  .expand-photo picture,
+  .expand-photo picture img {
     @apply w-full h-full object-cover;
   }
 

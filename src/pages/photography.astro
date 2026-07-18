@@ -461,7 +461,7 @@ const allPhotos = collections.flatMap((c: any) => (c.photos || []).map((p: any) 
       div.className = 'expand-photo';
       div.style.animationDelay = (i * 60) + 'ms';
       div.dataset.photo = JSON.stringify(p);
-      div.onclick = () => { closeExpandOverlay(); setTimeout(() => openViewer(p), 400); };
+      div.onclick = () => { openViewer(p, true); };
 
       if (p.fileAvif || p.fileWebp || p.fileJpeg || p.file) {
         div.innerHTML = window._pictureHTML(p, '', 'max-height: 75vh;') +
@@ -502,7 +502,8 @@ const allPhotos = collections.flatMap((c: any) => (c.photos || []).map((p: any) 
     openViewer(p);
   };
 
-  function openViewer(photo) {
+  function openViewer(photo, fromExpand) {
+    window._viewerFromExpand = fromExpand || false;
     const viewer = document.getElementById('photo-viewer');
     document.getElementById('viewer-title').textContent = photo.alt || '';
     document.getElementById('viewer-desc').textContent = photo.category || '';
@@ -549,7 +550,7 @@ const allPhotos = collections.flatMap((c: any) => (c.photos || []).map((p: any) 
     similarContainer.querySelectorAll('.gallery-similar-item').forEach(item => {
       item.addEventListener('click', () => {
         const p2 = JSON.parse(item.dataset.photo || '{}');
-        openViewer(p2);
+        openViewer(p2, window._viewerFromExpand);
       });
     });
 
@@ -560,6 +561,12 @@ const allPhotos = collections.flatMap((c: any) => (c.photos || []).map((p: any) 
   function closeViewer() {
     document.getElementById('photo-viewer').classList.remove('open');
     document.body.style.overflow = '';
+    if (window._viewerFromExpand) {
+      const expandOverlay = document.getElementById('expand-overlay');
+      if (expandOverlay.classList.contains('open')) {
+        expandOverlay.style.zIndex = '';
+      }
+    }
   }
 
   document.getElementById('photo-viewer-close')?.addEventListener('click', closeViewer);
