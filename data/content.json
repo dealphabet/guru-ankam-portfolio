@@ -1,8 +1,8 @@
 {
   "site": {
     "name": "Guru Ankam",
-    "tagline": "Photographer · Drummer · Developer · Creative",
-    "description": "Guru Ankam — Photographer · Drummer · Developer · Creative",
+    "tagline": "Photographer \u00b7 Drummer \u00b7 Developer \u00b7 Creative",
+    "description": "Guru Ankam \u2014 Photographer \u00b7 Drummer \u00b7 Developer \u00b7 Creative",
     "bio": "Multi-disciplinary creative based somewhere between the viewfinder, the drum kit, the keyboard, and the sketchpad. I believe the best work happens at the intersection of disciplines.",
     "email": "gurukrupal@outlook.com",
     "github": "https://github.com/",
@@ -16,7 +16,7 @@
         "title": "Golden Hour Series",
         "category": "Photography",
         "description": "Chasing the last light across city rooftops. A series of warm-toned captures from sunset sessions.",
-        "icon": "📸",
+        "icon": "\ud83d\udcf8",
         "gradient": "linear-gradient(135deg, #92400e 0%, #b45309 30%, #d97706 60%, #f59e0b 100%)",
         "dotColor": "#f59e0b",
         "href": "/photography"
@@ -24,8 +24,8 @@
       {
         "title": "Groove Sessions",
         "category": "Music",
-        "description": "Live drum recordings from the studio — exploring polyrhythms and pocket grooves.",
-        "icon": "🥁",
+        "description": "Live drum recordings from the studio \u2014 exploring polyrhythms and pocket grooves.",
+        "icon": "\ud83e\udd41",
         "gradient": "linear-gradient(135deg, #581c87 0%, #7c3aed 30%, #a855f7 60%, #c084fc 100%)",
         "dotColor": "#a855f7",
         "href": "/music"
@@ -34,7 +34,7 @@
         "title": "Portfolio v3",
         "category": "Code",
         "description": "This very website you are looking at. Built with Astro and Tailwind CSS.",
-        "icon": "💻",
+        "icon": "\ud83d\udcbb",
         "gradient": "linear-gradient(135deg, #1e3a5f 0%, #1d4ed8 30%, #3b82f6 60%, #60a5fa 100%)",
         "dotColor": "#3b82f6",
         "href": "/code"
@@ -43,7 +43,7 @@
         "title": "Neon Dreams",
         "category": "Creative",
         "description": "Storyboard for a short film concept exploring urban nightlife and solitude.",
-        "icon": "🎨",
+        "icon": "\ud83c\udfa8",
         "gradient": "linear-gradient(135deg, #064e3b 0%, #047857 30%, #10b981 60%, #34d399 100%)",
         "dotColor": "#10b981",
         "href": "/creative"
@@ -84,27 +84,27 @@
     "about": {
       "title": "The Person Behind the Pixels",
       "bio": [
-        "Hey, I am <strong>Guru Ankam</strong> — a multi-disciplinary creative based somewhere between the viewfinder, the drum kit, the keyboard, and the sketchpad.",
+        "Hey, I am <strong>Guru Ankam</strong> \u2014 a multi-disciplinary creative based somewhere between the viewfinder, the drum kit, the keyboard, and the sketchpad.",
         "I am a photographer who chases light, a drummer who lives for the pocket, a software engineer who builds with intention, and a creative who ties it all together through storyboarding and visual art.",
         "I believe the best work happens at the intersection of disciplines. A photograph teaches you about composition. Drumming teaches you about timing. Code teaches you about structure. And storyboarding teaches you about narrative. Together, they shape how I see and create.",
-        "This portfolio is a window into my world — each section representing a different facet of who I am and what I do. Take a look around."
+        "This portfolio is a window into my world \u2014 each section representing a different facet of who I am and what I do. Take a look around."
       ],
       "facts": [
         {
           "color": "#3b82f6",
-          "text": "Photographer — Landscapes, portraits, and street photography"
+          "text": "Photographer \u2014 Landscapes, portraits, and street photography"
         },
         {
           "color": "#6366f1",
-          "text": "Drummer — Acoustic, electronic, and programming"
+          "text": "Drummer \u2014 Acoustic, electronic, and programming"
         },
         {
           "color": "#8b5cf6",
-          "text": "Software Engineer — Full-stack development"
+          "text": "Software Engineer \u2014 Full-stack development"
         },
         {
           "color": "#10b981",
-          "text": "Creative — Storyboarding, art, and visual design"
+          "text": "Creative \u2014 Storyboarding, art, and visual design"
         }
       ]
     },
@@ -113,245 +113,2477 @@
       "description": "A collection of frames that speak louder than words. Every shot is a story, every shadow a feeling.",
       "collections": [
         {
-          "id": "moments-in-light",
-          "title": "Moments in Light",
-          "description": "Chasing the last light across city rooftops. A series of warm-toned captures from sunset sessions.",
+          "id": "flora-and-fauna",
+          "title": "Flora & Fauna",
+          "description": "Close-up studies of nature's details \u2014 petals, leaves, dragonflies, and the quiet beauty of the natural world.",
           "featured": true,
-          "previewPhotos": [0, 2, 4],
+          "previewPhotos": [
+            0,
+            11,
+            22
+          ],
           "photos": [
             {
-              "alt": "Golden hour over the city",
-              "category": "landscape",
-              "tags": ["golden-hour", "city", "sunset"],
+              "alt": "Close-up of textured grey leaves in grayscale.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "landscape-format"
+              ],
               "camera": "Sony A7IV",
               "lens": "24-70mm f/2.8",
-              "location": "Rooftop, Downtown",
-              "file": ""
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/vo1kaRN8uMM.avif",
+              "fileWebp": "images/portfolio/vo1kaRN8uMM.webp",
+              "fileJpeg": "images/portfolio/vo1kaRN8uMM.jpg"
             },
             {
-              "alt": "Street portrait",
-              "category": "portrait",
-              "tags": ["portrait", "street", "natural-light"],
+              "alt": "Close-up of textured white petals in black and white.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "petal",
+                "landscape-format"
+              ],
               "camera": "Sony A7IV",
               "lens": "85mm f/1.4",
-              "location": "Old Town",
-              "file": ""
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/1ro1D0JmQ28.avif",
+              "fileWebp": "images/portfolio/1ro1D0JmQ28.webp",
+              "fileJpeg": "images/portfolio/1ro1D0JmQ28.jpg"
             },
             {
-              "alt": "Rainy alley",
-              "category": "street",
-              "tags": ["rain", "moody", "urban"],
-              "camera": "Fuji X-T5",
-              "lens": "23mm f/2",
-              "location": "Back Alley",
-              "file": ""
-            },
-            {
-              "alt": "Mountain vista",
-              "category": "landscape",
-              "tags": ["mountains", "nature", "golden-hour"],
-              "camera": "Sony A7IV",
-              "lens": "16-35mm f/2.8",
-              "location": "Blue Ridge",
-              "file": ""
-            },
-            {
-              "alt": "Cafe window",
-              "category": "portrait",
-              "tags": ["portrait", "cafe", "natural-light"],
-              "camera": "Fuji X-T5",
-              "lens": "56mm f/1.2",
-              "location": "Downtown Cafe",
-              "file": ""
-            },
-            {
-              "alt": "Night market",
-              "category": "street",
-              "tags": ["night", "urban", "neon"],
+              "alt": "White snapdragons bloom with green leaves.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "portrait-format"
+              ],
               "camera": "Sony A7IV",
               "lens": "35mm f/1.4",
-              "location": "Night Market",
-              "file": ""
-            }
-          ]
-        },
-        {
-          "id": "street-stories",
-          "title": "Street Stories",
-          "description": "Candid moments from the rhythm of city life — unscripted, unposed, unforgettable.",
-          "featured": false,
-          "previewPhotos": [],
-          "photos": [
-            {
-              "alt": "Crossing at dusk",
-              "category": "street",
-              "tags": ["urban", "dusk", "crowd"],
-              "camera": "Sony A7IV",
-              "lens": "35mm f/1.4",
-              "location": "42nd Street",
-              "file": ""
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/wh5o8Xyg7bI.avif",
+              "fileWebp": "images/portfolio/wh5o8Xyg7bI.webp",
+              "fileJpeg": "images/portfolio/wh5o8Xyg7bI.jpg"
             },
             {
-              "alt": "Subway musician",
-              "category": "street",
-              "tags": ["music", "urban", "portrait"],
-              "camera": "Fuji X-T5",
-              "lens": "23mm f/2",
-              "location": "Underground Station",
-              "file": ""
-            },
-            {
-              "alt": "Reflections in the rain",
-              "category": "street",
-              "tags": ["rain", "moody", "neon"],
-              "camera": "Sony A7IV",
-              "lens": "50mm f/1.2",
-              "location": "Main Avenue",
-              "file": ""
-            },
-            {
-              "alt": "Morning commute",
-              "category": "street",
-              "tags": ["urban", "morning", "crowd"],
-              "camera": "Fuji X-T5",
-              "lens": "35mm f/1.4",
-              "location": "Central Bridge",
-              "file": ""
-            }
-          ]
-        },
-        {
-          "id": "portrait-studies",
-          "title": "Portrait Studies",
-          "description": "Exploring character and emotion through the lens — every face tells a different story.",
-          "featured": false,
-          "previewPhotos": [],
-          "photos": [
-            {
-              "alt": "Window light portrait",
-              "category": "portrait",
-              "tags": ["portrait", "natural-light", "studio"],
-              "camera": "Sony A7IV",
-              "lens": "85mm f/1.4",
-              "location": "Studio A",
-              "file": ""
-            },
-            {
-              "alt": "Environmental portrait",
-              "category": "portrait",
-              "tags": ["portrait", "environmental", "story"],
-              "camera": "Sony A7IV",
-              "lens": "50mm f/1.2",
-              "location": "Artist's Workshop",
-              "file": ""
-            },
-            {
-              "alt": "Street character",
-              "category": "portrait",
-              "tags": ["portrait", "street", "candid"],
-              "camera": "Fuji X-T5",
-              "lens": "56mm f/1.2",
-              "location": "Old Quarter",
-              "file": ""
-            },
-            {
-              "alt": "Golden hour headshot",
-              "category": "portrait",
-              "tags": ["portrait", "golden-hour", "warm"],
-              "camera": "Sony A7IV",
-              "lens": "85mm f/1.4",
-              "location": "Park Lane",
-              "file": ""
-            }
-          ]
-        },
-        {
-          "id": "nature-landscapes",
-          "title": "Nature & Landscapes",
-          "description": "Wide open spaces and the quiet majesty of the natural world — from mountains to coastlines.",
-          "featured": false,
-          "previewPhotos": [],
-          "photos": [
-            {
-              "alt": "Mountain sunrise",
-              "category": "landscape",
-              "tags": ["mountains", "sunrise", "nature"],
-              "camera": "Sony A7IV",
-              "lens": "16-35mm f/2.8",
-              "location": "Blue Ridge",
-              "file": ""
-            },
-            {
-              "alt": "Coastal cliffs",
-              "category": "landscape",
-              "tags": ["ocean", "cliffs", "nature"],
+              "alt": "Close-up of dusty miller plant leaves in black and white.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "landscape-format"
+              ],
               "camera": "Sony A7IV",
               "lens": "24-70mm f/2.8",
-              "location": "Pacific Coast",
-              "file": ""
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/RM1nNnT2V3w.avif",
+              "fileWebp": "images/portfolio/RM1nNnT2V3w.webp",
+              "fileJpeg": "images/portfolio/RM1nNnT2V3w.jpg"
             },
             {
-              "alt": "Forest trail",
-              "category": "landscape",
-              "tags": ["forest", "nature", "green"],
-              "camera": "Fuji X-T5",
-              "lens": "23mm f/2",
-              "location": "Redwood National",
-              "file": ""
-            },
-            {
-              "alt": "Desert dunes",
-              "category": "landscape",
-              "tags": ["desert", "golden-hour", "minimal"],
+              "alt": "A single pale pink dahlia bloom surrounded by dark leaves",
+              "category": "Flora And Fauna",
+              "tags": [
+                "landscape-format"
+              ],
               "camera": "Sony A7IV",
-              "lens": "70-200mm f/2.8",
-              "location": "Mojave",
-              "file": ""
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/YJJowCwfULQ.avif",
+              "fileWebp": "images/portfolio/YJJowCwfULQ.webp",
+              "fileJpeg": "images/portfolio/YJJowCwfULQ.jpg"
+            },
+            {
+              "alt": "Pink snapdragons bloom in a garden setting.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "garden",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/XpPFApCF6u8.avif",
+              "fileWebp": "images/portfolio/XpPFApCF6u8.webp",
+              "fileJpeg": "images/portfolio/XpPFApCF6u8.jpg"
+            },
+            {
+              "alt": "Two pelicans rest on a log over water.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "pelican",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/1o_NIC8TEBg.avif",
+              "fileWebp": "images/portfolio/1o_NIC8TEBg.webp",
+              "fileJpeg": "images/portfolio/1o_NIC8TEBg.jpg"
+            },
+            {
+              "alt": "White birds are preening in the pond.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "bird",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/6kqcmYnhfk8.avif",
+              "fileWebp": "images/portfolio/6kqcmYnhfk8.webp",
+              "fileJpeg": "images/portfolio/6kqcmYnhfk8.jpg"
+            },
+            {
+              "alt": "Two pelicans stand on a log over water.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "pelican",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/zlGnvovQhbg.avif",
+              "fileWebp": "images/portfolio/zlGnvovQhbg.webp",
+              "fileJpeg": "images/portfolio/zlGnvovQhbg.jpg"
+            },
+            {
+              "alt": "Two pelicans stand in the water.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "pelican",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/on1O93qqjWE.avif",
+              "fileWebp": "images/portfolio/on1O93qqjWE.webp",
+              "fileJpeg": "images/portfolio/on1O93qqjWE.jpg"
+            },
+            {
+              "alt": "Deer are resting under a shady tree.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "deer",
+                "tree",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/SuTAVhisE5M.avif",
+              "fileWebp": "images/portfolio/SuTAVhisE5M.webp",
+              "fileJpeg": "images/portfolio/SuTAVhisE5M.jpg"
+            },
+            {
+              "alt": "A glowing flower lantern in the dark.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "flower",
+                "lantern",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/cJbmpG0Wab4.avif",
+              "fileWebp": "images/portfolio/cJbmpG0Wab4.webp",
+              "fileJpeg": "images/portfolio/cJbmpG0Wab4.jpg"
+            },
+            {
+              "alt": "A glowing pink lotus flower lights up.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "flower",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/kmL2nY0BVTE.avif",
+              "fileWebp": "images/portfolio/kmL2nY0BVTE.webp",
+              "fileJpeg": "images/portfolio/kmL2nY0BVTE.jpg"
+            },
+            {
+              "alt": "White flowers bloom on a bush with green leaves.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "flower",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/WNVSc4pgeAg.avif",
+              "fileWebp": "images/portfolio/WNVSc4pgeAg.webp",
+              "fileJpeg": "images/portfolio/WNVSc4pgeAg.jpg"
+            },
+            {
+              "alt": "Green grass grows by a tranquil body of water.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "grass",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/LtV7Q7wXago.avif",
+              "fileWebp": "images/portfolio/LtV7Q7wXago.webp",
+              "fileJpeg": "images/portfolio/LtV7Q7wXago.jpg"
+            },
+            {
+              "alt": "White flowers bloom on a tree branch.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "flower",
+                "tree",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/tnQ4_3cfos0.avif",
+              "fileWebp": "images/portfolio/tnQ4_3cfos0.webp",
+              "fileJpeg": "images/portfolio/tnQ4_3cfos0.jpg"
+            },
+            {
+              "alt": "s9wpSrw4BEE",
+              "category": "Flora And Fauna",
+              "tags": [
+                "bee",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/s9wpSrw4BEE.avif",
+              "fileWebp": "images/portfolio/s9wpSrw4BEE.webp",
+              "fileJpeg": "images/portfolio/s9wpSrw4BEE.jpg"
+            },
+            {
+              "alt": "A daisy blooms in green grass surrounded by debris.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "daisy",
+                "grass",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/boDD2GZiSIc.avif",
+              "fileWebp": "images/portfolio/boDD2GZiSIc.webp",
+              "fileJpeg": "images/portfolio/boDD2GZiSIc.jpg"
+            },
+            {
+              "alt": "A shady tree casts shadows in a garden.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "garden",
+                "tree",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/fOS4bB6v-14.avif",
+              "fileWebp": "images/portfolio/fOS4bB6v-14.webp",
+              "fileJpeg": "images/portfolio/fOS4bB6v-14.jpg"
+            },
+            {
+              "alt": "A dragonfly sits on a bright green blade of grass.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "dragonfly",
+                "grass",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/itjF0dntHVY.avif",
+              "fileWebp": "images/portfolio/itjF0dntHVY.webp",
+              "fileJpeg": "images/portfolio/itjF0dntHVY.jpg"
+            },
+            {
+              "alt": "Dried leaves rest on green grass.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "grass",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/t5iDggAeY2Y.avif",
+              "fileWebp": "images/portfolio/t5iDggAeY2Y.webp",
+              "fileJpeg": "images/portfolio/t5iDggAeY2Y.jpg"
+            },
+            {
+              "alt": "A dragonfly rests upon a blade of grass.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "dragonfly",
+                "grass",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/Fq3t5kJ2bT4.avif",
+              "fileWebp": "images/portfolio/Fq3t5kJ2bT4.webp",
+              "fileJpeg": "images/portfolio/Fq3t5kJ2bT4.jpg"
+            },
+            {
+              "alt": "A red dragonfly perched on a thin stem.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "dragonfly",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/Qf6UDxoIw_c.avif",
+              "fileWebp": "images/portfolio/Qf6UDxoIw_c.webp",
+              "fileJpeg": "images/portfolio/Qf6UDxoIw_c.jpg"
+            },
+            {
+              "alt": "Leaves filter sunlight against a bright blue sky.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "sky",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/tzIhm3QzdFU.avif",
+              "fileWebp": "images/portfolio/tzIhm3QzdFU.webp",
+              "fileJpeg": "images/portfolio/tzIhm3QzdFU.jpg"
+            },
+            {
+              "alt": "A bee house is nestled in the lush green garden.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "garden",
+                "bee",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/tFOltcp_i3Y.avif",
+              "fileWebp": "images/portfolio/tFOltcp_i3Y.webp",
+              "fileJpeg": "images/portfolio/tFOltcp_i3Y.jpg"
+            },
+            {
+              "alt": "Pink tulip stands out among other flowers.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "flower",
+                "tulip",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/w6OxOY2MIF4.avif",
+              "fileWebp": "images/portfolio/w6OxOY2MIF4.webp",
+              "fileJpeg": "images/portfolio/w6OxOY2MIF4.jpg"
+            },
+            {
+              "alt": "Beautiful pink and red tulips bloom in a sunny field.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "tulip",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/yo1VVYZq6sE.avif",
+              "fileWebp": "images/portfolio/yo1VVYZq6sE.webp",
+              "fileJpeg": "images/portfolio/yo1VVYZq6sE.jpg"
+            },
+            {
+              "alt": "Red tulips line a path leading toward a tree.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "tulip",
+                "tree",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/vDPXVb4ydgo.avif",
+              "fileWebp": "images/portfolio/vDPXVb4ydgo.webp",
+              "fileJpeg": "images/portfolio/vDPXVb4ydgo.jpg"
+            },
+            {
+              "alt": "Teddy bear is amongst red tulips.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "tulip",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/Cx74Ktf9lz0.avif",
+              "fileWebp": "images/portfolio/Cx74Ktf9lz0.webp",
+              "fileJpeg": "images/portfolio/Cx74Ktf9lz0.jpg"
+            },
+            {
+              "alt": "Red tulips bloom vibrantly under a blue sky.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "tulip",
+                "sky",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/UnfFC8grMUY.avif",
+              "fileWebp": "images/portfolio/UnfFC8grMUY.webp",
+              "fileJpeg": "images/portfolio/UnfFC8grMUY.jpg"
+            },
+            {
+              "alt": "Red tulips bloom beautifully under the blue sky.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "tulip",
+                "sky",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/Zf1sji_vWCA.avif",
+              "fileWebp": "images/portfolio/Zf1sji_vWCA.webp",
+              "fileJpeg": "images/portfolio/Zf1sji_vWCA.jpg"
+            },
+            {
+              "alt": "Yellow tulips bloom under a bright, sunny sky.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "tulip",
+                "sky",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/l4XTlUX4-tA.avif",
+              "fileWebp": "images/portfolio/l4XTlUX4-tA.webp",
+              "fileJpeg": "images/portfolio/l4XTlUX4-tA.jpg"
+            },
+            {
+              "alt": "Red tulips bloom brightly under a clear blue sky.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "tulip",
+                "sky",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/bx_hVih8Tks.avif",
+              "fileWebp": "images/portfolio/bx_hVih8Tks.webp",
+              "fileJpeg": "images/portfolio/bx_hVih8Tks.jpg"
+            },
+            {
+              "alt": "A grassy, rocky hillside extends under a blue sky.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "grass",
+                "hill",
+                "sky",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/fVKMOZsOylU.avif",
+              "fileWebp": "images/portfolio/fVKMOZsOylU.webp",
+              "fileJpeg": "images/portfolio/fVKMOZsOylU.jpg"
+            },
+            {
+              "alt": "White flowers are blooming in the sunlight.",
+              "category": "Flora And Fauna",
+              "tags": [
+                "flower",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/cvyDBaSB0ok.avif",
+              "fileWebp": "images/portfolio/cvyDBaSB0ok.webp",
+              "fileJpeg": "images/portfolio/cvyDBaSB0ok.jpg"
             }
           ]
         },
         {
-          "id": "night-photography",
-          "title": "Night Photography",
-          "description": "When the sun goes down, the city comes alive — neon glow, long exposures, and electric energy.",
+          "id": "night-and-atmosphere",
+          "title": "Night & Atmosphere",
+          "description": "The electric energy of night \u2014 fireworks painting the sky, lanterns floating on water, and crowds gathered under rain.",
           "featured": false,
-          "previewPhotos": [],
+          "previewPhotos": [
+            0,
+            4,
+            8
+          ],
           "photos": [
             {
-              "alt": "Neon alleyway",
-              "category": "street",
-              "tags": ["neon", "night", "urban"],
-              "camera": "Sony A7IV",
-              "lens": "35mm f/1.4",
-              "location": "Chinatown",
-              "file": ""
-            },
-            {
-              "alt": "City skyline at night",
-              "category": "landscape",
-              "tags": ["city", "night", "skyline"],
-              "camera": "Sony A7IV",
-              "lens": "16-35mm f/2.8",
-              "location": "Observation Deck",
-              "file": ""
-            },
-            {
-              "alt": "Light trails",
-              "category": "street",
-              "tags": ["long-exposure", "urban", "motion"],
+              "alt": "People with umbrellas on a boat with floating lanterns.",
+              "category": "Night And Atmosphere",
+              "tags": [
+                "lantern",
+                "umbrella",
+                "portrait-format"
+              ],
               "camera": "Sony A7IV",
               "lens": "24-70mm f/2.8",
-              "location": "Highway Overpass",
-              "file": ""
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/QuXaFUNmEU4.avif",
+              "fileWebp": "images/portfolio/QuXaFUNmEU4.webp",
+              "fileJpeg": "images/portfolio/QuXaFUNmEU4.jpg"
             },
             {
-              "alt": "Rainy night reflections",
-              "category": "street",
-              "tags": ["rain", "neon", "moody"],
-              "camera": "Fuji X-T5",
-              "lens": "23mm f/2",
-              "location": "Downtown",
-              "file": ""
+              "alt": "Crowd gathered on a bridge outside a vue cinema.",
+              "category": "Night And Atmosphere",
+              "tags": [
+                "crowd",
+                "bridge",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "Entertainment District",
+              "file": "",
+              "fileAvif": "images/portfolio/MJD5Vvq3gwg.avif",
+              "fileWebp": "images/portfolio/MJD5Vvq3gwg.webp",
+              "fileJpeg": "images/portfolio/MJD5Vvq3gwg.jpg"
+            },
+            {
+              "alt": "People under umbrella watching rain over water",
+              "category": "Night And Atmosphere",
+              "tags": [
+                "rain",
+                "umbrella",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/z4chklQ7TEE.avif",
+              "fileWebp": "images/portfolio/z4chklQ7TEE.webp",
+              "fileJpeg": "images/portfolio/z4chklQ7TEE.jpg"
+            },
+            {
+              "alt": "Giant inflatable duck attracts large crowd by water",
+              "category": "Night And Atmosphere",
+              "tags": [
+                "crowd",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/zlaToVX1h6s.avif",
+              "fileWebp": "images/portfolio/zlaToVX1h6s.webp",
+              "fileJpeg": "images/portfolio/zlaToVX1h6s.jpg"
+            },
+            {
+              "alt": "City skyline at night with water reflections.",
+              "category": "Night And Atmosphere",
+              "tags": [
+                "night",
+                "sky",
+                "city",
+                "skyline",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/2uao23oNB_o.avif",
+              "fileWebp": "images/portfolio/2uao23oNB_o.webp",
+              "fileJpeg": "images/portfolio/2uao23oNB_o.jpg"
+            },
+            {
+              "alt": "A pink firework explodes against a dark night sky.",
+              "category": "Night And Atmosphere",
+              "tags": [
+                "firework",
+                "night",
+                "sky",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/XNocQxiEdHA.avif",
+              "fileWebp": "images/portfolio/XNocQxiEdHA.webp",
+              "fileJpeg": "images/portfolio/XNocQxiEdHA.jpg"
+            },
+            {
+              "alt": "Fireworks burst in the dark night sky.",
+              "category": "Night And Atmosphere",
+              "tags": [
+                "firework",
+                "night",
+                "sky",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/GawR1HR_s24.avif",
+              "fileWebp": "images/portfolio/GawR1HR_s24.webp",
+              "fileJpeg": "images/portfolio/GawR1HR_s24.jpg"
+            },
+            {
+              "alt": "A firework rocket shoots up into the night sky.",
+              "category": "Night And Atmosphere",
+              "tags": [
+                "firework",
+                "night",
+                "sky",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/uZ0o7nYYlkU.avif",
+              "fileWebp": "images/portfolio/uZ0o7nYYlkU.webp",
+              "fileJpeg": "images/portfolio/uZ0o7nYYlkU.jpg"
+            },
+            {
+              "alt": "Fireworks light up the night sky.",
+              "category": "Night And Atmosphere",
+              "tags": [
+                "firework",
+                "night",
+                "sky",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/rf1SaKUzuPw.avif",
+              "fileWebp": "images/portfolio/rf1SaKUzuPw.webp",
+              "fileJpeg": "images/portfolio/rf1SaKUzuPw.jpg"
+            },
+            {
+              "alt": "Fireworks light up the dark night sky.",
+              "category": "Night And Atmosphere",
+              "tags": [
+                "firework",
+                "night",
+                "sky",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/X7Ry9s6A37w.avif",
+              "fileWebp": "images/portfolio/X7Ry9s6A37w.webp",
+              "fileJpeg": "images/portfolio/X7Ry9s6A37w.jpg"
+            },
+            {
+              "alt": "A dark, minimalist room with coffee cups.",
+              "category": "Night And Atmosphere",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/rLABkD3Bb7k.avif",
+              "fileWebp": "images/portfolio/rLABkD3Bb7k.webp",
+              "fileJpeg": "images/portfolio/rLABkD3Bb7k.jpg"
+            },
+            {
+              "alt": "A colorful, illuminated dinosaur sculpture looks menacing.",
+              "category": "Night And Atmosphere",
+              "tags": [
+                "illuminated",
+                "dinosaur",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/WqpoXqFDrQA.avif",
+              "fileWebp": "images/portfolio/WqpoXqFDrQA.webp",
+              "fileJpeg": "images/portfolio/WqpoXqFDrQA.jpg"
+            },
+            {
+              "alt": "Dinosaur figures are illuminated in a dark scene.",
+              "category": "Night And Atmosphere",
+              "tags": [
+                "illuminated",
+                "dinosaur",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/OVK_TxYURj8.avif",
+              "fileWebp": "images/portfolio/OVK_TxYURj8.webp",
+              "fileJpeg": "images/portfolio/OVK_TxYURj8.jpg"
+            }
+          ]
+        },
+        {
+          "id": "museum-pieces",
+          "title": "Museum Pieces",
+          "description": "Fragments of history preserved behind glass \u2014 uniforms, artifacts, and the stories they carry.",
+          "featured": false,
+          "previewPhotos": [
+            0,
+            3,
+            6
+          ],
+          "photos": [
+            {
+              "alt": "Skulls are displayed in front of a window.",
+              "category": "Museum Pieces",
+              "tags": [
+                "skull",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/0DNI2fqdM2Q.avif",
+              "fileWebp": "images/portfolio/0DNI2fqdM2Q.webp",
+              "fileJpeg": "images/portfolio/0DNI2fqdM2Q.jpg"
+            },
+            {
+              "alt": "A vintage military uniform is on display.",
+              "category": "Museum Pieces",
+              "tags": [
+                "uniform",
+                "military",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/A7isgv3P7qo.avif",
+              "fileWebp": "images/portfolio/A7isgv3P7qo.webp",
+              "fileJpeg": "images/portfolio/A7isgv3P7qo.jpg"
+            },
+            {
+              "alt": "A man's suit is displayed on a mannequin.",
+              "category": "Museum Pieces",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/1HQcJTFBXbs.avif",
+              "fileWebp": "images/portfolio/1HQcJTFBXbs.webp",
+              "fileJpeg": "images/portfolio/1HQcJTFBXbs.jpg"
+            },
+            {
+              "alt": "An open wardrobe displays military uniforms and accessories.",
+              "category": "Museum Pieces",
+              "tags": [
+                "uniform",
+                "military",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/AtbE0vfI_RA.avif",
+              "fileWebp": "images/portfolio/AtbE0vfI_RA.webp",
+              "fileJpeg": "images/portfolio/AtbE0vfI_RA.jpg"
+            },
+            {
+              "alt": "A military uniform displayed under dim lighting.",
+              "category": "Museum Pieces",
+              "tags": [
+                "uniform",
+                "military",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/aHTZ-mkUk6U.avif",
+              "fileWebp": "images/portfolio/aHTZ-mkUk6U.webp",
+              "fileJpeg": "images/portfolio/aHTZ-mkUk6U.jpg"
+            },
+            {
+              "alt": "A german world war i uniform on display.",
+              "category": "Museum Pieces",
+              "tags": [
+                "uniform",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/pc3OudI1IVY.avif",
+              "fileWebp": "images/portfolio/pc3OudI1IVY.webp",
+              "fileJpeg": "images/portfolio/pc3OudI1IVY.jpg"
+            },
+            {
+              "alt": "A close-up shows a rifle's details.",
+              "category": "Museum Pieces",
+              "tags": [
+                "rifle",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/tV91tLofBu8.avif",
+              "fileWebp": "images/portfolio/tV91tLofBu8.webp",
+              "fileJpeg": "images/portfolio/tV91tLofBu8.jpg"
+            },
+            {
+              "alt": "Miniature ships are displayed on a map.",
+              "category": "Museum Pieces",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/pnKYzcJRxlM.avif",
+              "fileWebp": "images/portfolio/pnKYzcJRxlM.webp",
+              "fileJpeg": "images/portfolio/pnKYzcJRxlM.jpg"
+            },
+            {
+              "alt": "A brown, crusty bowl of water.",
+              "category": "Museum Pieces",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/Hk0W-n8snCY.avif",
+              "fileWebp": "images/portfolio/Hk0W-n8snCY.webp",
+              "fileJpeg": "images/portfolio/Hk0W-n8snCY.jpg"
+            },
+            {
+              "alt": "Inside of a cave with stalactites and stalagmites.",
+              "category": "Museum Pieces",
+              "tags": [
+                "cave",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "Natural Cave System",
+              "file": "",
+              "fileAvif": "images/portfolio/55wjuPjtRMg.avif",
+              "fileWebp": "images/portfolio/55wjuPjtRMg.webp",
+              "fileJpeg": "images/portfolio/55wjuPjtRMg.jpg"
+            },
+            {
+              "alt": "Rocky coastline with caves meets the sea.",
+              "category": "Museum Pieces",
+              "tags": [
+                "cave",
+                "coast",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "Natural Cave System",
+              "file": "",
+              "fileAvif": "images/portfolio/6Tl_Z2ZoLC4.avif",
+              "fileWebp": "images/portfolio/6Tl_Z2ZoLC4.webp",
+              "fileJpeg": "images/portfolio/6Tl_Z2ZoLC4.jpg"
+            }
+          ]
+        },
+        {
+          "id": "landscapes",
+          "title": "Landscapes",
+          "description": "Where earth meets sky \u2014 cliffs, coastlines, rolling hills, and the vastness that puts everything in perspective.",
+          "featured": false,
+          "previewPhotos": [
+            0,
+            7,
+            14
+          ],
+          "photos": [
+            {
+              "alt": "Water flows through a concrete dam under a cloudy sky.",
+              "category": "Landscapes",
+              "tags": [
+                "sky",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "River Dam",
+              "file": "",
+              "fileAvif": "images/portfolio/qShU7lC6cJI.avif",
+              "fileWebp": "images/portfolio/qShU7lC6cJI.webp",
+              "fileJpeg": "images/portfolio/qShU7lC6cJI.jpg"
+            },
+            {
+              "alt": "Water flows through a concrete dam under a cloudy sky.",
+              "category": "Landscapes",
+              "tags": [
+                "sky",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "River Dam",
+              "file": "",
+              "fileAvif": "images/portfolio/dJXJPL9v-eA.avif",
+              "fileWebp": "images/portfolio/dJXJPL9v-eA.webp",
+              "fileJpeg": "images/portfolio/dJXJPL9v-eA.jpg"
+            },
+            {
+              "alt": "Silhouette of a person kayaking on the ocean at sunset.",
+              "category": "Landscapes",
+              "tags": [
+                "ocean",
+                "sunset",
+                "kayak",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/jOieTW9wzjI.avif",
+              "fileWebp": "images/portfolio/jOieTW9wzjI.webp",
+              "fileJpeg": "images/portfolio/jOieTW9wzjI.jpg"
+            },
+            {
+              "alt": "Coastal town seen from an elevated vantage point.",
+              "category": "Landscapes",
+              "tags": [
+                "coast",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/eJUWbc6Yczg.avif",
+              "fileWebp": "images/portfolio/eJUWbc6Yczg.webp",
+              "fileJpeg": "images/portfolio/eJUWbc6Yczg.jpg"
+            },
+            {
+              "alt": "Cliffs overlook a verdant, forested landscape.",
+              "category": "Landscapes",
+              "tags": [
+                "cliff",
+                "forest",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/pQPTJmzxOOI.avif",
+              "fileWebp": "images/portfolio/pQPTJmzxOOI.webp",
+              "fileJpeg": "images/portfolio/pQPTJmzxOOI.jpg"
+            },
+            {
+              "alt": "A sunny street scene with brick buildings.",
+              "category": "Landscapes",
+              "tags": [
+                "tree",
+                "street",
+                "building",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/1GcqtF9mP_4.avif",
+              "fileWebp": "images/portfolio/1GcqtF9mP_4.webp",
+              "fileJpeg": "images/portfolio/1GcqtF9mP_4.jpg"
+            },
+            {
+              "alt": "A detailed temple tower against a clear blue sky.",
+              "category": "Landscapes",
+              "tags": [
+                "sky",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "Temple District",
+              "file": "",
+              "fileAvif": "images/portfolio/f0QKWj1-7s8.avif",
+              "fileWebp": "images/portfolio/f0QKWj1-7s8.webp",
+              "fileJpeg": "images/portfolio/f0QKWj1-7s8.jpg"
+            },
+            {
+              "alt": "A scenic village lies beneath a cloudy sky.",
+              "category": "Landscapes",
+              "tags": [
+                "village",
+                "sky",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/9FNjA8HYATo.avif",
+              "fileWebp": "images/portfolio/9FNjA8HYATo.webp",
+              "fileJpeg": "images/portfolio/9FNjA8HYATo.jpg"
+            },
+            {
+              "alt": "Trees reach towards the sky with sunlight.",
+              "category": "Landscapes",
+              "tags": [
+                "tree",
+                "sky",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/PNTgcJPvZ-g.avif",
+              "fileWebp": "images/portfolio/PNTgcJPvZ-g.webp",
+              "fileJpeg": "images/portfolio/PNTgcJPvZ-g.jpg"
+            },
+            {
+              "alt": "Tranquil lake scene with tree and blue sky.",
+              "category": "Landscapes",
+              "tags": [
+                "lake",
+                "tree",
+                "sky",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/26G_0xyugTw.avif",
+              "fileWebp": "images/portfolio/26G_0xyugTw.webp",
+              "fileJpeg": "images/portfolio/26G_0xyugTw.jpg"
+            },
+            {
+              "alt": "Looking up at a tree against blue sky.",
+              "category": "Landscapes",
+              "tags": [
+                "tree",
+                "sky",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/5bNvWFRFf2E.avif",
+              "fileWebp": "images/portfolio/5bNvWFRFf2E.webp",
+              "fileJpeg": "images/portfolio/5bNvWFRFf2E.jpg"
+            },
+            {
+              "alt": "Colorful cliffs stand under a bright, cloudy sky.",
+              "category": "Landscapes",
+              "tags": [
+                "cliff",
+                "sky",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/a0sjsOCQ_Cc.avif",
+              "fileWebp": "images/portfolio/a0sjsOCQ_Cc.webp",
+              "fileJpeg": "images/portfolio/a0sjsOCQ_Cc.jpg"
+            },
+            {
+              "alt": "Colorful cliffs under a bright blue sky.",
+              "category": "Landscapes",
+              "tags": [
+                "cliff",
+                "sky",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/POZrxgQ600E.avif",
+              "fileWebp": "images/portfolio/POZrxgQ600E.webp",
+              "fileJpeg": "images/portfolio/POZrxgQ600E.jpg"
+            },
+            {
+              "alt": "Ocean waves crash against rocky cliffs and shores.",
+              "category": "Landscapes",
+              "tags": [
+                "cliff",
+                "ocean",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/Q4cAKuMXuA8.avif",
+              "fileWebp": "images/portfolio/Q4cAKuMXuA8.webp",
+              "fileJpeg": "images/portfolio/Q4cAKuMXuA8.jpg"
+            },
+            {
+              "alt": "Coastal rocks and clear blue ocean under a blue sky.",
+              "category": "Landscapes",
+              "tags": [
+                "coast",
+                "ocean",
+                "sky",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/Qc6_nvP6X_0.avif",
+              "fileWebp": "images/portfolio/Qc6_nvP6X_0.webp",
+              "fileJpeg": "images/portfolio/Qc6_nvP6X_0.jpg"
+            },
+            {
+              "alt": "A rocky landscape overlooks distant hills and waters.",
+              "category": "Landscapes",
+              "tags": [
+                "hill",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/efRlQuqmjN4.avif",
+              "fileWebp": "images/portfolio/efRlQuqmjN4.webp",
+              "fileJpeg": "images/portfolio/efRlQuqmjN4.jpg"
+            },
+            {
+              "alt": "Rolling hills and a small house in a valley.",
+              "category": "Landscapes",
+              "tags": [
+                "hill",
+                "valley",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/yPeBXUF895U.avif",
+              "fileWebp": "images/portfolio/yPeBXUF895U.webp",
+              "fileJpeg": "images/portfolio/yPeBXUF895U.jpg"
+            },
+            {
+              "alt": "Silhouette of a person against a pink background.",
+              "category": "Landscapes",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/6KqBjLp23aQ.avif",
+              "fileWebp": "images/portfolio/6KqBjLp23aQ.webp",
+              "fileJpeg": "images/portfolio/6KqBjLp23aQ.jpg"
+            },
+            {
+              "alt": "Car driving on a scenic, winding road.",
+              "category": "Landscapes",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/cxzxNC1uRKI.avif",
+              "fileWebp": "images/portfolio/cxzxNC1uRKI.webp",
+              "fileJpeg": "images/portfolio/cxzxNC1uRKI.jpg"
+            },
+            {
+              "alt": "Rocky mountains reach toward a beautiful blue sky.",
+              "category": "Landscapes",
+              "tags": [
+                "mountain",
+                "sky",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/9LCFDZXdY_M.avif",
+              "fileWebp": "images/portfolio/9LCFDZXdY_M.webp",
+              "fileJpeg": "images/portfolio/9LCFDZXdY_M.jpg"
+            },
+            {
+              "alt": "A seagull soars above rocky cliffs and blue sky.",
+              "category": "Landscapes",
+              "tags": [
+                "cliff",
+                "sky",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/61XA2__UE9w.avif",
+              "fileWebp": "images/portfolio/61XA2__UE9w.webp",
+              "fileJpeg": "images/portfolio/61XA2__UE9w.jpg"
+            },
+            {
+              "alt": "A road curves beneath a towering cliff.",
+              "category": "Landscapes",
+              "tags": [
+                "cliff",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/Aj_rXP2Hk8g.avif",
+              "fileWebp": "images/portfolio/Aj_rXP2Hk8g.webp",
+              "fileJpeg": "images/portfolio/Aj_rXP2Hk8g.jpg"
+            },
+            {
+              "alt": "Airplane flies high through clear, blue sky.",
+              "category": "Landscapes",
+              "tags": [
+                "sky",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/2fT0u_L013U.avif",
+              "fileWebp": "images/portfolio/2fT0u_L013U.webp",
+              "fileJpeg": "images/portfolio/2fT0u_L013U.jpg"
+            }
+          ]
+        },
+        {
+          "id": "urban-scenes",
+          "title": "Urban Scenes",
+          "description": "The pulse of city life \u2014 skylines glowing at night, streets alive with movement, and the geometry of architecture.",
+          "featured": false,
+          "previewPhotos": [
+            0,
+            1
+          ],
+          "photos": [
+            {
+              "alt": "Two motorcycles parked side by side",
+              "category": "Urban Scenes",
+              "tags": [
+                "motorcycle",
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/bK0VBY7jlk8.avif",
+              "fileWebp": "images/portfolio/bK0VBY7jlk8.webp",
+              "fileJpeg": "images/portfolio/bK0VBY7jlk8.jpg"
+            },
+            {
+              "alt": "People walk on the walkway towards the stadium.",
+              "category": "Urban Scenes",
+              "tags": [
+                "stadium",
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "Sports Complex",
+              "file": "",
+              "fileAvif": "images/portfolio/dM1UuOpsxGw.avif",
+              "fileWebp": "images/portfolio/dM1UuOpsxGw.webp",
+              "fileJpeg": "images/portfolio/dM1UuOpsxGw.jpg"
+            }
+          ]
+        },
+        {
+          "id": "others",
+          "title": "Others",
+          "description": "A diverse collection of moments \u2014 each one waiting to be reorganized into its proper place.",
+          "featured": false,
+          "previewPhotos": [
+            0,
+            26,
+            52
+          ],
+          "photos": [
+            {
+              "alt": "A detailed red dragon figurine with a crystal orb.",
+              "category": "Others",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/kWC71Qo-0x4.avif",
+              "fileWebp": "images/portfolio/kWC71Qo-0x4.webp",
+              "fileJpeg": "images/portfolio/kWC71Qo-0x4.jpg"
+            },
+            {
+              "alt": "9mUEooRaBjo",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/9mUEooRaBjo.avif",
+              "fileWebp": "images/portfolio/9mUEooRaBjo.webp",
+              "fileJpeg": "images/portfolio/9mUEooRaBjo.jpg"
+            },
+            {
+              "alt": "golHd0_WE0Q",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/golHd0_WE0Q.avif",
+              "fileWebp": "images/portfolio/golHd0_WE0Q.webp",
+              "fileJpeg": "images/portfolio/golHd0_WE0Q.jpg"
+            },
+            {
+              "alt": "n2dBowHBpvc",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/n2dBowHBpvc.avif",
+              "fileWebp": "images/portfolio/n2dBowHBpvc.webp",
+              "fileJpeg": "images/portfolio/n2dBowHBpvc.jpg"
+            },
+            {
+              "alt": "kQ-u-7I2Nm8",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/kQ-u-7I2Nm8.avif",
+              "fileWebp": "images/portfolio/kQ-u-7I2Nm8.webp",
+              "fileJpeg": "images/portfolio/kQ-u-7I2Nm8.jpg"
+            },
+            {
+              "alt": "pX-NK8bKnKI",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/pX-NK8bKnKI.avif",
+              "fileWebp": "images/portfolio/pX-NK8bKnKI.webp",
+              "fileJpeg": "images/portfolio/pX-NK8bKnKI.jpg"
+            },
+            {
+              "alt": "yXCRNSeBzuw",
+              "category": "Others",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/yXCRNSeBzuw.avif",
+              "fileWebp": "images/portfolio/yXCRNSeBzuw.webp",
+              "fileJpeg": "images/portfolio/yXCRNSeBzuw.jpg"
+            },
+            {
+              "alt": "mYpdcVQfHY8",
+              "category": "Others",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/mYpdcVQfHY8.avif",
+              "fileWebp": "images/portfolio/mYpdcVQfHY8.webp",
+              "fileJpeg": "images/portfolio/mYpdcVQfHY8.jpg"
+            },
+            {
+              "alt": "zYHOwVfpQTI",
+              "category": "Others",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/zYHOwVfpQTI.avif",
+              "fileWebp": "images/portfolio/zYHOwVfpQTI.webp",
+              "fileJpeg": "images/portfolio/zYHOwVfpQTI.jpg"
+            },
+            {
+              "alt": "8onllgbz0x0",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/8onllgbz0x0.avif",
+              "fileWebp": "images/portfolio/8onllgbz0x0.webp",
+              "fileJpeg": "images/portfolio/8onllgbz0x0.jpg"
+            },
+            {
+              "alt": "A person sits under a covered structure.",
+              "category": "Others",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/WDC4uadKiWg.avif",
+              "fileWebp": "images/portfolio/WDC4uadKiWg.webp",
+              "fileJpeg": "images/portfolio/WDC4uadKiWg.jpg"
+            },
+            {
+              "alt": "glca4jGGIIw",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/glca4jGGIIw.avif",
+              "fileWebp": "images/portfolio/glca4jGGIIw.webp",
+              "fileJpeg": "images/portfolio/glca4jGGIIw.jpg"
+            },
+            {
+              "alt": "W4m2_vgrxD8",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/W4m2_vgrxD8.avif",
+              "fileWebp": "images/portfolio/W4m2_vgrxD8.webp",
+              "fileJpeg": "images/portfolio/W4m2_vgrxD8.jpg"
+            },
+            {
+              "alt": "mhMX6k6eJJ8",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/mhMX6k6eJJ8.avif",
+              "fileWebp": "images/portfolio/mhMX6k6eJJ8.webp",
+              "fileJpeg": "images/portfolio/mhMX6k6eJJ8.jpg"
+            },
+            {
+              "alt": "NoySs5Faq_M",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/NoySs5Faq_M.avif",
+              "fileWebp": "images/portfolio/NoySs5Faq_M.webp",
+              "fileJpeg": "images/portfolio/NoySs5Faq_M.jpg"
+            },
+            {
+              "alt": "u5zfC1ERxF8",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/u5zfC1ERxF8.avif",
+              "fileWebp": "images/portfolio/u5zfC1ERxF8.webp",
+              "fileJpeg": "images/portfolio/u5zfC1ERxF8.jpg"
+            },
+            {
+              "alt": "zPPHrzM4Woc",
+              "category": "Others",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/zPPHrzM4Woc.avif",
+              "fileWebp": "images/portfolio/zPPHrzM4Woc.webp",
+              "fileJpeg": "images/portfolio/zPPHrzM4Woc.jpg"
+            },
+            {
+              "alt": "bIMryL3PaYk",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/bIMryL3PaYk.avif",
+              "fileWebp": "images/portfolio/bIMryL3PaYk.webp",
+              "fileJpeg": "images/portfolio/bIMryL3PaYk.jpg"
+            },
+            {
+              "alt": "ffEBBb3WxzU",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/ffEBBb3WxzU.avif",
+              "fileWebp": "images/portfolio/ffEBBb3WxzU.webp",
+              "fileJpeg": "images/portfolio/ffEBBb3WxzU.jpg"
+            },
+            {
+              "alt": "s17L_vY8918",
+              "category": "Others",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/s17L_vY8918.avif",
+              "fileWebp": "images/portfolio/s17L_vY8918.webp",
+              "fileJpeg": "images/portfolio/s17L_vY8918.jpg"
+            },
+            {
+              "alt": "_lUP6FS_8QI",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/_lUP6FS_8QI.avif",
+              "fileWebp": "images/portfolio/_lUP6FS_8QI.webp",
+              "fileJpeg": "images/portfolio/_lUP6FS_8QI.jpg"
+            },
+            {
+              "alt": "MWSm3j3C8_U",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/MWSm3j3C8_U.avif",
+              "fileWebp": "images/portfolio/MWSm3j3C8_U.webp",
+              "fileJpeg": "images/portfolio/MWSm3j3C8_U.jpg"
+            },
+            {
+              "alt": "1g0qzOm45hQ",
+              "category": "Others",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/1g0qzOm45hQ.avif",
+              "fileWebp": "images/portfolio/1g0qzOm45hQ.webp",
+              "fileJpeg": "images/portfolio/1g0qzOm45hQ.jpg"
+            },
+            {
+              "alt": "0WlgFG5LW84",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/0WlgFG5LW84.avif",
+              "fileWebp": "images/portfolio/0WlgFG5LW84.webp",
+              "fileJpeg": "images/portfolio/0WlgFG5LW84.jpg"
+            },
+            {
+              "alt": "8_wzvcpP9ro",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/8_wzvcpP9ro.avif",
+              "fileWebp": "images/portfolio/8_wzvcpP9ro.webp",
+              "fileJpeg": "images/portfolio/8_wzvcpP9ro.jpg"
+            },
+            {
+              "alt": "Ornate carvings adorn a sandstone wall.",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/fy5c252J3cc.avif",
+              "fileWebp": "images/portfolio/fy5c252J3cc.webp",
+              "fileJpeg": "images/portfolio/fy5c252J3cc.jpg"
+            },
+            {
+              "alt": "Intricate stone carvings adorn an ancient temple.",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "Temple District",
+              "file": "",
+              "fileAvif": "images/portfolio/Fs-Kiiz_Ekc.avif",
+              "fileWebp": "images/portfolio/Fs-Kiiz_Ekc.webp",
+              "fileJpeg": "images/portfolio/Fs-Kiiz_Ekc.jpg"
+            },
+            {
+              "alt": "zw81TedG8OE",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/zw81TedG8OE.avif",
+              "fileWebp": "images/portfolio/zw81TedG8OE.webp",
+              "fileJpeg": "images/portfolio/zw81TedG8OE.jpg"
+            },
+            {
+              "alt": "yPVYBx0brs8",
+              "category": "Others",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/yPVYBx0brs8.avif",
+              "fileWebp": "images/portfolio/yPVYBx0brs8.webp",
+              "fileJpeg": "images/portfolio/yPVYBx0brs8.jpg"
+            },
+            {
+              "alt": "VDdGPfnQgN4",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/VDdGPfnQgN4.avif",
+              "fileWebp": "images/portfolio/VDdGPfnQgN4.webp",
+              "fileJpeg": "images/portfolio/VDdGPfnQgN4.jpg"
+            },
+            {
+              "alt": "bIRliHvYbUg",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/bIRliHvYbUg.avif",
+              "fileWebp": "images/portfolio/bIRliHvYbUg.webp",
+              "fileJpeg": "images/portfolio/bIRliHvYbUg.jpg"
+            },
+            {
+              "alt": "f9HTWiMLmzM",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/f9HTWiMLmzM.avif",
+              "fileWebp": "images/portfolio/f9HTWiMLmzM.webp",
+              "fileJpeg": "images/portfolio/f9HTWiMLmzM.jpg"
+            },
+            {
+              "alt": "vwFAtkfJ8DM",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/vwFAtkfJ8DM.avif",
+              "fileWebp": "images/portfolio/vwFAtkfJ8DM.webp",
+              "fileJpeg": "images/portfolio/vwFAtkfJ8DM.jpg"
+            },
+            {
+              "alt": "8OF9nEfV7mE",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/8OF9nEfV7mE.avif",
+              "fileWebp": "images/portfolio/8OF9nEfV7mE.webp",
+              "fileJpeg": "images/portfolio/8OF9nEfV7mE.jpg"
+            },
+            {
+              "alt": "0X0Am7utoJs",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/0X0Am7utoJs.avif",
+              "fileWebp": "images/portfolio/0X0Am7utoJs.webp",
+              "fileJpeg": "images/portfolio/0X0Am7utoJs.jpg"
+            },
+            {
+              "alt": "jjPbyd1BHn0",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/jjPbyd1BHn0.avif",
+              "fileWebp": "images/portfolio/jjPbyd1BHn0.webp",
+              "fileJpeg": "images/portfolio/jjPbyd1BHn0.jpg"
+            },
+            {
+              "alt": "BtTvosb4BGI",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/BtTvosb4BGI.avif",
+              "fileWebp": "images/portfolio/BtTvosb4BGI.webp",
+              "fileJpeg": "images/portfolio/BtTvosb4BGI.jpg"
+            },
+            {
+              "alt": "uGd4x3KGJbE",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/uGd4x3KGJbE.avif",
+              "fileWebp": "images/portfolio/uGd4x3KGJbE.webp",
+              "fileJpeg": "images/portfolio/uGd4x3KGJbE.jpg"
+            },
+            {
+              "alt": "a1pC0a45ktU",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/a1pC0a45ktU.avif",
+              "fileWebp": "images/portfolio/a1pC0a45ktU.webp",
+              "fileJpeg": "images/portfolio/a1pC0a45ktU.jpg"
+            },
+            {
+              "alt": "QQN38O6CGro",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/QQN38O6CGro.avif",
+              "fileWebp": "images/portfolio/QQN38O6CGro.webp",
+              "fileJpeg": "images/portfolio/QQN38O6CGro.jpg"
+            },
+            {
+              "alt": "v5Q6JiWLlPU",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/v5Q6JiWLlPU.avif",
+              "fileWebp": "images/portfolio/v5Q6JiWLlPU.webp",
+              "fileJpeg": "images/portfolio/v5Q6JiWLlPU.jpg"
+            },
+            {
+              "alt": "vDOzdTJFqjQ",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/vDOzdTJFqjQ.avif",
+              "fileWebp": "images/portfolio/vDOzdTJFqjQ.webp",
+              "fileJpeg": "images/portfolio/vDOzdTJFqjQ.jpg"
+            },
+            {
+              "alt": "ttT7M6X46T8",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/ttT7M6X46T8.avif",
+              "fileWebp": "images/portfolio/ttT7M6X46T8.webp",
+              "fileJpeg": "images/portfolio/ttT7M6X46T8.jpg"
+            },
+            {
+              "alt": "AdXjgATzMm0",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/AdXjgATzMm0.avif",
+              "fileWebp": "images/portfolio/AdXjgATzMm0.webp",
+              "fileJpeg": "images/portfolio/AdXjgATzMm0.jpg"
+            },
+            {
+              "alt": "xbfSZySRgTM",
+              "category": "Others",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/xbfSZySRgTM.avif",
+              "fileWebp": "images/portfolio/xbfSZySRgTM.webp",
+              "fileJpeg": "images/portfolio/xbfSZySRgTM.jpg"
+            },
+            {
+              "alt": "47sQLqV-C7o",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/47sQLqV-C7o.avif",
+              "fileWebp": "images/portfolio/47sQLqV-C7o.webp",
+              "fileJpeg": "images/portfolio/47sQLqV-C7o.jpg"
+            },
+            {
+              "alt": "nbC653pYla8",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/nbC653pYla8.avif",
+              "fileWebp": "images/portfolio/nbC653pYla8.webp",
+              "fileJpeg": "images/portfolio/nbC653pYla8.jpg"
+            },
+            {
+              "alt": "ApyUMBPgyDU",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/ApyUMBPgyDU.avif",
+              "fileWebp": "images/portfolio/ApyUMBPgyDU.webp",
+              "fileJpeg": "images/portfolio/ApyUMBPgyDU.jpg"
+            },
+            {
+              "alt": "sQNdA3jmQQI",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/sQNdA3jmQQI.avif",
+              "fileWebp": "images/portfolio/sQNdA3jmQQI.webp",
+              "fileJpeg": "images/portfolio/sQNdA3jmQQI.jpg"
+            },
+            {
+              "alt": "3kv71UyVr8w",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/3kv71UyVr8w.avif",
+              "fileWebp": "images/portfolio/3kv71UyVr8w.webp",
+              "fileJpeg": "images/portfolio/3kv71UyVr8w.jpg"
+            },
+            {
+              "alt": "sMahgWdHz_I",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/sMahgWdHz_I.avif",
+              "fileWebp": "images/portfolio/sMahgWdHz_I.webp",
+              "fileJpeg": "images/portfolio/sMahgWdHz_I.jpg"
+            },
+            {
+              "alt": "qxOxu6pqZB4",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/qxOxu6pqZB4.avif",
+              "fileWebp": "images/portfolio/qxOxu6pqZB4.webp",
+              "fileJpeg": "images/portfolio/qxOxu6pqZB4.jpg"
+            },
+            {
+              "alt": "HBPwVHZ5HRY",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/HBPwVHZ5HRY.avif",
+              "fileWebp": "images/portfolio/HBPwVHZ5HRY.webp",
+              "fileJpeg": "images/portfolio/HBPwVHZ5HRY.jpg"
+            },
+            {
+              "alt": "A9OVCTadioI",
+              "category": "Others",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/A9OVCTadioI.avif",
+              "fileWebp": "images/portfolio/A9OVCTadioI.webp",
+              "fileJpeg": "images/portfolio/A9OVCTadioI.jpg"
+            },
+            {
+              "alt": "0zrt2DHlPx0",
+              "category": "Others",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/0zrt2DHlPx0.avif",
+              "fileWebp": "images/portfolio/0zrt2DHlPx0.webp",
+              "fileJpeg": "images/portfolio/0zrt2DHlPx0.jpg"
+            },
+            {
+              "alt": "AVmY7tn_SDs",
+              "category": "Others",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/AVmY7tn_SDs.avif",
+              "fileWebp": "images/portfolio/AVmY7tn_SDs.webp",
+              "fileJpeg": "images/portfolio/AVmY7tn_SDs.jpg"
+            },
+            {
+              "alt": "vRWa6EZGggE",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/vRWa6EZGggE.avif",
+              "fileWebp": "images/portfolio/vRWa6EZGggE.webp",
+              "fileJpeg": "images/portfolio/vRWa6EZGggE.jpg"
+            },
+            {
+              "alt": "SWNMrbz77TA",
+              "category": "Others",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/SWNMrbz77TA.avif",
+              "fileWebp": "images/portfolio/SWNMrbz77TA.webp",
+              "fileJpeg": "images/portfolio/SWNMrbz77TA.jpg"
+            },
+            {
+              "alt": "vOiH9m3Bh68",
+              "category": "Others",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/vOiH9m3Bh68.avif",
+              "fileWebp": "images/portfolio/vOiH9m3Bh68.webp",
+              "fileJpeg": "images/portfolio/vOiH9m3Bh68.jpg"
+            },
+            {
+              "alt": "uazgnSwXm34",
+              "category": "Others",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/uazgnSwXm34.avif",
+              "fileWebp": "images/portfolio/uazgnSwXm34.webp",
+              "fileJpeg": "images/portfolio/uazgnSwXm34.jpg"
+            },
+            {
+              "alt": "VszQnMaMiA8",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/VszQnMaMiA8.avif",
+              "fileWebp": "images/portfolio/VszQnMaMiA8.webp",
+              "fileJpeg": "images/portfolio/VszQnMaMiA8.jpg"
+            },
+            {
+              "alt": "UannOYzKvjk",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/UannOYzKvjk.avif",
+              "fileWebp": "images/portfolio/UannOYzKvjk.webp",
+              "fileJpeg": "images/portfolio/UannOYzKvjk.jpg"
+            },
+            {
+              "alt": "Jxm0J-T4Fjo",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/Jxm0J-T4Fjo.avif",
+              "fileWebp": "images/portfolio/Jxm0J-T4Fjo.webp",
+              "fileJpeg": "images/portfolio/Jxm0J-T4Fjo.jpg"
+            },
+            {
+              "alt": "SqSX7OkC1Uo",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/SqSX7OkC1Uo.avif",
+              "fileWebp": "images/portfolio/SqSX7OkC1Uo.webp",
+              "fileJpeg": "images/portfolio/SqSX7OkC1Uo.jpg"
+            },
+            {
+              "alt": "apdaD5zqZMI",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/apdaD5zqZMI.avif",
+              "fileWebp": "images/portfolio/apdaD5zqZMI.webp",
+              "fileJpeg": "images/portfolio/apdaD5zqZMI.jpg"
+            },
+            {
+              "alt": "J8n2Weca-OA",
+              "category": "Others",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/J8n2Weca-OA.avif",
+              "fileWebp": "images/portfolio/J8n2Weca-OA.webp",
+              "fileJpeg": "images/portfolio/J8n2Weca-OA.jpg"
+            },
+            {
+              "alt": "M5pB2EInhCE",
+              "category": "Others",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/M5pB2EInhCE.avif",
+              "fileWebp": "images/portfolio/M5pB2EInhCE.webp",
+              "fileJpeg": "images/portfolio/M5pB2EInhCE.jpg"
+            },
+            {
+              "alt": "hT1OX7oca00",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/hT1OX7oca00.avif",
+              "fileWebp": "images/portfolio/hT1OX7oca00.webp",
+              "fileJpeg": "images/portfolio/hT1OX7oca00.jpg"
+            },
+            {
+              "alt": "IdgF7DBXgBA",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/IdgF7DBXgBA.avif",
+              "fileWebp": "images/portfolio/IdgF7DBXgBA.webp",
+              "fileJpeg": "images/portfolio/IdgF7DBXgBA.jpg"
+            },
+            {
+              "alt": "Ur9rwOBqAw8",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/Ur9rwOBqAw8.avif",
+              "fileWebp": "images/portfolio/Ur9rwOBqAw8.webp",
+              "fileJpeg": "images/portfolio/Ur9rwOBqAw8.jpg"
+            },
+            {
+              "alt": "_JXsjOpwH-I",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/_JXsjOpwH-I.avif",
+              "fileWebp": "images/portfolio/_JXsjOpwH-I.webp",
+              "fileJpeg": "images/portfolio/_JXsjOpwH-I.jpg"
+            },
+            {
+              "alt": "CfFEa1uwB54",
+              "category": "Others",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/CfFEa1uwB54.avif",
+              "fileWebp": "images/portfolio/CfFEa1uwB54.webp",
+              "fileJpeg": "images/portfolio/CfFEa1uwB54.jpg"
+            },
+            {
+              "alt": "M9dyeW2sOk4",
+              "category": "Others",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/M9dyeW2sOk4.avif",
+              "fileWebp": "images/portfolio/M9dyeW2sOk4.webp",
+              "fileJpeg": "images/portfolio/M9dyeW2sOk4.jpg"
+            },
+            {
+              "alt": "-moz3Ylc0ZM",
+              "category": "Others",
+              "tags": [
+                "portrait-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/-moz3Ylc0ZM.avif",
+              "fileWebp": "images/portfolio/-moz3Ylc0ZM.webp",
+              "fileJpeg": "images/portfolio/-moz3Ylc0ZM.jpg"
+            },
+            {
+              "alt": "bbt5eWFAXvc",
+              "category": "Others",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/bbt5eWFAXvc.avif",
+              "fileWebp": "images/portfolio/bbt5eWFAXvc.webp",
+              "fileJpeg": "images/portfolio/bbt5eWFAXvc.jpg"
+            },
+            {
+              "alt": "zRiIWzxfsN8",
+              "category": "Others",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/zRiIWzxfsN8.avif",
+              "fileWebp": "images/portfolio/zRiIWzxfsN8.webp",
+              "fileJpeg": "images/portfolio/zRiIWzxfsN8.jpg"
+            },
+            {
+              "alt": "BnAsGlTu6Ng",
+              "category": "Others",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/BnAsGlTu6Ng.avif",
+              "fileWebp": "images/portfolio/BnAsGlTu6Ng.webp",
+              "fileJpeg": "images/portfolio/BnAsGlTu6Ng.jpg"
+            },
+            {
+              "alt": "T24f6d1OPQc",
+              "category": "Others",
+              "tags": [
+                "landscape-format"
+              ],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "",
+              "file": "",
+              "fileAvif": "images/portfolio/T24f6d1OPQc.avif",
+              "fileWebp": "images/portfolio/T24f6d1OPQc.webp",
+              "fileJpeg": "images/portfolio/T24f6d1OPQc.jpg"
             }
           ]
         }
@@ -359,34 +2591,43 @@
     },
     "music": {
       "title": "The Beat Goes On",
-      "description": "Drummer at heart. Rhythm is the foundation of everything I do — whether it's behind a kit, in code, or through a lens.",
+      "description": "Drummer at heart. Rhythm is the foundation of everything I do \u2014 whether it's behind a kit, in code, or through a lens.",
       "gear": [
         "Acoustic Drum Kit",
         "Electronic Percussion",
         "Drum Programming"
       ],
-      "influences": "From the polyrhythmic complexity of jazz to the raw energy of rock, and the intricate patterns of Indian percussion — rhythm knows no boundaries.",
+      "influences": "From the polyrhythmic complexity of jazz to the raw energy of rock, and the intricate patterns of Indian percussion \u2014 rhythm knows no boundaries.",
       "audioClips": [
         {
           "title": "Pocket Groove",
           "description": "A tight funk groove with ghost notes on the snare.",
           "file": "",
           "duration": "",
-          "tags": ["funk", "groove"]
+          "tags": [
+            "funk",
+            "groove"
+          ]
         },
         {
           "title": "Polyrhythm Study",
           "description": "Exploring 3 over 4 polyrhythmic patterns on the kit.",
           "file": "",
           "duration": "",
-          "tags": ["jazz", "polyrhythm"]
+          "tags": [
+            "jazz",
+            "polyrhythm"
+          ]
         },
         {
           "title": "Indian Taal",
           "description": "Tintal cycle adapted for the drum kit.",
           "file": "",
           "duration": "",
-          "tags": ["indian", "taal"]
+          "tags": [
+            "indian",
+            "taal"
+          ]
         }
       ]
     },
@@ -406,7 +2647,7 @@
           "techDetails": "Built with React 18, TypeScript, and Node.js. Uses PostgreSQL for data storage and Redis for caching.",
           "github": "#",
           "live": "#",
-          "icon": "⚡",
+          "icon": "\u26a1",
           "gradient": "linear-gradient(135deg, #667eea, #764ba2)",
           "bannerColor": "#667eea",
           "file": ""
@@ -423,7 +2664,7 @@
           "techDetails": "Python backend with FastAPI, PostgreSQL database, deployed on AWS.",
           "github": "#",
           "live": "#",
-          "icon": "🚀",
+          "icon": "\ud83d\ude80",
           "gradient": "linear-gradient(135deg, #f093fb, #f5576c)",
           "bannerColor": "#f5576c",
           "file": ""
@@ -440,7 +2681,7 @@
           "techDetails": "Static site with Astro, styled with Tailwind CSS.",
           "github": "#",
           "live": "#",
-          "icon": "🌐",
+          "icon": "\ud83c\udf10",
           "gradient": "linear-gradient(135deg, #4facfe, #00f2fe)",
           "bannerColor": "#4facfe",
           "file": ""
@@ -449,14 +2690,14 @@
     },
     "creative": {
       "title": "Visions & Stories",
-      "description": "Where imagination takes shape — storyboards, art, and everything in between.",
+      "description": "Where imagination takes shape \u2014 storyboards, art, and everything in between.",
       "works": [
         {
           "title": "Storyboard Project",
           "description": "Visual storytelling through sequential art",
           "type": "storyboard",
           "longDescription": "A deep dive into the process of creating this storyboard. From initial concept sketches to final panel layouts, this project explores visual narrative techniques.",
-          "icon": "🎬",
+          "icon": "\ud83c\udfac",
           "gradient": "linear-gradient(135deg, #a18cd1, #fbc2eb)",
           "bannerColor": "#a18cd1",
           "tags": [
@@ -471,7 +2712,7 @@
           "description": "A personal creative exploration",
           "type": "art",
           "longDescription": "An exploration of color theory and emotional resonance through abstract composition.",
-          "icon": "🎨",
+          "icon": "\ud83c\udfa8",
           "gradient": "linear-gradient(135deg, #ffecd2, #fcb69f)",
           "bannerColor": "#fcb69f",
           "tags": [
@@ -486,7 +2727,7 @@
           "description": "Visual concepts and ideation",
           "type": "art",
           "longDescription": "Concept art for an imagined world. Combining architectural influences with organic forms.",
-          "icon": "✏️",
+          "icon": "\u270f\ufe0f",
           "gradient": "linear-gradient(135deg, #a1c4fd, #c2e9fb)",
           "bannerColor": "#a1c4fd",
           "tags": [

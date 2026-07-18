@@ -42,7 +42,13 @@ const allPhotos = collections.flatMap((c: any) => (c.photos || []).map((p: any) 
               data-photo={JSON.stringify(p)}
               onclick="openViewerFromData(this)"
             >
-              {p.file ? (
+              {p.fileAvif || p.fileWebp || p.fileJpeg ? (
+                <picture>
+                  {p.fileAvif && <source srcset={p.fileAvif} type="image/avif" />}
+                  {p.fileWebp && <source srcset={p.fileWebp} type="image/webp" />}
+                  <img src={p.fileJpeg || p.fileWebp || p.fileAvif || p.file} alt={p.alt} loading="lazy" />
+                </picture>
+              ) : p.file ? (
                 <img src={p.file} alt={p.alt} loading="lazy" />
               ) : (
                 <div class="collection-hero-placeholder">
@@ -114,7 +120,13 @@ const allPhotos = collections.flatMap((c: any) => (c.photos || []).map((p: any) 
                         data-photo={JSON.stringify(p)}
                         onclick="openViewerFromData(this)"
                       >
-                        {p.file ? (
+                        {p.fileAvif || p.fileWebp || p.fileJpeg ? (
+                          <picture>
+                            {p.fileAvif && <source srcset={p.fileAvif} type="image/avif" />}
+                            {p.fileWebp && <source srcset={p.fileWebp} type="image/webp" />}
+                            <img src={p.fileJpeg || p.fileWebp || p.fileAvif || p.file} alt={p.alt} loading="lazy" />
+                          </picture>
+                        ) : p.file ? (
                           <img src={p.file} alt={p.alt} loading="lazy" />
                         ) : (
                           <div class="carousel-item-placeholder">
@@ -234,6 +246,34 @@ const allPhotos = collections.flatMap((c: any) => (c.photos || []).map((p: any) 
 
 <script is:inline>
 (function() {
+  // ============================================
+  // PICTURE ELEMENT HELPER
+  // ============================================
+  function pictureHTML(p, className = '', style = '') {
+    const cls = className ? ' class="' + className + '"' : '';
+    const sty = style ? ' style="' + style + '"' : '';
+    if (p.fileAvif || p.fileWebp || p.fileJpeg) {
+      let html = '<picture>';
+      if (p.fileAvif) html += '<source srcset="' + p.fileAvif + '" type="image/avif" />';
+      if (p.fileWebp) html += '<source srcset="' + p.fileWebp + '" type="image/webp" />';
+      const fallback = p.fileJpeg || p.fileWebp || p.fileAvif || p.file || '';
+      html += '<img src="' + fallback + '" alt="' + (p.alt || '') + '"' + cls + sty + ' loading="lazy" />';
+      html += '</picture>';
+      return html;
+    }
+    if (p.file) {
+      return '<img src="' + p.file + '" alt="' + (p.alt || '') + '"' + cls + sty + ' loading="lazy" />';
+    }
+    return '';
+  }
+
+  function placeholderHTML(size) {
+    const sz = size || 'w-10 h-10';
+    return '<div class="collection-hero-placeholder"><svg class="' + sz + '" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg></div>';
+  }
+  window._pictureHTML = pictureHTML;
+  window._placeholderHTML = placeholderHTML;
+
   // ============================================
   // STATE
   // ============================================
@@ -423,8 +463,8 @@ const allPhotos = collections.flatMap((c: any) => (c.photos || []).map((p: any) 
       div.dataset.photo = JSON.stringify(p);
       div.onclick = () => { closeExpandOverlay(); setTimeout(() => openViewer(p), 400); };
 
-      if (p.file) {
-        div.innerHTML = '<img src="' + p.file + '" alt="' + (p.alt || '') + '" loading="lazy" />' +
+      if (p.fileAvif || p.fileWebp || p.fileJpeg || p.file) {
+        div.innerHTML = window._pictureHTML(p, '', 'max-height: 75vh;') +
           '<div class="expand-photo-overlay">' +
             '<p class="expand-photo-title">' + (p.alt || '') + '</p>' +
             '<p class="expand-photo-meta">' + (p.category || '') + (p._collection ? ' · ' + p._collection : '') + '</p>' +
@@ -471,8 +511,8 @@ const allPhotos = collections.flatMap((c: any) => (c.photos || []).map((p: any) 
     document.getElementById('viewer-location').textContent = photo.location ? '📍 ' + photo.location : '';
 
     const imgContainer = document.getElementById('viewer-img-container');
-    if (photo.file) {
-      imgContainer.innerHTML = '<img src="' + photo.file + '" alt="' + (photo.alt || '') + '" style="max-height: 75vh;" />';
+    if (photo.fileAvif || photo.fileWebp || photo.fileJpeg || photo.file) {
+      imgContainer.innerHTML = window._pictureHTML(photo, '', 'max-height: 75vh;');
     } else {
       imgContainer.innerHTML = '<div style="padding: 64px; color: var(--text-muted);"><svg class="w-16 h-16 opacity-30" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg></div>';
     }
@@ -496,8 +536,9 @@ const allPhotos = collections.flatMap((c: any) => (c.photos || []).map((p: any) 
     allPhotos.forEach(p2 => {
       const sharedTags = (p2.tags || []).filter(t => (photo.tags || []).includes(t));
       if (p2.category === photo.category || sharedTags.length > 0) {
-        if (p2.file) {
-          similarHTML += '<div class="aspect-square rounded-lg overflow-hidden cursor-pointer gallery-similar-item" data-photo=\'' + JSON.stringify(p2) + '\'><img src="' + p2.file + '" alt="' + (p2.alt || '') + '" class="w-full h-full object-cover" /></div>';
+        if (p2.fileAvif || p2.fileWebp || p2.fileJpeg || p2.file) {
+          const pic = window._pictureHTML(p2, 'w-full h-full object-cover');
+          similarHTML += '<div class="aspect-square rounded-lg overflow-hidden cursor-pointer gallery-similar-item" data-photo=\'' + JSON.stringify(p2) + '\'>' + pic + '</div>';
         } else {
           similarHTML += '<div class="aspect-square rounded-lg overflow-hidden cursor-pointer gallery-similar-item" data-photo=\'' + JSON.stringify(p2) + '\' style="background: var(--bg-secondary);"><div class="w-full h-full flex items-center justify-center" style="color: var(--text-muted); opacity: 0.3;"><svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg></div></div>';
         }

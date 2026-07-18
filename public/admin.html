@@ -451,7 +451,13 @@
                 <div class="field"><label>Lens</label><input type="text" value="${esc(p.lens)}" data-ci="${ci}" data-pi="${pi}" data-pkey="lens"></div>
               </div>
               <div class="field"><label>Location</label><input type="text" value="${esc(p.location)}" data-ci="${ci}" data-pi="${pi}" data-pkey="location"></div>
-              <button class="btn btn-danger" style="margin-top:8px" data-rm-col-photo="${ci}-${pi}">✕ Remove</button>
+              <div style="display:flex; gap:8px; margin-top:8px; align-items:center;">
+                <button class="btn btn-danger" data-rm-col-photo="${ci}-${pi}">✕ Remove</button>
+                <select class="btn" style="font-size:11px; padding:4px 8px;" data-move-col-photo="${ci}-${pi}">
+                  <option value="">Move to...</option>
+                  ${collections.map((other, oci) => oci !== ci ? `<option value="${oci}">${esc(other.title)}</option>` : '').join('')}
+                </select>
+              </div>
             </div>`;
         });
 
@@ -527,6 +533,18 @@
         el.addEventListener('click', () => {
           const [ci, pi] = el.dataset.rmColPhoto.split('-').map(Number);
           content.pages.photography.collections[ci].photos.splice(pi, 1);
+          renderCollections();
+        });
+      });
+
+      // Move photo to another collection
+      c.querySelectorAll('[data-move-col-photo]').forEach(el => {
+        el.addEventListener('change', () => {
+          const [ci, pi] = el.dataset.moveColPhoto.split('-').map(Number);
+          const targetCi = parseInt(el.value);
+          if (isNaN(targetCi)) return;
+          const photo = content.pages.photography.collections[ci].photos.splice(pi, 1)[0];
+          content.pages.photography.collections[targetCi].photos.push(photo);
           renderCollections();
         });
       });
