@@ -530,77 +530,45 @@ const allPhotos = collections.flatMap((c: any) => (c.photos || []).map((p: any) 
       '<span class="photo-tag cursor-pointer" data-viewer-tag="' + t + '">#' + t + '</span>'
     ).join('');
 
-    const allPhotosData = [];
-    document.querySelectorAll('[data-photo]').forEach(el => {
-      try {
-        const p2 = JSON.parse(el.dataset.photo);
-        if (p2.alt !== photo.alt) allPhotosData.push(p2);
-      } catch(e) {}
+    // Deduplicated pool from _allPhotos (not DOM, which has cloned carousel items)
+    const allPhotosData = (window._allPhotos || []).filter(p => p.alt !== photo.alt);
+
+    // Similar photos: same category or shared tags, no repeats, ends when done
+    const similarContainer = document.getElementById('viewer-similar');
+    const similar = allPhotosData.filter(p => {
+      const sharedTags = (p.tags || []).filter(t => (photo.tags || []).includes(t));
+      return p.category === photo.category || sharedTags.length > 0;
     });
 
-    function renderViewerSimilar(pool, currentPhoto, filterTag) {
-      const similarContainer = document.getElementById('viewer-similar');
-      let filtered;
-      if (filterTag) {
-        filtered = pool.filter(p => (p.tags || []).includes(filterTag));
-      } else {
-        filtered = pool.filter(p => {
-          const sharedTags = (p.tags || []).filter(t => (currentPhoto.tags || []).includes(t));
-          return p.category === currentPhoto.category || sharedTags.length > 0;
-        });
-        const nonSimilar = pool.filter(p => {
-          const sharedTags = (p.tags || []).filter(t => (currentPhoto.tags || []).includes(t));
-          return p.category !== currentPhoto.category && sharedTags.length === 0;
-        });
-        filtered = filtered.concat(nonSimilar);
+    let html = '';
+    similar.forEach(p2 => {
+      if (p2.fileAvif || p2.fileWebp || p2.fileJpeg || p2.file) {
+        const pic = window._pictureHTML(p2, 'w-full h-full object-cover');
+        html += '<div class="aspect-square rounded-lg overflow-hidden cursor-pointer gallery-similar-item" data-photo=\'' + JSON.stringify(p2) + '\'>' + pic + '</div>';
       }
+    });
+    similarContainer.innerHTML = html || '<p class="text-xs" style="color: var(--text-muted);">No similar photos found</p>';
 
-      let html = '';
-      const shownCount = filterTag ? filtered.length : filtered.length - (pool.length - filtered.length);
-      filtered.forEach((p2, idx) => {
-        if (p2.fileAvif || p2.fileWebp || p2.fileJpeg || p2.file) {
-          const pic = window._pictureHTML(p2, 'w-full h-full object-cover');
-          const dimStyle = (!filterTag && idx >= shownCount) ? ' style="opacity:0.4"' : '';
-          html += '<div class="aspect-square rounded-lg overflow-hidden cursor-pointer gallery-similar-item"' + dimStyle + ' data-photo=\'' + JSON.stringify(p2) + '\'>' + pic + '</div>';
-        }
+    similarContainer.querySelectorAll('.gallery-similar-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const p2 = JSON.parse(item.dataset.photo || '{}');
+        openViewer(p2, window._viewerFromExpand);
       });
+    });
 
-      const label = filterTag ? filterTag + ' photos (' + filtered.length + ')' : 'similar photos';
-      similarContainer.innerHTML = (html
-        ? '<div class="flex items-center gap-3 mb-3" style="color: var(--text-primary);">' +
-          '<h3 class="text-sm font-semibold">' + label + '</h3>' +
-          (filterTag ? '<button class="text-xs font-medium" style="color: var(--accent-1);" id="viewer-back-similar">← Back to similar</button>' : '') +
-          '</div>' + html
-        : '<p class="text-xs" style="color: var(--text-muted);">No photos found</p>');
-
-      const backBtn = document.getElementById('viewer-back-similar');
-      if (backBtn) {
-        backBtn.addEventListener('click', () => {
-          renderViewerSimilar(pool, currentPhoto, null);
-          tagsEl.querySelectorAll('.photo-tag').forEach(t => { t.style.opacity = '1'; t.style.fontWeight = '400'; });
-        });
-      }
-
-      similarContainer.querySelectorAll('.gallery-similar-item').forEach(item => {
-        item.addEventListener('click', () => {
-          const p2 = JSON.parse(item.dataset.photo || '{}');
-          openViewer(p2, window._viewerFromExpand);
-        });
-      });
-    }
-
+    // Tag click: close viewer, open expand overlay filtered by tag
     tagsEl.querySelectorAll('.photo-tag').forEach(tagEl => {
       tagEl.addEventListener('click', () => {
         const tag = tagEl.dataset.viewerTag;
-        renderViewerSimilar(allPhotosData, photo, tag);
-        tagsEl.querySelectorAll('.photo-tag').forEach(t => {
-          t.style.opacity = t.dataset.viewerTag === tag ? '1' : '0.4';
-          t.style.fontWeight = t.dataset.viewerTag === tag ? '700' : '400';
-        });
+        closeViewer();
+        setTimeout(() => {
+          const tagPhotos = window._allPhotos.filter(p => (p.tags || []).includes(tag));
+          const virtualCol = { id: 'tag-' + tag, title: '#' + tag, description: tagPhotos.length + ' photos tagged #' + tag, photos: tagPhotos };
+          const sourceEl = document.querySelector('.collection-grid') || document.querySelector('.collection-hero');
+          openExpandOverlay(virtualCol, sourceEl, tag);
+        }, 350);
       });
     });
-
-    renderViewerSimilar(allPhotosData, photo, null);
 
     viewer.classList.add('open');
     document.body.style.overflow = 'hidden';
