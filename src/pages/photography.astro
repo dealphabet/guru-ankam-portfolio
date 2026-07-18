@@ -530,36 +530,77 @@ const allPhotos = collections.flatMap((c: any) => (c.photos || []).map((p: any) 
       '<span class="photo-tag cursor-pointer" data-viewer-tag="' + t + '">#' + t + '</span>'
     ).join('');
 
-    // Build similar photos from all collections
-    const allPhotos = [];
+    const allPhotosData = [];
     document.querySelectorAll('[data-photo]').forEach(el => {
       try {
         const p2 = JSON.parse(el.dataset.photo);
-        if (p2.alt !== photo.alt) allPhotos.push(p2);
+        if (p2.alt !== photo.alt) allPhotosData.push(p2);
       } catch(e) {}
     });
 
-    const similarContainer = document.getElementById('viewer-similar');
-    let similarHTML = '';
-    allPhotos.forEach(p2 => {
-      const sharedTags = (p2.tags || []).filter(t => (photo.tags || []).includes(t));
-      if (p2.category === photo.category || sharedTags.length > 0) {
+    function renderViewerSimilar(pool, currentPhoto, filterTag) {
+      const similarContainer = document.getElementById('viewer-similar');
+      let filtered;
+      if (filterTag) {
+        filtered = pool.filter(p => (p.tags || []).includes(filterTag));
+      } else {
+        filtered = pool.filter(p => {
+          const sharedTags = (p.tags || []).filter(t => (currentPhoto.tags || []).includes(t));
+          return p.category === currentPhoto.category || sharedTags.length > 0;
+        });
+        const nonSimilar = pool.filter(p => {
+          const sharedTags = (p.tags || []).filter(t => (currentPhoto.tags || []).includes(t));
+          return p.category !== currentPhoto.category && sharedTags.length === 0;
+        });
+        filtered = filtered.concat(nonSimilar);
+      }
+
+      let html = '';
+      const shownCount = filterTag ? filtered.length : filtered.length - (pool.length - filtered.length);
+      filtered.forEach((p2, idx) => {
         if (p2.fileAvif || p2.fileWebp || p2.fileJpeg || p2.file) {
           const pic = window._pictureHTML(p2, 'w-full h-full object-cover');
-          similarHTML += '<div class="aspect-square rounded-lg overflow-hidden cursor-pointer gallery-similar-item" data-photo=\'' + JSON.stringify(p2) + '\'>' + pic + '</div>';
-        } else {
-          similarHTML += '<div class="aspect-square rounded-lg overflow-hidden cursor-pointer gallery-similar-item" data-photo=\'' + JSON.stringify(p2) + '\' style="background: var(--bg-secondary);"><div class="w-full h-full flex items-center justify-center" style="color: var(--text-muted); opacity: 0.3;"><svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg></div></div>';
+          const dimStyle = (!filterTag && idx >= shownCount) ? ' style="opacity:0.4"' : '';
+          html += '<div class="aspect-square rounded-lg overflow-hidden cursor-pointer gallery-similar-item"' + dimStyle + ' data-photo=\'' + JSON.stringify(p2) + '\'>' + pic + '</div>';
         }
-      }
-    });
-    similarContainer.innerHTML = similarHTML || '<p class="text-xs" style="color: var(--text-muted);">No similar photos found</p>';
+      });
 
-    similarContainer.querySelectorAll('.gallery-similar-item').forEach(item => {
-      item.addEventListener('click', () => {
-        const p2 = JSON.parse(item.dataset.photo || '{}');
-        openViewer(p2, window._viewerFromExpand);
+      const label = filterTag ? filterTag + ' photos (' + filtered.length + ')' : 'similar photos';
+      similarContainer.innerHTML = (html
+        ? '<div class="flex items-center gap-3 mb-3" style="color: var(--text-primary);">' +
+          '<h3 class="text-sm font-semibold">' + label + '</h3>' +
+          (filterTag ? '<button class="text-xs font-medium" style="color: var(--accent-1);" id="viewer-back-similar">← Back to similar</button>' : '') +
+          '</div>' + html
+        : '<p class="text-xs" style="color: var(--text-muted);">No photos found</p>');
+
+      const backBtn = document.getElementById('viewer-back-similar');
+      if (backBtn) {
+        backBtn.addEventListener('click', () => {
+          renderViewerSimilar(pool, currentPhoto, null);
+          tagsEl.querySelectorAll('.photo-tag').forEach(t => { t.style.opacity = '1'; t.style.fontWeight = '400'; });
+        });
+      }
+
+      similarContainer.querySelectorAll('.gallery-similar-item').forEach(item => {
+        item.addEventListener('click', () => {
+          const p2 = JSON.parse(item.dataset.photo || '{}');
+          openViewer(p2, window._viewerFromExpand);
+        });
+      });
+    }
+
+    tagsEl.querySelectorAll('.photo-tag').forEach(tagEl => {
+      tagEl.addEventListener('click', () => {
+        const tag = tagEl.dataset.viewerTag;
+        renderViewerSimilar(allPhotosData, photo, tag);
+        tagsEl.querySelectorAll('.photo-tag').forEach(t => {
+          t.style.opacity = t.dataset.viewerTag === tag ? '1' : '0.4';
+          t.style.fontWeight = t.dataset.viewerTag === tag ? '700' : '400';
+        });
       });
     });
+
+    renderViewerSimilar(allPhotosData, photo, null);
 
     viewer.classList.add('open');
     document.body.style.overflow = 'hidden';
