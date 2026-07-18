@@ -230,6 +230,7 @@ const allPhotos = collections.flatMap((c: any) => (c.photos || []).map((p: any) 
         <div class="text-right text-xs space-y-1" style="color: var(--text-muted);">
           <p id="viewer-camera"></p>
           <p id="viewer-lens"></p>
+          <p id="viewer-exif"></p>
           <p id="viewer-location"></p>
         </div>
       </div>
@@ -509,6 +510,12 @@ const allPhotos = collections.flatMap((c: any) => (c.photos || []).map((p: any) 
     document.getElementById('viewer-desc').textContent = photo.category || '';
     document.getElementById('viewer-camera').textContent = photo.camera ? '📷 ' + photo.camera : '';
     document.getElementById('viewer-lens').textContent = photo.lens ? '🔍 ' + photo.lens : '';
+    const exifParts = [];
+    if (photo.focalLength) exifParts.push(photo.focalLength);
+    if (photo.aperture) exifParts.push('f/' + photo.aperture);
+    if (photo.exposure) exifParts.push(photo.exposure + 's');
+    if (photo.iso) exifParts.push('ISO ' + photo.iso);
+    document.getElementById('viewer-exif').textContent = exifParts.length ? '⚙️ ' + exifParts.join(' · ') : '';
     document.getElementById('viewer-location').textContent = photo.location ? '📍 ' + photo.location : '';
 
     const imgContainer = document.getElementById('viewer-img-container');

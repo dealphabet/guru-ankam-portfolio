@@ -129,13 +129,17 @@
               "tags": [
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/vo1kaRN8uMM.avif",
               "fileWebp": "images/portfolio/vo1kaRN8uMM.webp",
-              "fileJpeg": "images/portfolio/vo1kaRN8uMM.jpg"
+              "fileJpeg": "images/portfolio/vo1kaRN8uMM.jpg",
+              "iso": "3200",
+              "focalLength": "70.0",
+              "aperture": "13.0",
+              "exposure": "1/125"
             },
             {
               "alt": "Close-up of textured white petals in black and white.",
@@ -144,13 +148,17 @@
                 "petal",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/1ro1D0JmQ28.avif",
               "fileWebp": "images/portfolio/1ro1D0JmQ28.webp",
-              "fileJpeg": "images/portfolio/1ro1D0JmQ28.jpg"
+              "fileJpeg": "images/portfolio/1ro1D0JmQ28.jpg",
+              "iso": "200",
+              "focalLength": "70.0",
+              "aperture": "4.0",
+              "exposure": "1/500"
             },
             {
               "alt": "White snapdragons bloom with green leaves.",
@@ -158,13 +166,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/wh5o8Xyg7bI.avif",
               "fileWebp": "images/portfolio/wh5o8Xyg7bI.webp",
-              "fileJpeg": "images/portfolio/wh5o8Xyg7bI.jpg"
+              "fileJpeg": "images/portfolio/wh5o8Xyg7bI.jpg",
+              "iso": "200",
+              "focalLength": "70.0",
+              "aperture": "4.0",
+              "exposure": "1/160"
             },
             {
               "alt": "Close-up of dusty miller plant leaves in black and white.",
@@ -172,13 +184,17 @@
               "tags": [
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/RM1nNnT2V3w.avif",
               "fileWebp": "images/portfolio/RM1nNnT2V3w.webp",
-              "fileJpeg": "images/portfolio/RM1nNnT2V3w.jpg"
+              "fileJpeg": "images/portfolio/RM1nNnT2V3w.jpg",
+              "iso": "100",
+              "focalLength": "38.0",
+              "aperture": "6.3",
+              "exposure": "1/250"
             },
             {
               "alt": "A single pale pink dahlia bloom surrounded by dark leaves",
@@ -186,13 +202,17 @@
               "tags": [
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/YJJowCwfULQ.avif",
               "fileWebp": "images/portfolio/YJJowCwfULQ.webp",
-              "fileJpeg": "images/portfolio/YJJowCwfULQ.jpg"
+              "fileJpeg": "images/portfolio/YJJowCwfULQ.jpg",
+              "iso": "400",
+              "focalLength": "70.0",
+              "aperture": "5.6",
+              "exposure": "1/1000"
             },
             {
               "alt": "Pink snapdragons bloom in a garden setting.",
@@ -201,13 +221,17 @@
                 "garden",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/XpPFApCF6u8.avif",
               "fileWebp": "images/portfolio/XpPFApCF6u8.webp",
-              "fileJpeg": "images/portfolio/XpPFApCF6u8.jpg"
+              "fileJpeg": "images/portfolio/XpPFApCF6u8.jpg",
+              "iso": "100",
+              "focalLength": "70.0",
+              "aperture": "4.0",
+              "exposure": "1/160"
             },
             {
               "alt": "Two pelicans rest on a log over water.",
@@ -216,13 +240,17 @@
                 "pelican",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/1o_NIC8TEBg.avif",
               "fileWebp": "images/portfolio/1o_NIC8TEBg.webp",
-              "fileJpeg": "images/portfolio/1o_NIC8TEBg.jpg"
+              "fileJpeg": "images/portfolio/1o_NIC8TEBg.jpg",
+              "iso": "640",
+              "focalLength": "200.0",
+              "aperture": "2.8",
+              "exposure": "1/4000"
             },
             {
               "alt": "White birds are preening in the pond.",
@@ -231,13 +259,17 @@
                 "bird",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/6kqcmYnhfk8.avif",
               "fileWebp": "images/portfolio/6kqcmYnhfk8.webp",
-              "fileJpeg": "images/portfolio/6kqcmYnhfk8.jpg"
+              "fileJpeg": "images/portfolio/6kqcmYnhfk8.jpg",
+              "iso": "100",
+              "focalLength": "170.0",
+              "aperture": "2.8",
+              "exposure": "1/640"
             },
             {
               "alt": "Two pelicans stand on a log over water.",
@@ -246,13 +278,17 @@
                 "pelican",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/zlGnvovQhbg.avif",
               "fileWebp": "images/portfolio/zlGnvovQhbg.webp",
-              "fileJpeg": "images/portfolio/zlGnvovQhbg.jpg"
+              "fileJpeg": "images/portfolio/zlGnvovQhbg.jpg",
+              "iso": "640",
+              "focalLength": "200.0",
+              "aperture": "2.8",
+              "exposure": "1/4000"
             },
             {
               "alt": "Two pelicans stand in the water.",
@@ -261,13 +297,17 @@
                 "pelican",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/on1O93qqjWE.avif",
               "fileWebp": "images/portfolio/on1O93qqjWE.webp",
-              "fileJpeg": "images/portfolio/on1O93qqjWE.jpg"
+              "fileJpeg": "images/portfolio/on1O93qqjWE.jpg",
+              "iso": "100",
+              "focalLength": "170.0",
+              "aperture": "2.8",
+              "exposure": "1/640"
             },
             {
               "alt": "Deer are resting under a shady tree.",
@@ -277,13 +317,17 @@
                 "tree",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/SuTAVhisE5M.avif",
               "fileWebp": "images/portfolio/SuTAVhisE5M.webp",
-              "fileJpeg": "images/portfolio/SuTAVhisE5M.jpg"
+              "fileJpeg": "images/portfolio/SuTAVhisE5M.jpg",
+              "iso": "320",
+              "focalLength": "200.0",
+              "aperture": "2.8",
+              "exposure": "1/200"
             },
             {
               "alt": "A glowing flower lantern in the dark.",
@@ -293,13 +337,17 @@
                 "lantern",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/cJbmpG0Wab4.avif",
               "fileWebp": "images/portfolio/cJbmpG0Wab4.webp",
-              "fileJpeg": "images/portfolio/cJbmpG0Wab4.jpg"
+              "fileJpeg": "images/portfolio/cJbmpG0Wab4.jpg",
+              "iso": "800",
+              "focalLength": "50.0",
+              "aperture": "6.3",
+              "exposure": "1/160"
             },
             {
               "alt": "A glowing pink lotus flower lights up.",
@@ -308,13 +356,17 @@
                 "flower",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/kmL2nY0BVTE.avif",
               "fileWebp": "images/portfolio/kmL2nY0BVTE.webp",
-              "fileJpeg": "images/portfolio/kmL2nY0BVTE.jpg"
+              "fileJpeg": "images/portfolio/kmL2nY0BVTE.jpg",
+              "iso": "800",
+              "focalLength": "28.0",
+              "aperture": "4.5",
+              "exposure": "1/50"
             },
             {
               "alt": "White flowers bloom on a bush with green leaves.",
@@ -323,13 +375,17 @@
                 "flower",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON D3300",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/WNVSc4pgeAg.avif",
               "fileWebp": "images/portfolio/WNVSc4pgeAg.webp",
-              "fileJpeg": "images/portfolio/WNVSc4pgeAg.jpg"
+              "fileJpeg": "images/portfolio/WNVSc4pgeAg.jpg",
+              "iso": "100",
+              "focalLength": "300.0",
+              "aperture": "8.0",
+              "exposure": "1/500"
             },
             {
               "alt": "Green grass grows by a tranquil body of water.",
@@ -338,13 +394,17 @@
                 "grass",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON D3300",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/LtV7Q7wXago.avif",
               "fileWebp": "images/portfolio/LtV7Q7wXago.webp",
-              "fileJpeg": "images/portfolio/LtV7Q7wXago.jpg"
+              "fileJpeg": "images/portfolio/LtV7Q7wXago.jpg",
+              "iso": "100",
+              "focalLength": "300.0",
+              "aperture": "6.3",
+              "exposure": "1/800"
             },
             {
               "alt": "White flowers bloom on a tree branch.",
@@ -354,13 +414,17 @@
                 "tree",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON D3300",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/tnQ4_3cfos0.avif",
               "fileWebp": "images/portfolio/tnQ4_3cfos0.webp",
-              "fileJpeg": "images/portfolio/tnQ4_3cfos0.jpg"
+              "fileJpeg": "images/portfolio/tnQ4_3cfos0.jpg",
+              "iso": "100",
+              "focalLength": "300.0",
+              "aperture": "8.0",
+              "exposure": "1/400"
             },
             {
               "alt": "s9wpSrw4BEE",
@@ -369,13 +433,17 @@
                 "bee",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/s9wpSrw4BEE.avif",
               "fileWebp": "images/portfolio/s9wpSrw4BEE.webp",
-              "fileJpeg": "images/portfolio/s9wpSrw4BEE.jpg"
+              "fileJpeg": "images/portfolio/s9wpSrw4BEE.jpg",
+              "iso": "21",
+              "focalLength": "9.0",
+              "aperture": "2.8",
+              "exposure": "1/159"
             },
             {
               "alt": "A daisy blooms in green grass surrounded by debris.",
@@ -385,13 +453,17 @@
                 "grass",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": " EOS 500D",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/boDD2GZiSIc.avif",
               "fileWebp": "images/portfolio/boDD2GZiSIc.webp",
-              "fileJpeg": "images/portfolio/boDD2GZiSIc.jpg"
+              "fileJpeg": "images/portfolio/boDD2GZiSIc.jpg",
+              "iso": "200",
+              "focalLength": "250.0",
+              "aperture": "5.6",
+              "exposure": "1/400"
             },
             {
               "alt": "A shady tree casts shadows in a garden.",
@@ -401,13 +473,17 @@
                 "tree",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/fOS4bB6v-14.avif",
               "fileWebp": "images/portfolio/fOS4bB6v-14.webp",
-              "fileJpeg": "images/portfolio/fOS4bB6v-14.jpg"
+              "fileJpeg": "images/portfolio/fOS4bB6v-14.jpg",
+              "iso": "250",
+              "focalLength": "50.0",
+              "aperture": "6.3",
+              "exposure": "1/250"
             },
             {
               "alt": "A dragonfly sits on a bright green blade of grass.",
@@ -417,13 +493,17 @@
                 "grass",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": " EOS 500D",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/itjF0dntHVY.avif",
               "fileWebp": "images/portfolio/itjF0dntHVY.webp",
-              "fileJpeg": "images/portfolio/itjF0dntHVY.jpg"
+              "fileJpeg": "images/portfolio/itjF0dntHVY.jpg",
+              "iso": "1600",
+              "focalLength": "250.0",
+              "aperture": "5.6",
+              "exposure": "1/4000"
             },
             {
               "alt": "Dried leaves rest on green grass.",
@@ -432,13 +512,17 @@
                 "grass",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": " EOS 500D",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/t5iDggAeY2Y.avif",
               "fileWebp": "images/portfolio/t5iDggAeY2Y.webp",
-              "fileJpeg": "images/portfolio/t5iDggAeY2Y.jpg"
+              "fileJpeg": "images/portfolio/t5iDggAeY2Y.jpg",
+              "iso": "200",
+              "focalLength": "250.0",
+              "aperture": "5.6",
+              "exposure": "1/800"
             },
             {
               "alt": "A dragonfly rests upon a blade of grass.",
@@ -448,13 +532,17 @@
                 "grass",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": " EOS 500D",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/Fq3t5kJ2bT4.avif",
               "fileWebp": "images/portfolio/Fq3t5kJ2bT4.webp",
-              "fileJpeg": "images/portfolio/Fq3t5kJ2bT4.jpg"
+              "fileJpeg": "images/portfolio/Fq3t5kJ2bT4.jpg",
+              "iso": "200",
+              "focalLength": "194.0",
+              "aperture": "5.6",
+              "exposure": "1/1000"
             },
             {
               "alt": "A red dragonfly perched on a thin stem.",
@@ -463,13 +551,17 @@
                 "dragonfly",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": " EOS 500D",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/Qf6UDxoIw_c.avif",
               "fileWebp": "images/portfolio/Qf6UDxoIw_c.webp",
-              "fileJpeg": "images/portfolio/Qf6UDxoIw_c.jpg"
+              "fileJpeg": "images/portfolio/Qf6UDxoIw_c.jpg",
+              "iso": "1600",
+              "focalLength": "250.0",
+              "aperture": "5.6",
+              "exposure": "1/4000"
             },
             {
               "alt": "Leaves filter sunlight against a bright blue sky.",
@@ -478,13 +570,17 @@
                 "sky",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": " EOS 500D",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/tzIhm3QzdFU.avif",
               "fileWebp": "images/portfolio/tzIhm3QzdFU.webp",
-              "fileJpeg": "images/portfolio/tzIhm3QzdFU.jpg"
+              "fileJpeg": "images/portfolio/tzIhm3QzdFU.jpg",
+              "iso": "1600",
+              "focalLength": "250.0",
+              "aperture": "5.6",
+              "exposure": "1/4000"
             },
             {
               "alt": "A bee house is nestled in the lush green garden.",
@@ -494,13 +590,17 @@
                 "bee",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/tFOltcp_i3Y.avif",
               "fileWebp": "images/portfolio/tFOltcp_i3Y.webp",
-              "fileJpeg": "images/portfolio/tFOltcp_i3Y.jpg"
+              "fileJpeg": "images/portfolio/tFOltcp_i3Y.jpg",
+              "iso": "160",
+              "focalLength": "50.0",
+              "aperture": "7.1",
+              "exposure": "1/50"
             },
             {
               "alt": "Pink tulip stands out among other flowers.",
@@ -510,13 +610,17 @@
                 "tulip",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/w6OxOY2MIF4.avif",
               "fileWebp": "images/portfolio/w6OxOY2MIF4.webp",
-              "fileJpeg": "images/portfolio/w6OxOY2MIF4.jpg"
+              "fileJpeg": "images/portfolio/w6OxOY2MIF4.jpg",
+              "iso": "180",
+              "focalLength": "50.0",
+              "aperture": "6.3",
+              "exposure": "1/1000"
             },
             {
               "alt": "Beautiful pink and red tulips bloom in a sunny field.",
@@ -525,13 +629,17 @@
                 "tulip",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/yo1VVYZq6sE.avif",
               "fileWebp": "images/portfolio/yo1VVYZq6sE.webp",
-              "fileJpeg": "images/portfolio/yo1VVYZq6sE.jpg"
+              "fileJpeg": "images/portfolio/yo1VVYZq6sE.jpg",
+              "iso": "320",
+              "focalLength": "50.0",
+              "aperture": "16.0",
+              "exposure": "1/200"
             },
             {
               "alt": "Red tulips line a path leading toward a tree.",
@@ -541,13 +649,17 @@
                 "tree",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/vDPXVb4ydgo.avif",
               "fileWebp": "images/portfolio/vDPXVb4ydgo.webp",
-              "fileJpeg": "images/portfolio/vDPXVb4ydgo.jpg"
+              "fileJpeg": "images/portfolio/vDPXVb4ydgo.jpg",
+              "iso": "160",
+              "focalLength": "50.0",
+              "aperture": "6.3",
+              "exposure": "1/1000"
             },
             {
               "alt": "Teddy bear is amongst red tulips.",
@@ -556,13 +668,17 @@
                 "tulip",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/Cx74Ktf9lz0.avif",
               "fileWebp": "images/portfolio/Cx74Ktf9lz0.webp",
-              "fileJpeg": "images/portfolio/Cx74Ktf9lz0.jpg"
+              "fileJpeg": "images/portfolio/Cx74Ktf9lz0.jpg",
+              "iso": "180",
+              "focalLength": "50.0",
+              "aperture": "6.3",
+              "exposure": "1/320"
             },
             {
               "alt": "Red tulips bloom vibrantly under a blue sky.",
@@ -572,13 +688,17 @@
                 "sky",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/UnfFC8grMUY.avif",
               "fileWebp": "images/portfolio/UnfFC8grMUY.webp",
-              "fileJpeg": "images/portfolio/UnfFC8grMUY.jpg"
+              "fileJpeg": "images/portfolio/UnfFC8grMUY.jpg",
+              "iso": "160",
+              "focalLength": "50.0",
+              "aperture": "6.3",
+              "exposure": "1/1000"
             },
             {
               "alt": "Red tulips bloom beautifully under the blue sky.",
@@ -588,13 +708,17 @@
                 "sky",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/Zf1sji_vWCA.avif",
               "fileWebp": "images/portfolio/Zf1sji_vWCA.webp",
-              "fileJpeg": "images/portfolio/Zf1sji_vWCA.jpg"
+              "fileJpeg": "images/portfolio/Zf1sji_vWCA.jpg",
+              "iso": "320",
+              "focalLength": "50.0",
+              "aperture": "6.3",
+              "exposure": "1/1000"
             },
             {
               "alt": "Yellow tulips bloom under a bright, sunny sky.",
@@ -604,13 +728,17 @@
                 "sky",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/l4XTlUX4-tA.avif",
               "fileWebp": "images/portfolio/l4XTlUX4-tA.webp",
-              "fileJpeg": "images/portfolio/l4XTlUX4-tA.jpg"
+              "fileJpeg": "images/portfolio/l4XTlUX4-tA.jpg",
+              "iso": "100",
+              "focalLength": "24.0",
+              "aperture": "5.0",
+              "exposure": "1/500"
             },
             {
               "alt": "Red tulips bloom brightly under a clear blue sky.",
@@ -620,13 +748,17 @@
                 "sky",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/bx_hVih8Tks.avif",
               "fileWebp": "images/portfolio/bx_hVih8Tks.webp",
-              "fileJpeg": "images/portfolio/bx_hVih8Tks.jpg"
+              "fileJpeg": "images/portfolio/bx_hVih8Tks.jpg",
+              "iso": "250",
+              "focalLength": "50.0",
+              "aperture": "6.3",
+              "exposure": "1/1000"
             },
             {
               "alt": "A grassy, rocky hillside extends under a blue sky.",
@@ -637,13 +769,17 @@
                 "sky",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": " EOS 500D",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/fVKMOZsOylU.avif",
               "fileWebp": "images/portfolio/fVKMOZsOylU.webp",
-              "fileJpeg": "images/portfolio/fVKMOZsOylU.jpg"
+              "fileJpeg": "images/portfolio/fVKMOZsOylU.jpg",
+              "iso": "400",
+              "focalLength": "60.0",
+              "aperture": "16.0",
+              "exposure": "1/200"
             },
             {
               "alt": "White flowers are blooming in the sunlight.",
@@ -652,13 +788,17 @@
                 "flower",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": " EOS 500D",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/cvyDBaSB0ok.avif",
               "fileWebp": "images/portfolio/cvyDBaSB0ok.webp",
-              "fileJpeg": "images/portfolio/cvyDBaSB0ok.jpg"
+              "fileJpeg": "images/portfolio/cvyDBaSB0ok.jpg",
+              "iso": "320",
+              "focalLength": "250.0",
+              "aperture": "5.6",
+              "exposure": "1/250"
             }
           ]
         },
@@ -681,13 +821,17 @@
                 "umbrella",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/QuXaFUNmEU4.avif",
               "fileWebp": "images/portfolio/QuXaFUNmEU4.webp",
-              "fileJpeg": "images/portfolio/QuXaFUNmEU4.jpg"
+              "fileJpeg": "images/portfolio/QuXaFUNmEU4.jpg",
+              "iso": "100",
+              "focalLength": "70.0",
+              "aperture": "4.0",
+              "exposure": "1/1000"
             },
             {
               "alt": "Crowd gathered on a bridge outside a vue cinema.",
@@ -697,13 +841,17 @@
                 "bridge",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "85mm f/1.4",
               "location": "Entertainment District",
               "file": "",
               "fileAvif": "images/portfolio/MJD5Vvq3gwg.avif",
               "fileWebp": "images/portfolio/MJD5Vvq3gwg.webp",
-              "fileJpeg": "images/portfolio/MJD5Vvq3gwg.jpg"
+              "fileJpeg": "images/portfolio/MJD5Vvq3gwg.jpg",
+              "iso": "100",
+              "focalLength": "70.0",
+              "aperture": "4.0",
+              "exposure": "1/1000"
             },
             {
               "alt": "People under umbrella watching rain over water",
@@ -713,13 +861,17 @@
                 "umbrella",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/z4chklQ7TEE.avif",
               "fileWebp": "images/portfolio/z4chklQ7TEE.webp",
-              "fileJpeg": "images/portfolio/z4chklQ7TEE.jpg"
+              "fileJpeg": "images/portfolio/z4chklQ7TEE.jpg",
+              "iso": "100",
+              "focalLength": "70.0",
+              "aperture": "8.0",
+              "exposure": "1/250"
             },
             {
               "alt": "Giant inflatable duck attracts large crowd by water",
@@ -728,13 +880,17 @@
                 "crowd",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/zlaToVX1h6s.avif",
               "fileWebp": "images/portfolio/zlaToVX1h6s.webp",
-              "fileJpeg": "images/portfolio/zlaToVX1h6s.jpg"
+              "fileJpeg": "images/portfolio/zlaToVX1h6s.jpg",
+              "iso": "100",
+              "focalLength": "54.0",
+              "aperture": "4.0",
+              "exposure": "1/125"
             },
             {
               "alt": "City skyline at night with water reflections.",
@@ -746,13 +902,17 @@
                 "skyline",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "DSC-WX300",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/2uao23oNB_o.avif",
               "fileWebp": "images/portfolio/2uao23oNB_o.webp",
-              "fileJpeg": "images/portfolio/2uao23oNB_o.jpg"
+              "fileJpeg": "images/portfolio/2uao23oNB_o.jpg",
+              "iso": "1600",
+              "focalLength": "4.4",
+              "aperture": "3.5",
+              "exposure": "1/60"
             },
             {
               "alt": "A pink firework explodes against a dark night sky.",
@@ -763,13 +923,17 @@
                 "sky",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/XNocQxiEdHA.avif",
               "fileWebp": "images/portfolio/XNocQxiEdHA.webp",
-              "fileJpeg": "images/portfolio/XNocQxiEdHA.jpg"
+              "fileJpeg": "images/portfolio/XNocQxiEdHA.jpg",
+              "iso": "4000",
+              "focalLength": "200.0",
+              "aperture": "2.8",
+              "exposure": "1/250"
             },
             {
               "alt": "Fireworks burst in the dark night sky.",
@@ -780,13 +944,17 @@
                 "sky",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/GawR1HR_s24.avif",
               "fileWebp": "images/portfolio/GawR1HR_s24.webp",
-              "fileJpeg": "images/portfolio/GawR1HR_s24.jpg"
+              "fileJpeg": "images/portfolio/GawR1HR_s24.jpg",
+              "iso": "3200",
+              "focalLength": "70.0",
+              "aperture": "2.8",
+              "exposure": "1/500"
             },
             {
               "alt": "A firework rocket shoots up into the night sky.",
@@ -797,13 +965,17 @@
                 "sky",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/uZ0o7nYYlkU.avif",
               "fileWebp": "images/portfolio/uZ0o7nYYlkU.webp",
-              "fileJpeg": "images/portfolio/uZ0o7nYYlkU.jpg"
+              "fileJpeg": "images/portfolio/uZ0o7nYYlkU.jpg",
+              "iso": "3200",
+              "focalLength": "90.0",
+              "aperture": "2.8",
+              "exposure": "1/200"
             },
             {
               "alt": "Fireworks light up the night sky.",
@@ -814,13 +986,17 @@
                 "sky",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/rf1SaKUzuPw.avif",
               "fileWebp": "images/portfolio/rf1SaKUzuPw.webp",
-              "fileJpeg": "images/portfolio/rf1SaKUzuPw.jpg"
+              "fileJpeg": "images/portfolio/rf1SaKUzuPw.jpg",
+              "iso": "4000",
+              "focalLength": "70.0",
+              "aperture": "2.8",
+              "exposure": "1/250"
             },
             {
               "alt": "Fireworks light up the dark night sky.",
@@ -831,13 +1007,17 @@
                 "sky",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/X7Ry9s6A37w.avif",
               "fileWebp": "images/portfolio/X7Ry9s6A37w.webp",
-              "fileJpeg": "images/portfolio/X7Ry9s6A37w.jpg"
+              "fileJpeg": "images/portfolio/X7Ry9s6A37w.jpg",
+              "iso": "4000",
+              "focalLength": "200.0",
+              "aperture": "2.8",
+              "exposure": "1/250"
             },
             {
               "alt": "A dark, minimalist room with coffee cups.",
@@ -845,13 +1025,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/rLABkD3Bb7k.avif",
               "fileWebp": "images/portfolio/rLABkD3Bb7k.webp",
-              "fileJpeg": "images/portfolio/rLABkD3Bb7k.jpg"
+              "fileJpeg": "images/portfolio/rLABkD3Bb7k.jpg",
+              "iso": "10000",
+              "focalLength": "70.0",
+              "aperture": "2.8",
+              "exposure": "1/200"
             },
             {
               "alt": "A colorful, illuminated dinosaur sculpture looks menacing.",
@@ -861,13 +1045,17 @@
                 "dinosaur",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/WqpoXqFDrQA.avif",
               "fileWebp": "images/portfolio/WqpoXqFDrQA.webp",
-              "fileJpeg": "images/portfolio/WqpoXqFDrQA.jpg"
+              "fileJpeg": "images/portfolio/WqpoXqFDrQA.jpg",
+              "iso": "800",
+              "focalLength": "50.0",
+              "aperture": "6.3",
+              "exposure": "1/50"
             },
             {
               "alt": "Dinosaur figures are illuminated in a dark scene.",
@@ -877,13 +1065,17 @@
                 "dinosaur",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/OVK_TxYURj8.avif",
               "fileWebp": "images/portfolio/OVK_TxYURj8.webp",
-              "fileJpeg": "images/portfolio/OVK_TxYURj8.jpg"
+              "fileJpeg": "images/portfolio/OVK_TxYURj8.jpg",
+              "iso": "800",
+              "focalLength": "50.0",
+              "aperture": "6.3",
+              "exposure": "1/30"
             }
           ]
         },
@@ -905,13 +1097,17 @@
                 "skull",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/0DNI2fqdM2Q.avif",
               "fileWebp": "images/portfolio/0DNI2fqdM2Q.webp",
-              "fileJpeg": "images/portfolio/0DNI2fqdM2Q.jpg"
+              "fileJpeg": "images/portfolio/0DNI2fqdM2Q.jpg",
+              "iso": "1250",
+              "focalLength": "82.0",
+              "aperture": "2.8",
+              "exposure": "1/125"
             },
             {
               "alt": "A vintage military uniform is on display.",
@@ -921,13 +1117,17 @@
                 "military",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/A7isgv3P7qo.avif",
               "fileWebp": "images/portfolio/A7isgv3P7qo.webp",
-              "fileJpeg": "images/portfolio/A7isgv3P7qo.jpg"
+              "fileJpeg": "images/portfolio/A7isgv3P7qo.jpg",
+              "iso": "3200",
+              "focalLength": "116.0",
+              "aperture": "2.8",
+              "exposure": "1/250"
             },
             {
               "alt": "A man's suit is displayed on a mannequin.",
@@ -935,13 +1135,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/1HQcJTFBXbs.avif",
               "fileWebp": "images/portfolio/1HQcJTFBXbs.webp",
-              "fileJpeg": "images/portfolio/1HQcJTFBXbs.jpg"
+              "fileJpeg": "images/portfolio/1HQcJTFBXbs.jpg",
+              "iso": "2000",
+              "focalLength": "70.0",
+              "aperture": "2.8",
+              "exposure": "1/100"
             },
             {
               "alt": "An open wardrobe displays military uniforms and accessories.",
@@ -951,13 +1155,17 @@
                 "military",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/AtbE0vfI_RA.avif",
               "fileWebp": "images/portfolio/AtbE0vfI_RA.webp",
-              "fileJpeg": "images/portfolio/AtbE0vfI_RA.jpg"
+              "fileJpeg": "images/portfolio/AtbE0vfI_RA.jpg",
+              "iso": "2000",
+              "focalLength": "70.0",
+              "aperture": "2.8",
+              "exposure": "1/100"
             },
             {
               "alt": "A military uniform displayed under dim lighting.",
@@ -967,13 +1175,17 @@
                 "military",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/aHTZ-mkUk6U.avif",
               "fileWebp": "images/portfolio/aHTZ-mkUk6U.webp",
-              "fileJpeg": "images/portfolio/aHTZ-mkUk6U.jpg"
+              "fileJpeg": "images/portfolio/aHTZ-mkUk6U.jpg",
+              "iso": "3200",
+              "focalLength": "200.0",
+              "aperture": "2.8",
+              "exposure": "1/250"
             },
             {
               "alt": "A german world war i uniform on display.",
@@ -982,13 +1194,17 @@
                 "uniform",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/pc3OudI1IVY.avif",
               "fileWebp": "images/portfolio/pc3OudI1IVY.webp",
-              "fileJpeg": "images/portfolio/pc3OudI1IVY.jpg"
+              "fileJpeg": "images/portfolio/pc3OudI1IVY.jpg",
+              "iso": "12800",
+              "focalLength": "155.0",
+              "aperture": "2.8",
+              "exposure": "1/200"
             },
             {
               "alt": "A close-up shows a rifle's details.",
@@ -997,13 +1213,17 @@
                 "rifle",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/tV91tLofBu8.avif",
               "fileWebp": "images/portfolio/tV91tLofBu8.webp",
-              "fileJpeg": "images/portfolio/tV91tLofBu8.jpg"
+              "fileJpeg": "images/portfolio/tV91tLofBu8.jpg",
+              "iso": "2500",
+              "focalLength": "200.0",
+              "aperture": "2.8",
+              "exposure": "1/200"
             },
             {
               "alt": "Miniature ships are displayed on a map.",
@@ -1011,13 +1231,17 @@
               "tags": [
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/pnKYzcJRxlM.avif",
               "fileWebp": "images/portfolio/pnKYzcJRxlM.webp",
-              "fileJpeg": "images/portfolio/pnKYzcJRxlM.jpg"
+              "fileJpeg": "images/portfolio/pnKYzcJRxlM.jpg",
+              "iso": "5000",
+              "focalLength": "98.0",
+              "aperture": "2.8",
+              "exposure": "1/200"
             },
             {
               "alt": "A brown, crusty bowl of water.",
@@ -1025,13 +1249,17 @@
               "tags": [
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/Hk0W-n8snCY.avif",
               "fileWebp": "images/portfolio/Hk0W-n8snCY.webp",
-              "fileJpeg": "images/portfolio/Hk0W-n8snCY.jpg"
+              "fileJpeg": "images/portfolio/Hk0W-n8snCY.jpg",
+              "iso": "800",
+              "focalLength": "31.5",
+              "aperture": "4.8",
+              "exposure": "1/50"
             },
             {
               "alt": "Inside of a cave with stalactites and stalagmites.",
@@ -1040,13 +1268,17 @@
                 "cave",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "Natural Cave System",
               "file": "",
               "fileAvif": "images/portfolio/55wjuPjtRMg.avif",
               "fileWebp": "images/portfolio/55wjuPjtRMg.webp",
-              "fileJpeg": "images/portfolio/55wjuPjtRMg.jpg"
+              "fileJpeg": "images/portfolio/55wjuPjtRMg.jpg",
+              "iso": "2500",
+              "focalLength": "24.0",
+              "aperture": "9.0",
+              "exposure": "1/13"
             },
             {
               "alt": "Rocky coastline with caves meets the sea.",
@@ -1056,13 +1288,17 @@
                 "coast",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": " EOS 500D",
               "lens": "85mm f/1.4",
               "location": "Natural Cave System",
               "file": "",
               "fileAvif": "images/portfolio/6Tl_Z2ZoLC4.avif",
               "fileWebp": "images/portfolio/6Tl_Z2ZoLC4.webp",
-              "fileJpeg": "images/portfolio/6Tl_Z2ZoLC4.jpg"
+              "fileJpeg": "images/portfolio/6Tl_Z2ZoLC4.jpg",
+              "iso": "100",
+              "focalLength": "70.0",
+              "aperture": "4.5",
+              "exposure": "1/1000"
             }
           ]
         },
@@ -1084,13 +1320,17 @@
                 "sky",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "DSC-WX300",
               "lens": "24-70mm f/2.8",
               "location": "River Dam",
               "file": "",
               "fileAvif": "images/portfolio/qShU7lC6cJI.avif",
               "fileWebp": "images/portfolio/qShU7lC6cJI.webp",
-              "fileJpeg": "images/portfolio/qShU7lC6cJI.jpg"
+              "fileJpeg": "images/portfolio/qShU7lC6cJI.jpg",
+              "iso": "80",
+              "focalLength": "11.0",
+              "aperture": "4.5",
+              "exposure": "1/1600"
             },
             {
               "alt": "Water flows through a concrete dam under a cloudy sky.",
@@ -1099,13 +1339,17 @@
                 "sky",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "DSC-WX300",
               "lens": "85mm f/1.4",
               "location": "River Dam",
               "file": "",
               "fileAvif": "images/portfolio/dJXJPL9v-eA.avif",
               "fileWebp": "images/portfolio/dJXJPL9v-eA.webp",
-              "fileJpeg": "images/portfolio/dJXJPL9v-eA.jpg"
+              "fileJpeg": "images/portfolio/dJXJPL9v-eA.jpg",
+              "iso": "80",
+              "focalLength": "33.0",
+              "aperture": "5.6",
+              "exposure": "1/800"
             },
             {
               "alt": "Silhouette of a person kayaking on the ocean at sunset.",
@@ -1116,13 +1360,17 @@
                 "kayak",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "DSC-WX300",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/jOieTW9wzjI.avif",
               "fileWebp": "images/portfolio/jOieTW9wzjI.webp",
-              "fileJpeg": "images/portfolio/jOieTW9wzjI.jpg"
+              "fileJpeg": "images/portfolio/jOieTW9wzjI.jpg",
+              "iso": "80",
+              "focalLength": "11.4",
+              "aperture": "10.0",
+              "exposure": "1/1600"
             },
             {
               "alt": "Coastal town seen from an elevated vantage point.",
@@ -1131,13 +1379,17 @@
                 "coast",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON D3300",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/eJUWbc6Yczg.avif",
               "fileWebp": "images/portfolio/eJUWbc6Yczg.webp",
-              "fileJpeg": "images/portfolio/eJUWbc6Yczg.jpg"
+              "fileJpeg": "images/portfolio/eJUWbc6Yczg.jpg",
+              "iso": "100",
+              "focalLength": "300.0",
+              "aperture": "8.0",
+              "exposure": "1/500"
             },
             {
               "alt": "Cliffs overlook a verdant, forested landscape.",
@@ -1147,13 +1399,17 @@
                 "forest",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON D3300",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/pQPTJmzxOOI.avif",
               "fileWebp": "images/portfolio/pQPTJmzxOOI.webp",
-              "fileJpeg": "images/portfolio/pQPTJmzxOOI.jpg"
+              "fileJpeg": "images/portfolio/pQPTJmzxOOI.jpg",
+              "iso": "100",
+              "focalLength": "300.0",
+              "aperture": "8.0",
+              "exposure": "1/500"
             },
             {
               "alt": "A sunny street scene with brick buildings.",
@@ -1164,13 +1420,17 @@
                 "building",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/1GcqtF9mP_4.avif",
               "fileWebp": "images/portfolio/1GcqtF9mP_4.webp",
-              "fileJpeg": "images/portfolio/1GcqtF9mP_4.jpg"
+              "fileJpeg": "images/portfolio/1GcqtF9mP_4.jpg",
+              "iso": "100",
+              "focalLength": "50.0",
+              "aperture": "6.3",
+              "exposure": "1/640"
             },
             {
               "alt": "A detailed temple tower against a clear blue sky.",
@@ -1179,13 +1439,17 @@
                 "sky",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON D3300",
               "lens": "24-70mm f/2.8",
               "location": "Temple District",
               "file": "",
               "fileAvif": "images/portfolio/f0QKWj1-7s8.avif",
               "fileWebp": "images/portfolio/f0QKWj1-7s8.webp",
-              "fileJpeg": "images/portfolio/f0QKWj1-7s8.jpg"
+              "fileJpeg": "images/portfolio/f0QKWj1-7s8.jpg",
+              "iso": "200",
+              "focalLength": "70.0",
+              "aperture": "4.0",
+              "exposure": "1/4000"
             },
             {
               "alt": "A scenic village lies beneath a cloudy sky.",
@@ -1195,13 +1459,17 @@
                 "sky",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone XR",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/9FNjA8HYATo.avif",
               "fileWebp": "images/portfolio/9FNjA8HYATo.webp",
-              "fileJpeg": "images/portfolio/9FNjA8HYATo.jpg"
+              "fileJpeg": "images/portfolio/9FNjA8HYATo.jpg",
+              "iso": "24",
+              "focalLength": "4.2",
+              "aperture": "1.8",
+              "exposure": "1/3521"
             },
             {
               "alt": "Trees reach towards the sky with sunlight.",
@@ -1211,13 +1479,17 @@
                 "sky",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone XR",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/PNTgcJPvZ-g.avif",
               "fileWebp": "images/portfolio/PNTgcJPvZ-g.webp",
-              "fileJpeg": "images/portfolio/PNTgcJPvZ-g.jpg"
+              "fileJpeg": "images/portfolio/PNTgcJPvZ-g.jpg",
+              "iso": "24",
+              "focalLength": "4.2",
+              "aperture": "1.8",
+              "exposure": "1/1585"
             },
             {
               "alt": "Tranquil lake scene with tree and blue sky.",
@@ -1228,13 +1500,17 @@
                 "sky",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/26G_0xyugTw.avif",
               "fileWebp": "images/portfolio/26G_0xyugTw.webp",
-              "fileJpeg": "images/portfolio/26G_0xyugTw.jpg"
+              "fileJpeg": "images/portfolio/26G_0xyugTw.jpg",
+              "iso": "32",
+              "focalLength": "2.2",
+              "aperture": "2.2",
+              "exposure": "1/615"
             },
             {
               "alt": "Looking up at a tree against blue sky.",
@@ -1244,13 +1520,17 @@
                 "sky",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/5bNvWFRFf2E.avif",
               "fileWebp": "images/portfolio/5bNvWFRFf2E.webp",
-              "fileJpeg": "images/portfolio/5bNvWFRFf2E.jpg"
+              "fileJpeg": "images/portfolio/5bNvWFRFf2E.jpg",
+              "iso": "21",
+              "focalLength": "9.0",
+              "aperture": "2.8",
+              "exposure": "1/378"
             },
             {
               "alt": "Colorful cliffs stand under a bright, cloudy sky.",
@@ -1260,13 +1540,17 @@
                 "sky",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/a0sjsOCQ_Cc.avif",
               "fileWebp": "images/portfolio/a0sjsOCQ_Cc.webp",
-              "fileJpeg": "images/portfolio/a0sjsOCQ_Cc.jpg"
+              "fileJpeg": "images/portfolio/a0sjsOCQ_Cc.jpg",
+              "iso": "80",
+              "focalLength": "6.9",
+              "aperture": "1.8",
+              "exposure": "1/9709"
             },
             {
               "alt": "Colorful cliffs under a bright blue sky.",
@@ -1276,13 +1560,17 @@
                 "sky",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/POZrxgQ600E.avif",
               "fileWebp": "images/portfolio/POZrxgQ600E.webp",
-              "fileJpeg": "images/portfolio/POZrxgQ600E.jpg"
+              "fileJpeg": "images/portfolio/POZrxgQ600E.jpg",
+              "iso": "32",
+              "focalLength": "9.0",
+              "aperture": "2.8",
+              "exposure": "1/1531"
             },
             {
               "alt": "Ocean waves crash against rocky cliffs and shores.",
@@ -1292,13 +1580,17 @@
                 "ocean",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone XR",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/Q4cAKuMXuA8.avif",
               "fileWebp": "images/portfolio/Q4cAKuMXuA8.webp",
-              "fileJpeg": "images/portfolio/Q4cAKuMXuA8.jpg"
+              "fileJpeg": "images/portfolio/Q4cAKuMXuA8.jpg",
+              "iso": "25",
+              "focalLength": "4.2",
+              "aperture": "1.8",
+              "exposure": "1/3521"
             },
             {
               "alt": "Coastal rocks and clear blue ocean under a blue sky.",
@@ -1309,13 +1601,17 @@
                 "sky",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/Qc6_nvP6X_0.avif",
               "fileWebp": "images/portfolio/Qc6_nvP6X_0.webp",
-              "fileJpeg": "images/portfolio/Qc6_nvP6X_0.jpg"
+              "fileJpeg": "images/portfolio/Qc6_nvP6X_0.jpg",
+              "iso": "57",
+              "focalLength": "6.9",
+              "aperture": "1.8",
+              "exposure": "1/4808"
             },
             {
               "alt": "A rocky landscape overlooks distant hills and waters.",
@@ -1324,13 +1620,17 @@
                 "hill",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": " EOS 500D",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/efRlQuqmjN4.avif",
               "fileWebp": "images/portfolio/efRlQuqmjN4.webp",
-              "fileJpeg": "images/portfolio/efRlQuqmjN4.jpg"
+              "fileJpeg": "images/portfolio/efRlQuqmjN4.jpg",
+              "iso": "100",
+              "focalLength": "100.0",
+              "aperture": "8.0",
+              "exposure": "1/320"
             },
             {
               "alt": "Rolling hills and a small house in a valley.",
@@ -1340,13 +1640,17 @@
                 "valley",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": " EOS 500D",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/yPeBXUF895U.avif",
               "fileWebp": "images/portfolio/yPeBXUF895U.webp",
-              "fileJpeg": "images/portfolio/yPeBXUF895U.jpg"
+              "fileJpeg": "images/portfolio/yPeBXUF895U.jpg",
+              "iso": "100",
+              "focalLength": "60.0",
+              "aperture": "7.1",
+              "exposure": "1/200"
             },
             {
               "alt": "Silhouette of a person against a pink background.",
@@ -1354,13 +1658,17 @@
               "tags": [
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": " EOS 500D",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/6KqBjLp23aQ.avif",
               "fileWebp": "images/portfolio/6KqBjLp23aQ.webp",
-              "fileJpeg": "images/portfolio/6KqBjLp23aQ.jpg"
+              "fileJpeg": "images/portfolio/6KqBjLp23aQ.jpg",
+              "iso": "100",
+              "focalLength": "109.0",
+              "aperture": "8.0",
+              "exposure": "0.8"
             },
             {
               "alt": "Car driving on a scenic, winding road.",
@@ -1368,13 +1676,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone XR",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/cxzxNC1uRKI.avif",
               "fileWebp": "images/portfolio/cxzxNC1uRKI.webp",
-              "fileJpeg": "images/portfolio/cxzxNC1uRKI.jpg"
+              "fileJpeg": "images/portfolio/cxzxNC1uRKI.jpg",
+              "iso": "24",
+              "focalLength": "4.2",
+              "aperture": "1.8",
+              "exposure": "1/2309"
             },
             {
               "alt": "Rocky mountains reach toward a beautiful blue sky.",
@@ -1384,13 +1696,17 @@
                 "sky",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": " EOS 500D",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/9LCFDZXdY_M.avif",
               "fileWebp": "images/portfolio/9LCFDZXdY_M.webp",
-              "fileJpeg": "images/portfolio/9LCFDZXdY_M.jpg"
+              "fileJpeg": "images/portfolio/9LCFDZXdY_M.jpg",
+              "iso": "100",
+              "focalLength": "65.0",
+              "aperture": "4.0",
+              "exposure": "1/1600"
             },
             {
               "alt": "A seagull soars above rocky cliffs and blue sky.",
@@ -1400,13 +1716,17 @@
                 "sky",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": " EOS 500D",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/61XA2__UE9w.avif",
               "fileWebp": "images/portfolio/61XA2__UE9w.webp",
-              "fileJpeg": "images/portfolio/61XA2__UE9w.jpg"
+              "fileJpeg": "images/portfolio/61XA2__UE9w.jpg",
+              "iso": "100",
+              "focalLength": "55.0",
+              "aperture": "8.0",
+              "exposure": "1/250"
             },
             {
               "alt": "A road curves beneath a towering cliff.",
@@ -1415,13 +1735,17 @@
                 "cliff",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": " EOS 500D",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/Aj_rXP2Hk8g.avif",
               "fileWebp": "images/portfolio/Aj_rXP2Hk8g.webp",
-              "fileJpeg": "images/portfolio/Aj_rXP2Hk8g.jpg"
+              "fileJpeg": "images/portfolio/Aj_rXP2Hk8g.jpg",
+              "iso": "100",
+              "focalLength": "55.0",
+              "aperture": "7.1",
+              "exposure": "1/200"
             },
             {
               "alt": "Airplane flies high through clear, blue sky.",
@@ -1430,13 +1754,17 @@
                 "sky",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": " EOS 500D",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/2fT0u_L013U.avif",
               "fileWebp": "images/portfolio/2fT0u_L013U.webp",
-              "fileJpeg": "images/portfolio/2fT0u_L013U.jpg"
+              "fileJpeg": "images/portfolio/2fT0u_L013U.jpg",
+              "iso": "800",
+              "focalLength": "250.0",
+              "aperture": "5.6",
+              "exposure": "1/1250"
             }
           ]
         },
@@ -1457,13 +1785,17 @@
                 "motorcycle",
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "DSC-WX300",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/bK0VBY7jlk8.avif",
               "fileWebp": "images/portfolio/bK0VBY7jlk8.webp",
-              "fileJpeg": "images/portfolio/bK0VBY7jlk8.jpg"
+              "fileJpeg": "images/portfolio/bK0VBY7jlk8.jpg",
+              "iso": "200",
+              "focalLength": "38.9",
+              "aperture": "5.6",
+              "exposure": "1/250"
             },
             {
               "alt": "People walk on the walkway towards the stadium.",
@@ -1472,13 +1804,17 @@
                 "stadium",
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "85mm f/1.4",
               "location": "Sports Complex",
               "file": "",
               "fileAvif": "images/portfolio/dM1UuOpsxGw.avif",
               "fileWebp": "images/portfolio/dM1UuOpsxGw.webp",
-              "fileJpeg": "images/portfolio/dM1UuOpsxGw.jpg"
+              "fileJpeg": "images/portfolio/dM1UuOpsxGw.jpg",
+              "iso": "58",
+              "focalLength": "6.9",
+              "aperture": "1.8",
+              "exposure": "1/80"
             }
           ]
         },
@@ -1499,13 +1835,17 @@
               "tags": [
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/kWC71Qo-0x4.avif",
               "fileWebp": "images/portfolio/kWC71Qo-0x4.webp",
-              "fileJpeg": "images/portfolio/kWC71Qo-0x4.jpg"
+              "fileJpeg": "images/portfolio/kWC71Qo-0x4.jpg",
+              "iso": "800",
+              "focalLength": "200.0",
+              "aperture": "2.8",
+              "exposure": "1/500"
             },
             {
               "alt": "9mUEooRaBjo",
@@ -1513,13 +1853,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/9mUEooRaBjo.avif",
               "fileWebp": "images/portfolio/9mUEooRaBjo.webp",
-              "fileJpeg": "images/portfolio/9mUEooRaBjo.jpg"
+              "fileJpeg": "images/portfolio/9mUEooRaBjo.jpg",
+              "iso": "640",
+              "focalLength": "70.0",
+              "aperture": "5.6",
+              "exposure": "1/1600"
             },
             {
               "alt": "golHd0_WE0Q",
@@ -1527,13 +1871,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/golHd0_WE0Q.avif",
               "fileWebp": "images/portfolio/golHd0_WE0Q.webp",
-              "fileJpeg": "images/portfolio/golHd0_WE0Q.jpg"
+              "fileJpeg": "images/portfolio/golHd0_WE0Q.jpg",
+              "iso": "100",
+              "focalLength": "34.0",
+              "aperture": "8.0",
+              "exposure": "1/400"
             },
             {
               "alt": "n2dBowHBpvc",
@@ -1541,13 +1889,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/n2dBowHBpvc.avif",
               "fileWebp": "images/portfolio/n2dBowHBpvc.webp",
-              "fileJpeg": "images/portfolio/n2dBowHBpvc.jpg"
+              "fileJpeg": "images/portfolio/n2dBowHBpvc.jpg",
+              "iso": "100",
+              "focalLength": "24.0",
+              "aperture": "4.0",
+              "exposure": "1/1000"
             },
             {
               "alt": "kQ-u-7I2Nm8",
@@ -1555,13 +1907,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/kQ-u-7I2Nm8.avif",
               "fileWebp": "images/portfolio/kQ-u-7I2Nm8.webp",
-              "fileJpeg": "images/portfolio/kQ-u-7I2Nm8.jpg"
+              "fileJpeg": "images/portfolio/kQ-u-7I2Nm8.jpg",
+              "iso": "100",
+              "focalLength": "24.0",
+              "aperture": "4.0",
+              "exposure": "1/1000"
             },
             {
               "alt": "pX-NK8bKnKI",
@@ -1569,13 +1925,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/pX-NK8bKnKI.avif",
               "fileWebp": "images/portfolio/pX-NK8bKnKI.webp",
-              "fileJpeg": "images/portfolio/pX-NK8bKnKI.jpg"
+              "fileJpeg": "images/portfolio/pX-NK8bKnKI.jpg",
+              "iso": "100",
+              "focalLength": "70.0",
+              "aperture": "4.0",
+              "exposure": "1/1000"
             },
             {
               "alt": "yXCRNSeBzuw",
@@ -1583,13 +1943,17 @@
               "tags": [
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/yXCRNSeBzuw.avif",
               "fileWebp": "images/portfolio/yXCRNSeBzuw.webp",
-              "fileJpeg": "images/portfolio/yXCRNSeBzuw.jpg"
+              "fileJpeg": "images/portfolio/yXCRNSeBzuw.jpg",
+              "iso": "100",
+              "focalLength": "28.0",
+              "aperture": "4.0",
+              "exposure": "1/1000"
             },
             {
               "alt": "mYpdcVQfHY8",
@@ -1597,13 +1961,17 @@
               "tags": [
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/mYpdcVQfHY8.avif",
               "fileWebp": "images/portfolio/mYpdcVQfHY8.webp",
-              "fileJpeg": "images/portfolio/mYpdcVQfHY8.jpg"
+              "fileJpeg": "images/portfolio/mYpdcVQfHY8.jpg",
+              "iso": "100",
+              "focalLength": "24.0",
+              "aperture": "4.0",
+              "exposure": "1/1000"
             },
             {
               "alt": "zYHOwVfpQTI",
@@ -1611,13 +1979,17 @@
               "tags": [
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "DSC-WX300",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/zYHOwVfpQTI.avif",
               "fileWebp": "images/portfolio/zYHOwVfpQTI.webp",
-              "fileJpeg": "images/portfolio/zYHOwVfpQTI.jpg"
+              "fileJpeg": "images/portfolio/zYHOwVfpQTI.jpg",
+              "iso": "80",
+              "focalLength": "4.3",
+              "aperture": "8.0",
+              "exposure": "1/1250"
             },
             {
               "alt": "8onllgbz0x0",
@@ -1625,13 +1997,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "DSC-WX300",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/8onllgbz0x0.avif",
               "fileWebp": "images/portfolio/8onllgbz0x0.webp",
-              "fileJpeg": "images/portfolio/8onllgbz0x0.jpg"
+              "fileJpeg": "images/portfolio/8onllgbz0x0.jpg",
+              "iso": "800",
+              "focalLength": "4.4",
+              "aperture": "3.5",
+              "exposure": "1/15"
             },
             {
               "alt": "A person sits under a covered structure.",
@@ -1639,13 +2015,17 @@
               "tags": [
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "DSC-WX300",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/WDC4uadKiWg.avif",
               "fileWebp": "images/portfolio/WDC4uadKiWg.webp",
-              "fileJpeg": "images/portfolio/WDC4uadKiWg.jpg"
+              "fileJpeg": "images/portfolio/WDC4uadKiWg.jpg",
+              "iso": "80",
+              "focalLength": "4.3",
+              "aperture": "3.5",
+              "exposure": "1/100"
             },
             {
               "alt": "glca4jGGIIw",
@@ -1653,13 +2033,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/glca4jGGIIw.avif",
               "fileWebp": "images/portfolio/glca4jGGIIw.webp",
-              "fileJpeg": "images/portfolio/glca4jGGIIw.jpg"
+              "fileJpeg": "images/portfolio/glca4jGGIIw.jpg",
+              "iso": "3200",
+              "focalLength": "200.0",
+              "aperture": "2.8",
+              "exposure": "1/200"
             },
             {
               "alt": "W4m2_vgrxD8",
@@ -1667,13 +2051,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/W4m2_vgrxD8.avif",
               "fileWebp": "images/portfolio/W4m2_vgrxD8.webp",
-              "fileJpeg": "images/portfolio/W4m2_vgrxD8.jpg"
+              "fileJpeg": "images/portfolio/W4m2_vgrxD8.jpg",
+              "iso": "125",
+              "focalLength": "200.0",
+              "aperture": "2.8",
+              "exposure": "1/400"
             },
             {
               "alt": "mhMX6k6eJJ8",
@@ -1681,13 +2069,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/mhMX6k6eJJ8.avif",
               "fileWebp": "images/portfolio/mhMX6k6eJJ8.webp",
-              "fileJpeg": "images/portfolio/mhMX6k6eJJ8.jpg"
+              "fileJpeg": "images/portfolio/mhMX6k6eJJ8.jpg",
+              "iso": "4000",
+              "focalLength": "200.0",
+              "aperture": "2.8",
+              "exposure": "1/250"
             },
             {
               "alt": "NoySs5Faq_M",
@@ -1695,13 +2087,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/NoySs5Faq_M.avif",
               "fileWebp": "images/portfolio/NoySs5Faq_M.webp",
-              "fileJpeg": "images/portfolio/NoySs5Faq_M.jpg"
+              "fileJpeg": "images/portfolio/NoySs5Faq_M.jpg",
+              "iso": "4000",
+              "focalLength": "200.0",
+              "aperture": "2.8",
+              "exposure": "1/250"
             },
             {
               "alt": "u5zfC1ERxF8",
@@ -1709,13 +2105,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/u5zfC1ERxF8.avif",
               "fileWebp": "images/portfolio/u5zfC1ERxF8.webp",
-              "fileJpeg": "images/portfolio/u5zfC1ERxF8.jpg"
+              "fileJpeg": "images/portfolio/u5zfC1ERxF8.jpg",
+              "iso": "320",
+              "focalLength": "200.0",
+              "aperture": "2.8",
+              "exposure": "1/500"
             },
             {
               "alt": "zPPHrzM4Woc",
@@ -1723,13 +2123,17 @@
               "tags": [
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/zPPHrzM4Woc.avif",
               "fileWebp": "images/portfolio/zPPHrzM4Woc.webp",
-              "fileJpeg": "images/portfolio/zPPHrzM4Woc.jpg"
+              "fileJpeg": "images/portfolio/zPPHrzM4Woc.jpg",
+              "iso": "4000",
+              "focalLength": "75.0",
+              "aperture": "2.8",
+              "exposure": "1/250"
             },
             {
               "alt": "bIMryL3PaYk",
@@ -1737,13 +2141,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/bIMryL3PaYk.avif",
               "fileWebp": "images/portfolio/bIMryL3PaYk.webp",
-              "fileJpeg": "images/portfolio/bIMryL3PaYk.jpg"
+              "fileJpeg": "images/portfolio/bIMryL3PaYk.jpg",
+              "iso": "4000",
+              "focalLength": "200.0",
+              "aperture": "2.8",
+              "exposure": "1/250"
             },
             {
               "alt": "ffEBBb3WxzU",
@@ -1751,13 +2159,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/ffEBBb3WxzU.avif",
               "fileWebp": "images/portfolio/ffEBBb3WxzU.webp",
-              "fileJpeg": "images/portfolio/ffEBBb3WxzU.jpg"
+              "fileJpeg": "images/portfolio/ffEBBb3WxzU.jpg",
+              "iso": "10000",
+              "focalLength": "70.0",
+              "aperture": "2.8",
+              "exposure": "1/200"
             },
             {
               "alt": "s17L_vY8918",
@@ -1765,13 +2177,17 @@
               "tags": [
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/s17L_vY8918.avif",
               "fileWebp": "images/portfolio/s17L_vY8918.webp",
-              "fileJpeg": "images/portfolio/s17L_vY8918.jpg"
+              "fileJpeg": "images/portfolio/s17L_vY8918.jpg",
+              "iso": "5000",
+              "focalLength": "70.0",
+              "aperture": "2.8",
+              "exposure": "1/200"
             },
             {
               "alt": "_lUP6FS_8QI",
@@ -1779,13 +2195,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/_lUP6FS_8QI.avif",
               "fileWebp": "images/portfolio/_lUP6FS_8QI.webp",
-              "fileJpeg": "images/portfolio/_lUP6FS_8QI.jpg"
+              "fileJpeg": "images/portfolio/_lUP6FS_8QI.jpg",
+              "iso": "5000",
+              "focalLength": "90.0",
+              "aperture": "2.8",
+              "exposure": "1/200"
             },
             {
               "alt": "MWSm3j3C8_U",
@@ -1793,13 +2213,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/MWSm3j3C8_U.avif",
               "fileWebp": "images/portfolio/MWSm3j3C8_U.webp",
-              "fileJpeg": "images/portfolio/MWSm3j3C8_U.jpg"
+              "fileJpeg": "images/portfolio/MWSm3j3C8_U.jpg",
+              "iso": "800",
+              "focalLength": "40.0",
+              "aperture": "5.6",
+              "exposure": "1/2000"
             },
             {
               "alt": "1g0qzOm45hQ",
@@ -1807,13 +2231,17 @@
               "tags": [
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/1g0qzOm45hQ.avif",
               "fileWebp": "images/portfolio/1g0qzOm45hQ.webp",
-              "fileJpeg": "images/portfolio/1g0qzOm45hQ.jpg"
+              "fileJpeg": "images/portfolio/1g0qzOm45hQ.jpg",
+              "iso": "64",
+              "focalLength": "6.9",
+              "aperture": "1.8",
+              "exposure": "1/5882"
             },
             {
               "alt": "0WlgFG5LW84",
@@ -1821,13 +2249,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON D3300",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/0WlgFG5LW84.avif",
               "fileWebp": "images/portfolio/0WlgFG5LW84.webp",
-              "fileJpeg": "images/portfolio/0WlgFG5LW84.jpg"
+              "fileJpeg": "images/portfolio/0WlgFG5LW84.jpg",
+              "iso": "100",
+              "focalLength": "300.0",
+              "aperture": "6.3",
+              "exposure": "1/250"
             },
             {
               "alt": "8_wzvcpP9ro",
@@ -1835,13 +2267,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/8_wzvcpP9ro.avif",
               "fileWebp": "images/portfolio/8_wzvcpP9ro.webp",
-              "fileJpeg": "images/portfolio/8_wzvcpP9ro.jpg"
+              "fileJpeg": "images/portfolio/8_wzvcpP9ro.jpg",
+              "iso": "640",
+              "focalLength": "50.0",
+              "aperture": "6.3",
+              "exposure": "1/2000"
             },
             {
               "alt": "Ornate carvings adorn a sandstone wall.",
@@ -1849,13 +2285,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON D3300",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/fy5c252J3cc.avif",
               "fileWebp": "images/portfolio/fy5c252J3cc.webp",
-              "fileJpeg": "images/portfolio/fy5c252J3cc.jpg"
+              "fileJpeg": "images/portfolio/fy5c252J3cc.jpg",
+              "iso": "200",
+              "focalLength": "300.0",
+              "aperture": "5.6",
+              "exposure": "1/3200"
             },
             {
               "alt": "Intricate stone carvings adorn an ancient temple.",
@@ -1863,13 +2303,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON D3300",
               "lens": "35mm f/1.4",
               "location": "Temple District",
               "file": "",
               "fileAvif": "images/portfolio/Fs-Kiiz_Ekc.avif",
               "fileWebp": "images/portfolio/Fs-Kiiz_Ekc.webp",
-              "fileJpeg": "images/portfolio/Fs-Kiiz_Ekc.jpg"
+              "fileJpeg": "images/portfolio/Fs-Kiiz_Ekc.jpg",
+              "iso": "200",
+              "focalLength": "300.0",
+              "aperture": "5.6",
+              "exposure": "1/4000"
             },
             {
               "alt": "zw81TedG8OE",
@@ -1877,13 +2321,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/zw81TedG8OE.avif",
               "fileWebp": "images/portfolio/zw81TedG8OE.webp",
-              "fileJpeg": "images/portfolio/zw81TedG8OE.jpg"
+              "fileJpeg": "images/portfolio/zw81TedG8OE.jpg",
+              "iso": "57",
+              "focalLength": "6.9",
+              "aperture": "1.8",
+              "exposure": "1/1592"
             },
             {
               "alt": "yPVYBx0brs8",
@@ -1891,13 +2339,17 @@
               "tags": [
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/yPVYBx0brs8.avif",
               "fileWebp": "images/portfolio/yPVYBx0brs8.webp",
-              "fileJpeg": "images/portfolio/yPVYBx0brs8.jpg"
+              "fileJpeg": "images/portfolio/yPVYBx0brs8.jpg",
+              "iso": "33",
+              "focalLength": "9.0",
+              "aperture": "2.8",
+              "exposure": "1/99"
             },
             {
               "alt": "VDdGPfnQgN4",
@@ -1905,13 +2357,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/VDdGPfnQgN4.avif",
               "fileWebp": "images/portfolio/VDdGPfnQgN4.webp",
-              "fileJpeg": "images/portfolio/VDdGPfnQgN4.jpg"
+              "fileJpeg": "images/portfolio/VDdGPfnQgN4.jpg",
+              "iso": "29",
+              "focalLength": "9.0",
+              "aperture": "2.8",
+              "exposure": "1/258"
             },
             {
               "alt": "bIRliHvYbUg",
@@ -1919,13 +2375,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/bIRliHvYbUg.avif",
               "fileWebp": "images/portfolio/bIRliHvYbUg.webp",
-              "fileJpeg": "images/portfolio/bIRliHvYbUg.jpg"
+              "fileJpeg": "images/portfolio/bIRliHvYbUg.jpg",
+              "iso": "21",
+              "focalLength": "9.0",
+              "aperture": "2.8",
+              "exposure": "1/296"
             },
             {
               "alt": "f9HTWiMLmzM",
@@ -1933,13 +2393,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/f9HTWiMLmzM.avif",
               "fileWebp": "images/portfolio/f9HTWiMLmzM.webp",
-              "fileJpeg": "images/portfolio/f9HTWiMLmzM.jpg"
+              "fileJpeg": "images/portfolio/f9HTWiMLmzM.jpg",
+              "iso": "29",
+              "focalLength": "9.0",
+              "aperture": "2.8",
+              "exposure": "1/122"
             },
             {
               "alt": "vwFAtkfJ8DM",
@@ -1947,13 +2411,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/vwFAtkfJ8DM.avif",
               "fileWebp": "images/portfolio/vwFAtkfJ8DM.webp",
-              "fileJpeg": "images/portfolio/vwFAtkfJ8DM.jpg"
+              "fileJpeg": "images/portfolio/vwFAtkfJ8DM.jpg",
+              "iso": "160",
+              "focalLength": "6.9",
+              "aperture": "1.8",
+              "exposure": "1/121"
             },
             {
               "alt": "8OF9nEfV7mE",
@@ -1961,13 +2429,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/8OF9nEfV7mE.avif",
               "fileWebp": "images/portfolio/8OF9nEfV7mE.webp",
-              "fileJpeg": "images/portfolio/8OF9nEfV7mE.jpg"
+              "fileJpeg": "images/portfolio/8OF9nEfV7mE.jpg",
+              "iso": "228",
+              "focalLength": "6.9",
+              "aperture": "1.8",
+              "exposure": "1/70"
             },
             {
               "alt": "0X0Am7utoJs",
@@ -1975,13 +2447,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/0X0Am7utoJs.avif",
               "fileWebp": "images/portfolio/0X0Am7utoJs.webp",
-              "fileJpeg": "images/portfolio/0X0Am7utoJs.jpg"
+              "fileJpeg": "images/portfolio/0X0Am7utoJs.jpg",
+              "iso": "80",
+              "focalLength": "6.9",
+              "aperture": "1.8",
+              "exposure": "1/541"
             },
             {
               "alt": "jjPbyd1BHn0",
@@ -1989,13 +2465,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/jjPbyd1BHn0.avif",
               "fileWebp": "images/portfolio/jjPbyd1BHn0.webp",
-              "fileJpeg": "images/portfolio/jjPbyd1BHn0.jpg"
+              "fileJpeg": "images/portfolio/jjPbyd1BHn0.jpg",
+              "iso": "80",
+              "focalLength": "9.0",
+              "aperture": "2.8",
+              "exposure": "1/99"
             },
             {
               "alt": "BtTvosb4BGI",
@@ -2003,13 +2483,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/BtTvosb4BGI.avif",
               "fileWebp": "images/portfolio/BtTvosb4BGI.webp",
-              "fileJpeg": "images/portfolio/BtTvosb4BGI.jpg"
+              "fileJpeg": "images/portfolio/BtTvosb4BGI.jpg",
+              "iso": "45",
+              "focalLength": "6.9",
+              "aperture": "1.8",
+              "exposure": "1/1174"
             },
             {
               "alt": "uGd4x3KGJbE",
@@ -2017,13 +2501,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/uGd4x3KGJbE.avif",
               "fileWebp": "images/portfolio/uGd4x3KGJbE.webp",
-              "fileJpeg": "images/portfolio/uGd4x3KGJbE.jpg"
+              "fileJpeg": "images/portfolio/uGd4x3KGJbE.jpg",
+              "iso": "167",
+              "focalLength": "6.9",
+              "aperture": "1.8",
+              "exposure": "1/121"
             },
             {
               "alt": "a1pC0a45ktU",
@@ -2031,13 +2519,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/a1pC0a45ktU.avif",
               "fileWebp": "images/portfolio/a1pC0a45ktU.webp",
-              "fileJpeg": "images/portfolio/a1pC0a45ktU.jpg"
+              "fileJpeg": "images/portfolio/a1pC0a45ktU.jpg",
+              "iso": "21",
+              "focalLength": "9.0",
+              "aperture": "2.8",
+              "exposure": "1/303"
             },
             {
               "alt": "QQN38O6CGro",
@@ -2045,13 +2537,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/QQN38O6CGro.avif",
               "fileWebp": "images/portfolio/QQN38O6CGro.webp",
-              "fileJpeg": "images/portfolio/QQN38O6CGro.jpg"
+              "fileJpeg": "images/portfolio/QQN38O6CGro.jpg",
+              "iso": "21",
+              "focalLength": "9.0",
+              "aperture": "2.8",
+              "exposure": "1/170"
             },
             {
               "alt": "v5Q6JiWLlPU",
@@ -2059,13 +2555,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/v5Q6JiWLlPU.avif",
               "fileWebp": "images/portfolio/v5Q6JiWLlPU.webp",
-              "fileJpeg": "images/portfolio/v5Q6JiWLlPU.jpg"
+              "fileJpeg": "images/portfolio/v5Q6JiWLlPU.jpg",
+              "iso": "32",
+              "focalLength": "9.0",
+              "aperture": "2.8",
+              "exposure": "1/192"
             },
             {
               "alt": "vDOzdTJFqjQ",
@@ -2073,13 +2573,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/vDOzdTJFqjQ.avif",
               "fileWebp": "images/portfolio/vDOzdTJFqjQ.webp",
-              "fileJpeg": "images/portfolio/vDOzdTJFqjQ.jpg"
+              "fileJpeg": "images/portfolio/vDOzdTJFqjQ.jpg",
+              "iso": "63",
+              "focalLength": "6.9",
+              "aperture": "1.8",
+              "exposure": "1/3731"
             },
             {
               "alt": "ttT7M6X46T8",
@@ -2087,13 +2591,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/ttT7M6X46T8.avif",
               "fileWebp": "images/portfolio/ttT7M6X46T8.webp",
-              "fileJpeg": "images/portfolio/ttT7M6X46T8.jpg"
+              "fileJpeg": "images/portfolio/ttT7M6X46T8.jpg",
+              "iso": "32",
+              "focalLength": "9.0",
+              "aperture": "2.8",
+              "exposure": "1/2096"
             },
             {
               "alt": "AdXjgATzMm0",
@@ -2101,13 +2609,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": " EOS 500D",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/AdXjgATzMm0.avif",
               "fileWebp": "images/portfolio/AdXjgATzMm0.webp",
-              "fileJpeg": "images/portfolio/AdXjgATzMm0.jpg"
+              "fileJpeg": "images/portfolio/AdXjgATzMm0.jpg",
+              "iso": "3200",
+              "focalLength": "250.0",
+              "aperture": "5.6",
+              "exposure": "1/4000"
             },
             {
               "alt": "xbfSZySRgTM",
@@ -2115,13 +2627,17 @@
               "tags": [
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": " EOS 500D",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/xbfSZySRgTM.avif",
               "fileWebp": "images/portfolio/xbfSZySRgTM.webp",
-              "fileJpeg": "images/portfolio/xbfSZySRgTM.jpg"
+              "fileJpeg": "images/portfolio/xbfSZySRgTM.jpg",
+              "iso": "200",
+              "focalLength": "250.0",
+              "aperture": "5.6",
+              "exposure": "1/4000"
             },
             {
               "alt": "47sQLqV-C7o",
@@ -2129,13 +2645,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": " EOS 500D",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/47sQLqV-C7o.avif",
               "fileWebp": "images/portfolio/47sQLqV-C7o.webp",
-              "fileJpeg": "images/portfolio/47sQLqV-C7o.jpg"
+              "fileJpeg": "images/portfolio/47sQLqV-C7o.jpg",
+              "iso": "200",
+              "focalLength": "109.0",
+              "aperture": "5.6",
+              "exposure": "1/400"
             },
             {
               "alt": "nbC653pYla8",
@@ -2143,13 +2663,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone XR",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/nbC653pYla8.avif",
               "fileWebp": "images/portfolio/nbC653pYla8.webp",
-              "fileJpeg": "images/portfolio/nbC653pYla8.jpg"
+              "fileJpeg": "images/portfolio/nbC653pYla8.jpg",
+              "iso": "24",
+              "focalLength": "4.2",
+              "aperture": "1.8",
+              "exposure": "1/348"
             },
             {
               "alt": "ApyUMBPgyDU",
@@ -2157,13 +2681,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/ApyUMBPgyDU.avif",
               "fileWebp": "images/portfolio/ApyUMBPgyDU.webp",
-              "fileJpeg": "images/portfolio/ApyUMBPgyDU.jpg"
+              "fileJpeg": "images/portfolio/ApyUMBPgyDU.jpg",
+              "iso": "100",
+              "focalLength": "50.0",
+              "aperture": "6.3",
+              "exposure": "1/500"
             },
             {
               "alt": "sQNdA3jmQQI",
@@ -2171,13 +2699,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/sQNdA3jmQQI.avif",
               "fileWebp": "images/portfolio/sQNdA3jmQQI.webp",
-              "fileJpeg": "images/portfolio/sQNdA3jmQQI.jpg"
+              "fileJpeg": "images/portfolio/sQNdA3jmQQI.jpg",
+              "iso": "10551",
+              "focalLength": "6.9",
+              "aperture": "1.8",
+              "exposure": "1/33"
             },
             {
               "alt": "3kv71UyVr8w",
@@ -2185,13 +2717,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/3kv71UyVr8w.avif",
               "fileWebp": "images/portfolio/3kv71UyVr8w.webp",
-              "fileJpeg": "images/portfolio/3kv71UyVr8w.jpg"
+              "fileJpeg": "images/portfolio/3kv71UyVr8w.jpg",
+              "iso": "81",
+              "focalLength": "6.9",
+              "aperture": "1.8",
+              "exposure": "1/3356"
             },
             {
               "alt": "sMahgWdHz_I",
@@ -2199,13 +2735,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/sMahgWdHz_I.avif",
               "fileWebp": "images/portfolio/sMahgWdHz_I.webp",
-              "fileJpeg": "images/portfolio/sMahgWdHz_I.jpg"
+              "fileJpeg": "images/portfolio/sMahgWdHz_I.jpg",
+              "iso": "82",
+              "focalLength": "6.9",
+              "aperture": "1.8",
+              "exposure": "1/1692"
             },
             {
               "alt": "qxOxu6pqZB4",
@@ -2213,13 +2753,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/qxOxu6pqZB4.avif",
               "fileWebp": "images/portfolio/qxOxu6pqZB4.webp",
-              "fileJpeg": "images/portfolio/qxOxu6pqZB4.jpg"
+              "fileJpeg": "images/portfolio/qxOxu6pqZB4.jpg",
+              "iso": "80",
+              "focalLength": "6.9",
+              "aperture": "1.8",
+              "exposure": "1/580"
             },
             {
               "alt": "HBPwVHZ5HRY",
@@ -2227,13 +2771,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/HBPwVHZ5HRY.avif",
               "fileWebp": "images/portfolio/HBPwVHZ5HRY.webp",
-              "fileJpeg": "images/portfolio/HBPwVHZ5HRY.jpg"
+              "fileJpeg": "images/portfolio/HBPwVHZ5HRY.jpg",
+              "iso": "100",
+              "focalLength": "50.0",
+              "aperture": "6.3",
+              "exposure": "1/500"
             },
             {
               "alt": "A9OVCTadioI",
@@ -2241,13 +2789,17 @@
               "tags": [
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/A9OVCTadioI.avif",
               "fileWebp": "images/portfolio/A9OVCTadioI.webp",
-              "fileJpeg": "images/portfolio/A9OVCTadioI.jpg"
+              "fileJpeg": "images/portfolio/A9OVCTadioI.jpg",
+              "iso": "3200",
+              "focalLength": "46.0",
+              "aperture": "6.3",
+              "exposure": "1/200"
             },
             {
               "alt": "0zrt2DHlPx0",
@@ -2255,13 +2807,17 @@
               "tags": [
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/0zrt2DHlPx0.avif",
               "fileWebp": "images/portfolio/0zrt2DHlPx0.webp",
-              "fileJpeg": "images/portfolio/0zrt2DHlPx0.jpg"
+              "fileJpeg": "images/portfolio/0zrt2DHlPx0.jpg",
+              "iso": "2800",
+              "focalLength": "50.0",
+              "aperture": "6.3",
+              "exposure": "1/200"
             },
             {
               "alt": "AVmY7tn_SDs",
@@ -2269,13 +2825,17 @@
               "tags": [
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "NIKON Z 5",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/AVmY7tn_SDs.avif",
               "fileWebp": "images/portfolio/AVmY7tn_SDs.webp",
-              "fileJpeg": "images/portfolio/AVmY7tn_SDs.jpg"
+              "fileJpeg": "images/portfolio/AVmY7tn_SDs.jpg",
+              "iso": "640",
+              "focalLength": "50.0",
+              "aperture": "6.3",
+              "exposure": "1/200"
             },
             {
               "alt": "vRWa6EZGggE",
@@ -2283,13 +2843,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone XR",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/vRWa6EZGggE.avif",
               "fileWebp": "images/portfolio/vRWa6EZGggE.webp",
-              "fileJpeg": "images/portfolio/vRWa6EZGggE.jpg"
+              "fileJpeg": "images/portfolio/vRWa6EZGggE.jpg",
+              "iso": "24",
+              "focalLength": "4.2",
+              "aperture": "1.8",
+              "exposure": "1/1190"
             },
             {
               "alt": "SWNMrbz77TA",
@@ -2297,13 +2861,17 @@
               "tags": [
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/SWNMrbz77TA.avif",
               "fileWebp": "images/portfolio/SWNMrbz77TA.webp",
-              "fileJpeg": "images/portfolio/SWNMrbz77TA.jpg"
+              "fileJpeg": "images/portfolio/SWNMrbz77TA.jpg",
+              "iso": "57",
+              "focalLength": "6.9",
+              "aperture": "1.8",
+              "exposure": "1/2538"
             },
             {
               "alt": "vOiH9m3Bh68",
@@ -2311,13 +2879,17 @@
               "tags": [
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/vOiH9m3Bh68.avif",
               "fileWebp": "images/portfolio/vOiH9m3Bh68.webp",
-              "fileJpeg": "images/portfolio/vOiH9m3Bh68.jpg"
+              "fileJpeg": "images/portfolio/vOiH9m3Bh68.jpg",
+              "iso": "22",
+              "focalLength": "9.0",
+              "aperture": "2.8",
+              "exposure": "1/39"
             },
             {
               "alt": "uazgnSwXm34",
@@ -2325,13 +2897,17 @@
               "tags": [
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/uazgnSwXm34.avif",
               "fileWebp": "images/portfolio/uazgnSwXm34.webp",
-              "fileJpeg": "images/portfolio/uazgnSwXm34.jpg"
+              "fileJpeg": "images/portfolio/uazgnSwXm34.jpg",
+              "iso": "58",
+              "focalLength": "6.9",
+              "aperture": "1.8",
+              "exposure": "1/3891"
             },
             {
               "alt": "VszQnMaMiA8",
@@ -2339,13 +2915,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": " EOS 500D",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/VszQnMaMiA8.avif",
               "fileWebp": "images/portfolio/VszQnMaMiA8.webp",
-              "fileJpeg": "images/portfolio/VszQnMaMiA8.jpg"
+              "fileJpeg": "images/portfolio/VszQnMaMiA8.jpg",
+              "iso": "400",
+              "focalLength": "55.0",
+              "aperture": "11.0",
+              "exposure": "1/200"
             },
             {
               "alt": "UannOYzKvjk",
@@ -2353,13 +2933,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone XR",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/UannOYzKvjk.avif",
               "fileWebp": "images/portfolio/UannOYzKvjk.webp",
-              "fileJpeg": "images/portfolio/UannOYzKvjk.jpg"
+              "fileJpeg": "images/portfolio/UannOYzKvjk.jpg",
+              "iso": "24",
+              "focalLength": "4.2",
+              "aperture": "1.8",
+              "exposure": "1/274"
             },
             {
               "alt": "Jxm0J-T4Fjo",
@@ -2367,13 +2951,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone XR",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/Jxm0J-T4Fjo.avif",
               "fileWebp": "images/portfolio/Jxm0J-T4Fjo.webp",
-              "fileJpeg": "images/portfolio/Jxm0J-T4Fjo.jpg"
+              "fileJpeg": "images/portfolio/Jxm0J-T4Fjo.jpg",
+              "iso": "48",
+              "focalLength": "4.2",
+              "aperture": "1.8",
+              "exposure": "1/60"
             },
             {
               "alt": "SqSX7OkC1Uo",
@@ -2381,13 +2969,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone XR",
               "lens": "24-70mm f/2.8",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/SqSX7OkC1Uo.avif",
               "fileWebp": "images/portfolio/SqSX7OkC1Uo.webp",
-              "fileJpeg": "images/portfolio/SqSX7OkC1Uo.jpg"
+              "fileJpeg": "images/portfolio/SqSX7OkC1Uo.jpg",
+              "iso": "174",
+              "focalLength": "4.2",
+              "aperture": "1.8",
+              "exposure": "1/30"
             },
             {
               "alt": "apdaD5zqZMI",
@@ -2395,13 +2987,17 @@
               "tags": [
                 "portrait-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone 14 Pro Max",
               "lens": "85mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/apdaD5zqZMI.avif",
               "fileWebp": "images/portfolio/apdaD5zqZMI.webp",
-              "fileJpeg": "images/portfolio/apdaD5zqZMI.jpg"
+              "fileJpeg": "images/portfolio/apdaD5zqZMI.jpg",
+              "iso": "1874",
+              "focalLength": "2.2",
+              "aperture": "2.2",
+              "exposure": "1/50"
             },
             {
               "alt": "J8n2Weca-OA",
@@ -2409,13 +3005,17 @@
               "tags": [
                 "landscape-format"
               ],
-              "camera": "Sony A7IV",
+              "camera": "iPhone X",
               "lens": "35mm f/1.4",
               "location": "",
               "file": "",
               "fileAvif": "images/portfolio/J8n2Weca-OA.avif",
               "fileWebp": "images/portfolio/J8n2Weca-OA.webp",
-              "fileJpeg": "images/portfolio/J8n2Weca-OA.jpg"
+              "fileJpeg": "images/portfolio/J8n2Weca-OA.jpg",
+              "iso": "25",
+              "focalLength": "4.0",
+              "aperture": "1.8",
+              "exposure": "1/120"
             },
             {
               "alt": "M5pB2EInhCE",
