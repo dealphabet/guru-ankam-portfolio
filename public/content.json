@@ -1,0 +1,502 @@
+{
+  "site": {
+    "name": "Guru Ankam",
+    "tagline": "Photographer · Drummer · Developer · Creative",
+    "description": "Guru Ankam — Photographer · Drummer · Developer · Creative",
+    "bio": "Multi-disciplinary creative based somewhere between the viewfinder, the drum kit, the keyboard, and the sketchpad. I believe the best work happens at the intersection of disciplines.",
+    "email": "gurukrupal@outlook.com",
+    "github": "https://github.com/",
+    "instagram": "https://www.instagram.com/guruo_0/",
+    "linkedin": "https://linkedin.com/"
+  },
+  "showcase": {
+    "label": "Recently on:",
+    "slides": [
+      {
+        "title": "Golden Hour Series",
+        "category": "Photography",
+        "description": "Chasing the last light across city rooftops. A series of warm-toned captures from sunset sessions.",
+        "icon": "📸",
+        "gradient": "linear-gradient(135deg, #92400e 0%, #b45309 30%, #d97706 60%, #f59e0b 100%)",
+        "dotColor": "#f59e0b",
+        "href": "/photography"
+      },
+      {
+        "title": "Groove Sessions",
+        "category": "Music",
+        "description": "Live drum recordings from the studio — exploring polyrhythms and pocket grooves.",
+        "icon": "🥁",
+        "gradient": "linear-gradient(135deg, #581c87 0%, #7c3aed 30%, #a855f7 60%, #c084fc 100%)",
+        "dotColor": "#a855f7",
+        "href": "/music"
+      },
+      {
+        "title": "Portfolio v3",
+        "category": "Code",
+        "description": "This very website you are looking at. Built with Astro and Tailwind CSS.",
+        "icon": "💻",
+        "gradient": "linear-gradient(135deg, #1e3a5f 0%, #1d4ed8 30%, #3b82f6 60%, #60a5fa 100%)",
+        "dotColor": "#3b82f6",
+        "href": "/code"
+      },
+      {
+        "title": "Neon Dreams",
+        "category": "Creative",
+        "description": "Storyboard for a short film concept exploring urban nightlife and solitude.",
+        "icon": "🎨",
+        "gradient": "linear-gradient(135deg, #064e3b 0%, #047857 30%, #10b981 60%, #34d399 100%)",
+        "dotColor": "#10b981",
+        "href": "/creative"
+      }
+    ]
+  },
+  "disciplines": [
+    {
+      "title": "Photography",
+      "tagline": "Moments frozen in time",
+      "href": "/photography",
+      "color": "#f59e0b",
+      "number": "01"
+    },
+    {
+      "title": "Music",
+      "tagline": "Rhythm & groove",
+      "href": "/music",
+      "color": "#a855f7",
+      "number": "02"
+    },
+    {
+      "title": "Code",
+      "tagline": "Building with purpose",
+      "href": "/code",
+      "color": "#3b82f6",
+      "number": "03"
+    },
+    {
+      "title": "Creative",
+      "tagline": "Stories & visions",
+      "href": "/creative",
+      "color": "#10b981",
+      "number": "04"
+    }
+  ],
+  "pages": {
+    "about": {
+      "title": "The Person Behind the Pixels",
+      "bio": [
+        "Hey, I am <strong>Guru Ankam</strong> — a multi-disciplinary creative based somewhere between the viewfinder, the drum kit, the keyboard, and the sketchpad.",
+        "I am a photographer who chases light, a drummer who lives for the pocket, a software engineer who builds with intention, and a creative who ties it all together through storyboarding and visual art.",
+        "I believe the best work happens at the intersection of disciplines. A photograph teaches you about composition. Drumming teaches you about timing. Code teaches you about structure. And storyboarding teaches you about narrative. Together, they shape how I see and create.",
+        "This portfolio is a window into my world — each section representing a different facet of who I am and what I do. Take a look around."
+      ],
+      "facts": [
+        {
+          "color": "#3b82f6",
+          "text": "Photographer — Landscapes, portraits, and street photography"
+        },
+        {
+          "color": "#6366f1",
+          "text": "Drummer — Acoustic, electronic, and programming"
+        },
+        {
+          "color": "#8b5cf6",
+          "text": "Software Engineer — Full-stack development"
+        },
+        {
+          "color": "#10b981",
+          "text": "Creative — Storyboarding, art, and visual design"
+        }
+      ]
+    },
+    "photography": {
+      "title": "Photography",
+      "description": "A collection of frames that speak louder than words. Every shot is a story, every shadow a feeling.",
+      "collections": [
+        {
+          "id": "moments-in-light",
+          "title": "Moments in Light",
+          "description": "Chasing the last light across city rooftops. A series of warm-toned captures from sunset sessions.",
+          "featured": true,
+          "previewPhotos": [0, 2, 4],
+          "photos": [
+            {
+              "alt": "Golden hour over the city",
+              "category": "landscape",
+              "tags": ["golden-hour", "city", "sunset"],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "Rooftop, Downtown",
+              "file": ""
+            },
+            {
+              "alt": "Street portrait",
+              "category": "portrait",
+              "tags": ["portrait", "street", "natural-light"],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "Old Town",
+              "file": ""
+            },
+            {
+              "alt": "Rainy alley",
+              "category": "street",
+              "tags": ["rain", "moody", "urban"],
+              "camera": "Fuji X-T5",
+              "lens": "23mm f/2",
+              "location": "Back Alley",
+              "file": ""
+            },
+            {
+              "alt": "Mountain vista",
+              "category": "landscape",
+              "tags": ["mountains", "nature", "golden-hour"],
+              "camera": "Sony A7IV",
+              "lens": "16-35mm f/2.8",
+              "location": "Blue Ridge",
+              "file": ""
+            },
+            {
+              "alt": "Cafe window",
+              "category": "portrait",
+              "tags": ["portrait", "cafe", "natural-light"],
+              "camera": "Fuji X-T5",
+              "lens": "56mm f/1.2",
+              "location": "Downtown Cafe",
+              "file": ""
+            },
+            {
+              "alt": "Night market",
+              "category": "street",
+              "tags": ["night", "urban", "neon"],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "Night Market",
+              "file": ""
+            }
+          ]
+        },
+        {
+          "id": "street-stories",
+          "title": "Street Stories",
+          "description": "Candid moments from the rhythm of city life — unscripted, unposed, unforgettable.",
+          "featured": false,
+          "previewPhotos": [],
+          "photos": [
+            {
+              "alt": "Crossing at dusk",
+              "category": "street",
+              "tags": ["urban", "dusk", "crowd"],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "42nd Street",
+              "file": ""
+            },
+            {
+              "alt": "Subway musician",
+              "category": "street",
+              "tags": ["music", "urban", "portrait"],
+              "camera": "Fuji X-T5",
+              "lens": "23mm f/2",
+              "location": "Underground Station",
+              "file": ""
+            },
+            {
+              "alt": "Reflections in the rain",
+              "category": "street",
+              "tags": ["rain", "moody", "neon"],
+              "camera": "Sony A7IV",
+              "lens": "50mm f/1.2",
+              "location": "Main Avenue",
+              "file": ""
+            },
+            {
+              "alt": "Morning commute",
+              "category": "street",
+              "tags": ["urban", "morning", "crowd"],
+              "camera": "Fuji X-T5",
+              "lens": "35mm f/1.4",
+              "location": "Central Bridge",
+              "file": ""
+            }
+          ]
+        },
+        {
+          "id": "portrait-studies",
+          "title": "Portrait Studies",
+          "description": "Exploring character and emotion through the lens — every face tells a different story.",
+          "featured": false,
+          "previewPhotos": [],
+          "photos": [
+            {
+              "alt": "Window light portrait",
+              "category": "portrait",
+              "tags": ["portrait", "natural-light", "studio"],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "Studio A",
+              "file": ""
+            },
+            {
+              "alt": "Environmental portrait",
+              "category": "portrait",
+              "tags": ["portrait", "environmental", "story"],
+              "camera": "Sony A7IV",
+              "lens": "50mm f/1.2",
+              "location": "Artist's Workshop",
+              "file": ""
+            },
+            {
+              "alt": "Street character",
+              "category": "portrait",
+              "tags": ["portrait", "street", "candid"],
+              "camera": "Fuji X-T5",
+              "lens": "56mm f/1.2",
+              "location": "Old Quarter",
+              "file": ""
+            },
+            {
+              "alt": "Golden hour headshot",
+              "category": "portrait",
+              "tags": ["portrait", "golden-hour", "warm"],
+              "camera": "Sony A7IV",
+              "lens": "85mm f/1.4",
+              "location": "Park Lane",
+              "file": ""
+            }
+          ]
+        },
+        {
+          "id": "nature-landscapes",
+          "title": "Nature & Landscapes",
+          "description": "Wide open spaces and the quiet majesty of the natural world — from mountains to coastlines.",
+          "featured": false,
+          "previewPhotos": [],
+          "photos": [
+            {
+              "alt": "Mountain sunrise",
+              "category": "landscape",
+              "tags": ["mountains", "sunrise", "nature"],
+              "camera": "Sony A7IV",
+              "lens": "16-35mm f/2.8",
+              "location": "Blue Ridge",
+              "file": ""
+            },
+            {
+              "alt": "Coastal cliffs",
+              "category": "landscape",
+              "tags": ["ocean", "cliffs", "nature"],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "Pacific Coast",
+              "file": ""
+            },
+            {
+              "alt": "Forest trail",
+              "category": "landscape",
+              "tags": ["forest", "nature", "green"],
+              "camera": "Fuji X-T5",
+              "lens": "23mm f/2",
+              "location": "Redwood National",
+              "file": ""
+            },
+            {
+              "alt": "Desert dunes",
+              "category": "landscape",
+              "tags": ["desert", "golden-hour", "minimal"],
+              "camera": "Sony A7IV",
+              "lens": "70-200mm f/2.8",
+              "location": "Mojave",
+              "file": ""
+            }
+          ]
+        },
+        {
+          "id": "night-photography",
+          "title": "Night Photography",
+          "description": "When the sun goes down, the city comes alive — neon glow, long exposures, and electric energy.",
+          "featured": false,
+          "previewPhotos": [],
+          "photos": [
+            {
+              "alt": "Neon alleyway",
+              "category": "street",
+              "tags": ["neon", "night", "urban"],
+              "camera": "Sony A7IV",
+              "lens": "35mm f/1.4",
+              "location": "Chinatown",
+              "file": ""
+            },
+            {
+              "alt": "City skyline at night",
+              "category": "landscape",
+              "tags": ["city", "night", "skyline"],
+              "camera": "Sony A7IV",
+              "lens": "16-35mm f/2.8",
+              "location": "Observation Deck",
+              "file": ""
+            },
+            {
+              "alt": "Light trails",
+              "category": "street",
+              "tags": ["long-exposure", "urban", "motion"],
+              "camera": "Sony A7IV",
+              "lens": "24-70mm f/2.8",
+              "location": "Highway Overpass",
+              "file": ""
+            },
+            {
+              "alt": "Rainy night reflections",
+              "category": "street",
+              "tags": ["rain", "neon", "moody"],
+              "camera": "Fuji X-T5",
+              "lens": "23mm f/2",
+              "location": "Downtown",
+              "file": ""
+            }
+          ]
+        }
+      ]
+    },
+    "music": {
+      "title": "The Beat Goes On",
+      "description": "Drummer at heart. Rhythm is the foundation of everything I do — whether it's behind a kit, in code, or through a lens.",
+      "gear": [
+        "Acoustic Drum Kit",
+        "Electronic Percussion",
+        "Drum Programming"
+      ],
+      "influences": "From the polyrhythmic complexity of jazz to the raw energy of rock, and the intricate patterns of Indian percussion — rhythm knows no boundaries.",
+      "audioClips": [
+        {
+          "title": "Pocket Groove",
+          "description": "A tight funk groove with ghost notes on the snare.",
+          "file": "",
+          "duration": "",
+          "tags": ["funk", "groove"]
+        },
+        {
+          "title": "Polyrhythm Study",
+          "description": "Exploring 3 over 4 polyrhythmic patterns on the kit.",
+          "file": "",
+          "duration": "",
+          "tags": ["jazz", "polyrhythm"]
+        },
+        {
+          "title": "Indian Taal",
+          "description": "Tintal cycle adapted for the drum kit.",
+          "file": "",
+          "duration": "",
+          "tags": ["indian", "taal"]
+        }
+      ]
+    },
+    "code": {
+      "title": "Building Things",
+      "description": "Software engineer by trade, builder by nature. Here are some projects I have been working on.",
+      "projects": [
+        {
+          "title": "Project One",
+          "description": "A brief description of what this project does and the tech used.",
+          "longDescription": "This is a detailed write-up about the project. It covers the architecture decisions, challenges faced, and solutions implemented. You can write multiple paragraphs here using the admin panel.",
+          "tags": [
+            "React",
+            "TypeScript",
+            "Node.js"
+          ],
+          "techDetails": "Built with React 18, TypeScript, and Node.js. Uses PostgreSQL for data storage and Redis for caching.",
+          "github": "#",
+          "live": "#",
+          "icon": "⚡",
+          "gradient": "linear-gradient(135deg, #667eea, #764ba2)",
+          "bannerColor": "#667eea",
+          "file": ""
+        },
+        {
+          "title": "Project Two",
+          "description": "Another project showcasing a different set of skills and technologies.",
+          "longDescription": "Detailed write-up for project two. Describe the problem space, your approach, and the outcome.",
+          "tags": [
+            "Python",
+            "FastAPI",
+            "PostgreSQL"
+          ],
+          "techDetails": "Python backend with FastAPI, PostgreSQL database, deployed on AWS.",
+          "github": "#",
+          "live": "#",
+          "icon": "🚀",
+          "gradient": "linear-gradient(135deg, #f093fb, #f5576c)",
+          "bannerColor": "#f5576c",
+          "file": ""
+        },
+        {
+          "title": "Project Three",
+          "description": "An open-source contribution or side project you are proud of.",
+          "longDescription": "Write about what inspired this project and what you learned building it.",
+          "tags": [
+            "Astro",
+            "Tailwind",
+            "TypeScript"
+          ],
+          "techDetails": "Static site with Astro, styled with Tailwind CSS.",
+          "github": "#",
+          "live": "#",
+          "icon": "🌐",
+          "gradient": "linear-gradient(135deg, #4facfe, #00f2fe)",
+          "bannerColor": "#4facfe",
+          "file": ""
+        }
+      ]
+    },
+    "creative": {
+      "title": "Visions & Stories",
+      "description": "Where imagination takes shape — storyboards, art, and everything in between.",
+      "works": [
+        {
+          "title": "Storyboard Project",
+          "description": "Visual storytelling through sequential art",
+          "type": "storyboard",
+          "longDescription": "A deep dive into the process of creating this storyboard. From initial concept sketches to final panel layouts, this project explores visual narrative techniques.",
+          "icon": "🎬",
+          "gradient": "linear-gradient(135deg, #a18cd1, #fbc2eb)",
+          "bannerColor": "#a18cd1",
+          "tags": [
+            "storyboard",
+            "narrative",
+            "visual-story"
+          ],
+          "file": ""
+        },
+        {
+          "title": "Art Piece One",
+          "description": "A personal creative exploration",
+          "type": "art",
+          "longDescription": "An exploration of color theory and emotional resonance through abstract composition.",
+          "icon": "🎨",
+          "gradient": "linear-gradient(135deg, #ffecd2, #fcb69f)",
+          "bannerColor": "#fcb69f",
+          "tags": [
+            "abstract",
+            "color-theory",
+            "personal"
+          ],
+          "file": ""
+        },
+        {
+          "title": "Concept Design",
+          "description": "Visual concepts and ideation",
+          "type": "art",
+          "longDescription": "Concept art for an imagined world. Combining architectural influences with organic forms.",
+          "icon": "✏️",
+          "gradient": "linear-gradient(135deg, #a1c4fd, #c2e9fb)",
+          "bannerColor": "#a1c4fd",
+          "tags": [
+            "concept",
+            "architecture",
+            "worldbuilding"
+          ],
+          "file": ""
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import content from '../../data/content.json';
+
+const about = content.pages.about;
+---
+
+<Layout title="About — Guru Ankam">
+  <section class="px-6 py-16 max-w-3xl mx-auto" data-debug="about-page">
+    <span class="debug-label" style="top:60px; left:12px; display:none;">ABOUT — Bio, photo, quick facts</span>
+    <div class="flex items-start justify-between gap-4 mb-10">
+      <div class="flex-1 min-w-0">
+        <p class="section-label mb-2 fade-in">About</p>
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-3 fade-in fade-in-delay-1" style="color: var(--text-primary);">{about.title}</h1>
+      </div>
+      <span class="text-6xl md:text-8xl flex-shrink-0 opacity-[0.08] select-none fade-in fade-in-delay-1">👤</span>
+    </div>
+
+    <div class="space-y-6 fade-in fade-in-delay-2">
+      <div class="w-full aspect-[16/9] rounded-2xl overflow-hidden flex items-center justify-center border transition-colors" style="background: var(--bg-secondary); border-color: var(--border);">
+        <svg class="w-14 h-14" style="color: var(--text-muted); opacity: 0.2;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+        </svg>
+      </div>
+
+      <div class="space-y-4">
+        {about.bio.map((paragraph: string) => (
+          <p class="text-sm leading-relaxed" style="color: var(--text-secondary);" set:html={paragraph} />
+        ))}
+      </div>
+
+      <div class="rounded-2xl border p-6 transition-colors" style="border-color: var(--border); background: var(--bg-card);">
+        <h3 class="text-base font-semibold mb-3" style="color: var(--text-primary);">Quick Facts</h3>
+        <ul class="space-y-2 text-sm" style="color: var(--text-secondary);">
+          {about.facts.map((fact: any) => (
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full" style={`background: ${fact.color};`} />
+              {fact.text}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+</Layout>

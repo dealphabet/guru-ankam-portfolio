@@ -1,0 +1,320 @@
+---
+import Layout from '../layouts/Layout.astro';
+import content from '../../data/content.json';
+
+const music = content.pages.music;
+const audioClips = music.audioClips || [];
+const allTags = [...new Set(audioClips.flatMap((c: any) => c.tags || []))];
+---
+
+<Layout title="Music — Guru Ankam">
+  <section class="px-6 py-16 max-w-3xl mx-auto" data-debug="music-page">
+    <span class="debug-label" style="top:60px; left:12px; display:none;">MUSIC — Drummer intro, gear, audio demos</span>
+    <div class="flex items-start justify-between gap-4 mb-10">
+      <div class="flex-1 min-w-0">
+        <p class="section-label mb-2 fade-in">Music</p>
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-3 fade-in fade-in-delay-1" style="color: var(--text-primary);">{music.title}</h1>
+        <p class="text-sm leading-relaxed fade-in fade-in-delay-2" style="color: var(--text-secondary);">
+          {music.description}
+        </p>
+      </div>
+      <span class="text-6xl md:text-8xl flex-shrink-0 opacity-[0.08] select-none fade-in fade-in-delay-1">🎵</span>
+    </div>
+
+    <!-- Audio Clips -->
+    <div class="space-y-3 fade-in fade-in-delay-2 mb-6">
+      <div class="flex items-center justify-between gap-4 mb-1">
+        <h2 class="text-base font-semibold" style="color: var(--text-primary);">Demos</h2>
+        {allTags.length > 0 && (
+          <div class="relative inline-block" id="music-tag-dropdown-wrap">
+            <button id="music-tag-dropdown-btn" class="px-4 py-1.5 rounded-full text-xs font-medium border transition-all flex items-center gap-1.5"
+              style="border-color: var(--border); background: var(--bg-card); color: var(--text-muted);">
+              <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z"/></svg>
+              Filter
+              <svg class="w-3 h-3 transition-transform" id="music-tag-dropdown-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <span id="music-active-tag-pill" class="hidden ml-2 inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium" style="background: var(--tag-bg); color: var(--tag-text);">
+              <span id="music-active-tag-text"></span>
+              <button id="music-active-tag-remove" class="ml-0.5 hover:opacity-70 transition-opacity">
+                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+              </button>
+            </span>
+            <div id="music-tag-dropdown" class="hidden absolute top-full right-0 mt-2 w-48 rounded-xl border z-50 py-2 max-h-64 overflow-y-auto"
+              style="background: var(--bg-card); border-color: var(--border); box-shadow: var(--card-shadow-hover);">
+              {allTags.map(tag => (
+                <button class="music-tag-dropdown-item w-full text-left px-3 py-2 text-xs flex items-center gap-2 transition-colors hover:bg-[var(--bg-card-hover)]"
+                  data-tag={tag} style="color: var(--text-secondary);">
+                  <span class="px-1.5 py-0.5 rounded text-[10px] font-medium" style="background: var(--tag-bg); color: var(--tag-text);">{tag}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {audioClips.length > 0 ? (
+        audioClips.map((clip: any, i: number) => (
+          <div class="audio-clip rounded-2xl border p-4 transition-all" style="border-color: var(--border); background: var(--bg-card);" data-clip-index={i} data-tags={JSON.stringify(clip.tags || [])}>
+            <div class="flex items-center gap-3">
+              <!-- Play/Pause Button -->
+              <button class="audio-play-btn w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-200"
+                style="background: var(--accent-1); color: #fff;"
+                data-clip-index={i}
+                aria-label={`Play ${clip.title}`}
+              >
+                <svg class="play-icon w-4 h-4 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+                <svg class="pause-icon w-4 h-4 hidden" fill="currentColor" viewBox="0 0 24 24">
+                  <rect x="6" y="4" width="4" height="16" rx="1"/>
+                  <rect x="14" y="4" width="4" height="16" rx="1"/>
+                </svg>
+              </button>
+
+              <!-- Clip Info + Progress -->
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between gap-2 mb-1">
+                  <h3 class="text-sm font-semibold truncate" style="color: var(--text-primary);">{clip.title}</h3>
+                  <span class="audio-time text-xs flex-shrink-0" style="color: var(--text-muted);">0:00{clip.duration ? ` / ${clip.duration}` : ''}</span>
+                </div>
+                <p class="text-xs mb-2 truncate" style="color: var(--text-secondary);">{clip.description}</p>
+                <!-- Progress Bar -->
+                <div class="audio-progress-bar relative w-full h-1.5 rounded-full cursor-pointer" style="background: var(--bg-secondary);" data-clip-index={i}>
+                  <div class="audio-progress-fill absolute top-0 left-0 h-full rounded-full transition-all duration-100" style="background: var(--accent-1); width: 0%;" />
+                  <div class="audio-progress-thumb absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full opacity-0 transition-opacity" style="background: var(--accent-1); left: 0%;" />
+                </div>
+                <!-- Tags -->
+                {clip.tags && clip.tags.length > 0 && (
+                  <div class="flex gap-1.5 mt-2">
+                    {clip.tags.map((tag: string) => (
+                      <span class="text-[10px] px-1.5 py-0.5 rounded-full" style="background: var(--bg-secondary); color: var(--text-muted);">#{tag}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+            {clip.file ? (
+              <audio class="audio-element" data-clip-index={i} preload="metadata">
+                <source src={clip.file} />
+              </audio>
+            ) : (
+              <audio class="audio-element" data-clip-index={i} preload="metadata"></audio>
+            )}
+          </div>
+        ))
+      ) : (
+        <div class="rounded-2xl border p-8 text-center transition-colors" style="border-color: var(--border); background: var(--bg-card);">
+          <svg class="w-10 h-10 mx-auto mb-3" style="color: var(--text-muted); opacity: 0.4;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+          </svg>
+          <p class="text-xs" style="color: var(--text-muted);">Add audio clips in the admin panel</p>
+        </div>
+      )}
+    </div>
+
+    <div class="space-y-4 fade-in fade-in-delay-3">
+      <div class="rounded-2xl border p-6 transition-colors" style="border-color: var(--border); background: var(--bg-card);">
+        <h3 class="text-base font-semibold mb-3" style="color: var(--text-primary);">What I Play</h3>
+        <ul class="space-y-2 text-sm" style="color: var(--text-secondary);">
+          {music.gear.map((item: string) => (
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full" style="background: var(--accent-2);" />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="rounded-2xl border p-6 transition-colors" style="border-color: var(--border); background: var(--bg-card);">
+        <h3 class="text-base font-semibold mb-3" style="color: var(--text-primary);">Influences</h3>
+        <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">
+          {music.influences}
+        </p>
+      </div>
+    </div>
+
+    <p class="text-center text-xs mt-10 fade-in fade-in-delay-4" style="color: var(--text-muted);">
+      Add audio files to <code class="px-1.5 py-0.5 rounded text-[10px]" style="background: var(--bg-secondary);">public/audio/</code> and manage clips in the <a href="/admin.html" style="color: var(--accent-1);">admin panel</a>
+    </p>
+  </section>
+</Layout>
+
+<script is:inline>
+(function() {
+  // ============================================
+  // TAG DROPDOWN FILTERING
+  // ============================================
+  const musicTagDropdownBtn = document.getElementById('music-tag-dropdown-btn');
+  const musicTagDropdown = document.getElementById('music-tag-dropdown');
+  const musicTagDropdownArrow = document.getElementById('music-tag-dropdown-arrow');
+  const musicActiveTagPill = document.getElementById('music-active-tag-pill');
+  const musicActiveTagText = document.getElementById('music-active-tag-text');
+  const musicActiveTagRemove = document.getElementById('music-active-tag-remove');
+  const musicTagItems = document.querySelectorAll('.music-tag-dropdown-item');
+  let activeMusicTag = '';
+
+  musicTagDropdownBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    musicTagDropdown?.classList.toggle('hidden');
+    musicTagDropdownArrow?.classList.toggle('rotate-180');
+  });
+
+  document.addEventListener('click', () => {
+    musicTagDropdown?.classList.add('hidden');
+    musicTagDropdownArrow?.classList.remove('rotate-180');
+  });
+
+  musicTagItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const tag = (item).dataset.tag || '';
+      activeMusicTag = tag;
+      if (musicActiveTagPill && musicActiveTagText) {
+        musicActiveTagText.textContent = tag;
+        musicActiveTagPill.classList.remove('hidden');
+      }
+      musicTagDropdown?.classList.add('hidden');
+      musicTagDropdownArrow?.classList.remove('rotate-180');
+      applyMusicFilters();
+    });
+  });
+
+  musicActiveTagRemove?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    activeMusicTag = '';
+    musicActiveTagPill?.classList.add('hidden');
+    applyMusicFilters();
+  });
+
+  function applyMusicFilters() {
+    document.querySelectorAll('.audio-clip').forEach(card => {
+      const el = card;
+      const tags = JSON.parse(el.dataset.tags || '[]');
+      const match = !activeMusicTag || tags.includes(activeMusicTag);
+      el.style.display = match ? '' : 'none';
+    });
+  }
+
+  // ============================================
+  // AUDIO PLAYER
+  // ============================================
+  let currentPlayingIndex = null;
+  const audioElements = document.querySelectorAll('.audio-element');
+  const playBtns = document.querySelectorAll('.audio-play-btn');
+  const progressBars = document.querySelectorAll('.audio-progress-bar');
+  const progressFills = document.querySelectorAll('.audio-progress-fill');
+  const progressThumbs = document.querySelectorAll('.audio-progress-thumb');
+  const timeDisplays = document.querySelectorAll('.audio-time');
+
+  function formatTime(seconds) {
+    if (isNaN(seconds)) return '0:00';
+    const m = Math.floor(seconds / 60);
+    const s = Math.floor(seconds % 60);
+    return m + ':' + (s < 10 ? '0' : '') + s;
+  }
+
+  function stopAll() {
+    audioElements.forEach((audio, i) => {
+      audio.pause();
+      audio.currentTime = 0;
+      const btn = playBtns[i];
+      if (btn) {
+        btn.querySelector('.play-icon').classList.remove('hidden');
+        btn.querySelector('.pause-icon').classList.add('hidden');
+      }
+      if (progressFills[i]) progressFills[i].style.width = '0%';
+      if (progressThumbs[i]) progressThumbs[i].style.left = '0%';
+    });
+    currentPlayingIndex = null;
+  }
+
+  playBtns.forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+      const audio = audioElements[i];
+      if (!audio || !audio.querySelector('source')?.getAttribute('src')) return;
+
+      if (currentPlayingIndex === i && !audio.paused) {
+        audio.pause();
+        btn.querySelector('.play-icon').classList.remove('hidden');
+        btn.querySelector('.pause-icon').classList.add('hidden');
+        currentPlayingIndex = null;
+      } else {
+        stopAll();
+        audio.play().catch(() => {});
+        btn.querySelector('.play-icon').classList.add('hidden');
+        btn.querySelector('.pause-icon').classList.remove('hidden');
+        currentPlayingIndex = i;
+      }
+    });
+  });
+
+  audioElements.forEach((audio, i) => {
+    audio.addEventListener('timeupdate', () => {
+      if (audio.duration) {
+        const pct = (audio.currentTime / audio.duration) * 100;
+        if (progressFills[i]) progressFills[i].style.width = pct + '%';
+        if (progressThumbs[i]) progressThumbs[i].style.left = 'calc(' + pct + '% - 6px)';
+        if (timeDisplays[i]) {
+          const duration = audio.querySelector('source')?.getAttribute('src') ? ' / ' + formatTime(audio.duration) : '';
+          timeDisplays[i].textContent = formatTime(audio.currentTime) + duration;
+        }
+      }
+    });
+
+    audio.addEventListener('ended', () => {
+      const btn = playBtns[i];
+      if (btn) {
+        btn.querySelector('.play-icon').classList.remove('hidden');
+        btn.querySelector('.pause-icon').classList.add('hidden');
+      }
+      if (progressFills[i]) progressFills[i].style.width = '0%';
+      if (progressThumbs[i]) progressThumbs[i].style.left = '0%';
+      currentPlayingIndex = null;
+    });
+  });
+
+  progressBars.forEach((bar, i) => {
+    bar.addEventListener('click', (e) => {
+      const audio = audioElements[i];
+      if (!audio || !audio.duration) return;
+      const rect = bar.getBoundingClientRect();
+      const pct = (e.clientX - rect.left) / rect.width;
+      audio.currentTime = pct * audio.duration;
+    });
+
+    let isDragging = false;
+    bar.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      const audio = audioElements[i];
+      if (!audio || !audio.duration) return;
+      const rect = bar.getBoundingClientRect();
+      const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+      audio.currentTime = pct * audio.duration;
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      const audio = audioElements[i];
+      if (!audio || !audio.duration) return;
+      const rect = bar.getBoundingClientRect();
+      const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+      audio.currentTime = pct * audio.duration;
+    });
+
+    document.addEventListener('mouseup', () => { isDragging = false; });
+  });
+})();
+</script>
+
+<style>
+  .audio-clip:hover {
+    border-color: var(--accent-1) !important;
+    box-shadow: 0 0 0 1px var(--accent-1);
+  }
+  .audio-play-btn:hover {
+    transform: scale(1.08);
+  }
+  .audio-progress-bar:hover .audio-progress-thumb {
+    opacity: 1 !important;
+  }
+</style>

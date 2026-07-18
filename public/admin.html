@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guru Ankam — Site Editor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0d1117; --bg-card: #161b22; --bg-input: #0d1117;
+      --border: #30363d; --border-focus: #58a6ff;
+      --text: #e6edf3; --text-dim: #8b949e;
+      --accent: #58a6ff; --accent-hover: #79c0ff;
+      --green: #3fb950; --red: #f85149; --yellow: #d29922; --purple: #bc8cff;
+    }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; line-height: 1.5; }
+    .app { display: flex; min-height: 100vh; }
+    .sidebar { width: 260px; background: var(--bg-card); border-right: 1px solid var(--border); padding: 20px 0; flex-shrink: 0; position: sticky; top: 0; height: 100vh; overflow-y: auto; display: flex; flex-direction: column; }
+    .sidebar-header { padding: 0 16px 16px; border-bottom: 1px solid var(--border); margin-bottom: 12px; }
+    .sidebar-header h1 { font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+    .sidebar-header .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+    .sidebar-header p { font-size: 11px; color: var(--text-dim); margin-top: 4px; font-family: 'JetBrains Mono', monospace; }
+    .nav-section { padding: 0 8px; margin-bottom: 8px; }
+    .nav-section-title { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); padding: 8px 8px 4px; }
+    .nav-item { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: 13px; color: var(--text-dim); transition: all 0.15s; border: none; background: none; width: 100%; text-align: left; }
+    .nav-item:hover { background: rgba(88,166,255,0.08); color: var(--text); }
+    .nav-item.active { background: rgba(88,166,255,0.12); color: var(--accent); }
+    .nav-item .icon { width: 16px; text-align: center; font-size: 12px; }
+    .main { flex: 1; padding: 24px 32px; max-width: 800px; }
+    .page-header { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+    .page-header h2 { font-size: 20px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+    .page-header .badge { font-size: 10px; padding: 2px 8px; border-radius: 10px; background: rgba(88,166,255,0.12); color: var(--accent); font-weight: 600; }
+    .page-header p { font-size: 13px; color: var(--text-dim); margin-top: 4px; }
+    .field { margin-bottom: 16px; }
+    .field label { display: block; font-size: 12px; font-weight: 600; color: var(--text-dim); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .field input, .field textarea, .field select { width: 100%; padding: 10px 12px; background: var(--bg-input); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 13px; font-family: 'JetBrains Mono', monospace; transition: border-color 0.15s; }
+    .field input:focus, .field textarea:focus { outline: none; border-color: var(--border-focus); box-shadow: 0 0 0 3px rgba(88,166,255,0.1); }
+    .field textarea { min-height: 80px; resize: vertical; }
+    .field .hint { font-size: 11px; color: var(--text-dim); margin-top: 4px; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+    .card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+    .card-header h3 { font-size: 14px; font-weight: 600; }
+    .card-header .card-number { font-size: 11px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; }
+    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; border: 1px solid var(--border); background: var(--bg-card); color: var(--text); transition: all 0.15s; }
+    .btn:hover { border-color: var(--border-focus); }
+    .btn-primary { background: var(--accent); border-color: var(--accent); color: #0d1117; }
+    .btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+    .btn-danger { color: var(--red); border-color: rgba(248,81,73,0.3); }
+    .btn-danger:hover { background: rgba(248,81,73,0.1); border-color: var(--red); }
+    .btn-success { color: var(--green); border-color: rgba(63,185,80,0.3); }
+    .btn-success:hover { background: rgba(63,185,80,0.1); border-color: var(--green); }
+    .btn-group { display: flex; gap: 8px; margin-top: 16px; }
+    .section { display: none; }
+    .section.active { display: block; }
+    .slide-item { position: relative; }
+    .slide-item .remove-btn { position: absolute; top: 8px; right: 8px; }
+    .color-input { display: flex; align-items: center; gap: 8px; }
+    .color-input input[type="color"] { width: 36px; height: 36px; padding: 2px; border-radius: 6px; cursor: pointer; }
+    .color-input input[type="text"] { flex: 1; }
+    .toast { position: fixed; bottom: 24px; right: 24px; padding: 12px 20px; background: var(--bg-card); border: 1px solid var(--green); border-radius: 8px; font-size: 13px; color: var(--green); z-index: 1000; opacity: 0; transform: translateY(10px); transition: all 0.3s; pointer-events: none; }
+    .toast.show { opacity: 1; transform: translateY(0); }
+    /* Drop zone */
+    .drop-zone { border: 2px dashed var(--border); border-radius: 8px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.2s; position: relative; min-height: 100px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; }
+    .drop-zone:hover, .drop-zone.dragover { border-color: var(--accent); background: rgba(88,166,255,0.05); }
+    .drop-zone .drop-icon { font-size: 24px; opacity: 0.5; }
+    .drop-zone .drop-text { font-size: 12px; color: var(--text-dim); }
+    .drop-zone .drop-formats { font-size: 10px; color: var(--text-dim); opacity: 0.6; font-family: 'JetBrains Mono', monospace; }
+    .drop-zone .drop-size { font-size: 10px; color: var(--accent); font-family: 'JetBrains Mono', monospace; }
+    .drop-zone img { max-width: 100%; max-height: 120px; border-radius: 6px; object-fit: contain; }
+    .drop-zone input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+    @media (max-width: 768px) { .app { flex-direction: column; } .sidebar { width: 100%; height: auto; position: relative; border-right: none; border-bottom: 1px solid var(--border); padding: 12px 0; } .main { padding: 16px; } .field-row { grid-template-columns: 1fr; } }
+    .preview-check { accent-color: var(--accent); width: 16px; height: 16px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <h1><span class="dot"></span> Site Editor</h1>
+        <p>data/content.json</p>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-title">General</div>
+        <button class="nav-item active" data-section="site"><span class="icon">⚙</span> Site Settings</button>
+        <button class="nav-item" data-section="showcase"><span class="icon">🖼</span> Recently On</button>
+        <button class="nav-item" data-section="disciplines"><span class="icon">🔄</span> Discover More</button>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-title">Pages</div>
+        <button class="nav-item" data-section="about"><span class="icon">👤</span> About</button>
+        <button class="nav-item" data-section="photography"><span class="icon">📷</span> Photography</button>
+        <button class="nav-item" data-section="music"><span class="icon">🎵</span> Music</button>
+        <button class="nav-item" data-section="code"><span class="icon">💻</span> Code</button>
+        <button class="nav-item" data-section="creative"><span class="icon">🎨</span> Creative</button>
+      </div>
+      <div class="nav-section" style="margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border);">
+        <button class="btn btn-primary" style="width: 100%; justify-content: center;" id="export-btn">↓ Export content.json</button>
+        <button class="btn" style="width: 100%; justify-content: center; margin-top: 8px;" id="import-btn">↑ Import JSON</button>
+        <input type="file" id="import-file" accept=".json" style="display: none;">
+      </div>
+    </nav>
+
+    <div class="main">
+      <!-- Site Settings -->
+      <div class="section active" id="section-site">
+        <div class="page-header"><h2>⚙ Site Settings <span class="badge">global</span></h2><p>Basic site information, bio, and social links.</p></div>
+        <div class="card">
+          <div class="field"><label>Site Name</label><input type="text" data-path="site.name"></div>
+          <div class="field"><label>Tagline</label><input type="text" data-path="site.tagline"></div>
+          <div class="field"><label>Description (meta)</label><input type="text" data-path="site.description"></div>
+          <div class="field"><label>Bio (shown on homepage)</label><textarea data-path="site.bio" rows="3"></textarea><div class="hint">Short bio displayed below your name on the homepage.</div></div>
+          <div class="field"><label>Email</label><input type="email" data-path="site.email"></div>
+          <div class="field-row">
+            <div class="field"><label>GitHub URL</label><input type="url" data-path="site.github"></div>
+            <div class="field"><label>Instagram URL</label><input type="url" data-path="site.instagram"></div>
+          </div>
+          <div class="field"><label>LinkedIn URL</label><input type="url" data-path="site.linkedin"></div>
+        </div>
+      </div>
+
+      <!-- Showcase / Recently On -->
+      <div class="section" id="section-showcase">
+        <div class="page-header"><h2>🖼 Recently On <span class="badge">carousel</span></h2><p>Banner carousel items on the homepage.</p></div>
+        <div class="field"><label>Section Label</label><input type="text" data-path="showcase.label"></div>
+        <div id="showcase-slides"></div>
+        <button class="btn" id="add-slide">+ Add Slide</button>
+      </div>
+
+      <!-- Discover More -->
+      <div class="section" id="section-disciplines">
+        <div class="page-header"><h2>🔄 Discover More <span class="badge">carousel</span></h2><p>Items in the vertical "Discover more about me" carousel.</p></div>
+        <div id="discipline-items"></div>
+        <button class="btn" id="add-discipline">+ Add Item</button>
+      </div>
+
+      <!-- About -->
+      <div class="section" id="section-about">
+        <div class="page-header"><h2>👤 About Page</h2><p>Bio text and quick facts.</p></div>
+        <div class="card">
+          <div class="field"><label>Page Title</label><input type="text" data-path="pages.about.title"></div>
+          <div class="field"><label>Bio Paragraphs (one per line)</label><textarea data-path="pages.about.bio" rows="6"></textarea><div class="hint">HTML tags like &lt;strong&gt; are allowed.</div></div>
+        </div>
+        <h3 style="font-size: 14px; margin: 16px 0 12px;">Quick Facts</h3>
+        <div id="about-facts"></div>
+        <button class="btn" id="add-fact">+ Add Fact</button>
+      </div>
+
+      <!-- Photography -->
+      <div class="section" id="section-photography">
+        <div class="page-header"><h2>📷 Photography Page</h2><p>Gallery collections with photos, tags, and drag-drop upload.</p></div>
+        <div class="card">
+          <div class="field"><label>Page Title</label><input type="text" data-path="pages.photography.title"></div>
+          <div class="field"><label>Description</label><textarea data-path="pages.photography.description" rows="2"></textarea></div>
+        </div>
+        <h3 style="font-size: 14px; margin: 16px 0 12px;">Collections</h3>
+        <div id="collection-items"></div>
+        <button class="btn" id="add-collection">+ Add Collection</button>
+      </div>
+
+      <!-- Music -->
+      <div class="section" id="section-music">
+        <div class="page-header"><h2>🎵 Music Page</h2><p>Drummer info, gear list, audio demos, and influences.</p></div>
+        <div class="card">
+          <div class="field"><label>Page Title</label><input type="text" data-path="pages.music.title"></div>
+          <div class="field"><label>Description</label><textarea data-path="pages.music.description" rows="2"></textarea></div>
+          <div class="field"><label>Gear (one per line)</label><textarea data-path="pages.music.gear" rows="3"></textarea></div>
+          <div class="field"><label>Influences</label><textarea data-path="pages.music.influences" rows="3"></textarea></div>
+        </div>
+        <h3 style="font-size: 14px; margin: 16px 0 12px;">Audio Clips</h3>
+        <p style="font-size: 11px; color: var(--text-dim); margin-bottom: 12px;">Add audio files to <code>public/audio/</code> then set the file path below (e.g. <code>/audio/clip.mp3</code>).</p>
+        <div id="audio-clip-items"></div>
+        <button class="btn" id="add-audio-clip">+ Add Audio Clip</button>
+      </div>
+
+      <!-- Code -->
+      <div class="section" id="section-code">
+        <div class="page-header"><h2>💻 Code Page</h2><p>Project cards with detail overlays.</p></div>
+        <div class="card">
+          <div class="field"><label>Page Title</label><input type="text" data-path="pages.code.title"></div>
+          <div class="field"><label>Description</label><textarea data-path="pages.code.description" rows="2"></textarea></div>
+        </div>
+        <h3 style="font-size: 14px; margin: 16px 0 12px;">Projects</h3>
+        <div id="project-items"></div>
+        <button class="btn" id="add-project">+ Add Project</button>
+      </div>
+
+      <!-- Creative -->
+      <div class="section" id="section-creative">
+        <div class="page-header"><h2>🎨 Creative Page</h2><p>Storyboard and art items with detail overlays.</p></div>
+        <div class="card">
+          <div class="field"><label>Page Title</label><input type="text" data-path="pages.creative.title"></div>
+          <div class="field"><label>Description</label><textarea data-path="pages.creative.description" rows="2"></textarea></div>
+        </div>
+        <h3 style="font-size: 14px; margin: 16px 0 12px;">Works</h3>
+        <div id="creative-items"></div>
+        <button class="btn" id="add-creative">+ Add Work</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Saved to memory</div>
+
+  <script>
+    // @ts-nocheck
+    let content = null;
+
+    // Navigation
+    document.querySelectorAll('.nav-item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        document.getElementById('section-' + btn.dataset.section)?.classList.add('active');
+      });
+    });
+
+    // Load content
+    async function loadContent() {
+      try { const res = await fetch('/content.json'); content = await res.json(); } catch {
+        try { const res = await fetch('/data/content.json'); content = await res.json(); } catch {
+          try { const res = await fetch('../data/content.json'); content = await res.json(); } catch {
+            content = { site: {}, showcase: { slides: [] }, disciplines: [], pages: { photography: { title: 'Photography', description: '', collections: [] }, music: { title: 'Music', description: '', gear: [], influences: '' }, code: { title: 'Code', description: '', projects: [] }, creative: { title: 'Creative', description: '', works: [] }, about: { title: 'About', bio: [], facts: [] } } };
+          }
+        }
+      }
+      populateAll();
+    }
+
+    function populateAll() {
+      document.querySelectorAll('[data-path]').forEach(el => {
+        const val = getNestedValue(content, el.dataset.path);
+        el.value = Array.isArray(val) ? val.join('\n') : (val || '');
+      });
+      renderShowcaseSlides();
+      renderDisciplines();
+      renderAboutFacts();
+      renderCollections();
+      renderProjects();
+      renderCreativeWorks();
+      renderAudioClips();
+    }
+
+    function getNestedValue(obj, path) { return path.split('.').reduce((o, k) => o?.[k], obj); }
+    function setNestedValue(obj, path, value) {
+      const keys = path.split('.');
+      let cur = obj;
+      for (let i = 0; i < keys.length - 1; i++) { if (!cur[keys[i]]) cur[keys[i]] = {}; cur = cur[keys[i]]; }
+      cur[keys[keys.length - 1]] = value;
+    }
+
+    document.addEventListener('input', (e) => {
+      if (e.target.dataset.path) {
+        const path = e.target.dataset.path;
+        const val = e.target.tagName === 'TEXTAREA' && path.includes('.bio')
+          ? e.target.value.split('\n').filter(l => l.trim()) : e.target.value;
+        setNestedValue(content, path, val);
+      }
+    });
+
+    function showToast(msg = 'Saved to memory') {
+      const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2000);
+    }
+
+    function esc(s) { return String(s || '').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+    // Drop zone helper
+    function createDropZone(idx, type, currentFile) {
+      const id = `drop-${type}-${idx}`;
+      return `<div class="drop-zone" id="${id}" data-idx="${idx}" data-type="${type}">
+        <input type="file" accept="image/jpeg,image/png,image/webp" />
+        ${currentFile ? `<img src="${currentFile}" />` : `
+          <div class="drop-icon">📁</div>
+          <div class="drop-text">Drop image or click to browse</div>
+          <div class="drop-formats">JPG, PNG, WebP</div>
+          <div class="drop-size">Recommended: 1920×1080</div>
+        `}
+      </div>`;
+    }
+
+    function setupDropZones() {
+      document.querySelectorAll('.drop-zone').forEach(zone => {
+        const input = zone.querySelector('input[type="file"]');
+        const idx = parseInt(zone.dataset.idx);
+        const type = zone.dataset.type;
+
+        zone.addEventListener('dragover', (e) => { e.preventDefault(); zone.classList.add('dragover'); });
+        zone.addEventListener('dragleave', () => zone.classList.remove('dragover'));
+        zone.addEventListener('drop', (e) => {
+          e.preventDefault(); zone.classList.remove('dragover');
+          const file = e.dataTransfer.files[0];
+          if (file) readFile(file, zone, idx, type);
+        });
+        input?.addEventListener('change', (e) => {
+          const file = e.target.files[0];
+          if (file) readFile(file, zone, idx, type);
+        });
+      });
+    }
+
+    function readFile(file, zone, idx, type) {
+      if (!file.type.match(/^image\/(jpeg|png|webp)$/)) { showToast('Unsupported format'); return; }
+      if (file.size > 10 * 1024 * 1024) { showToast('File too large (max 10MB)'); return; }
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const dataUrl = e.target.result;
+        zone.innerHTML = `<img src="${dataUrl}" /><input type="file" accept="image/jpeg,image/png,image/webp" />`;
+        setupDropZones();
+        // Store in content
+        if (type === 'col-photo') {
+          const [ci, pi] = idx.toString().split('-').map(Number);
+          content.pages.photography.collections[ci].photos[pi].file = dataUrl;
+        } else if (type === 'slide') {
+          content.showcase.slides[idx].imageFile = dataUrl;
+        } else if (type === 'proj-banner') {
+          content.pages.code.projects[idx].file = dataUrl;
+        } else if (type === 'cre-banner') {
+          content.pages.creative.works[idx].file = dataUrl;
+        }
+        showToast('Image loaded');
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // ========== SHOWCASE SLIDES ==========
+    function renderShowcaseSlides() {
+      const c = document.getElementById('showcase-slides'); c.innerHTML = '';
+      (content.showcase?.slides || []).forEach((s, i) => {
+        const d = document.createElement('div'); d.className = 'card slide-item';
+        d.innerHTML = `
+          <div class="card-header"><h3>${esc(s.icon)} ${esc(s.title)}</h3><span class="card-number">#${i+1}</span></div>
+          <div class="field"><label>Banner Image</label>${createDropZone(i, 'slide', s.imageFile || s.file || '')}</div>
+          <div class="field-row">
+            <div class="field"><label>Title</label><input type="text" value="${esc(s.title)}" data-arr="showcase.slides" data-idx="${i}" data-key="title"></div>
+            <div class="field"><label>Category</label><input type="text" value="${esc(s.category)}" data-arr="showcase.slides" data-idx="${i}" data-key="category"></div>
+          </div>
+          <div class="field"><label>Description</label><input type="text" value="${esc(s.description)}" data-arr="showcase.slides" data-idx="${i}" data-key="description"></div>
+          <div class="field-row">
+            <div class="field"><label>Icon</label><input type="text" value="${esc(s.icon)}" data-arr="showcase.slides" data-idx="${i}" data-key="icon"></div>
+            <div class="field"><label>Link</label><input type="text" value="${esc(s.href)}" data-arr="showcase.slides" data-idx="${i}" data-key="href"></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label>Dot Color</label><div class="color-input"><input type="color" value="${s.dotColor}" data-arr="showcase.slides" data-idx="${i}" data-key="dotColor"><input type="text" value="${esc(s.dotColor)}" data-arr="showcase.slides" data-idx="${i}" data-key="dotColor"></div></div>
+            <div class="field"><label>Gradient</label><input type="text" value="${esc(s.gradient)}" data-arr="showcase.slides" data-idx="${i}" data-key="gradient"></div>
+          </div>
+          <button class="btn btn-danger remove-btn" data-rm="showcase.slides" data-idx="${i}">✕ Remove</button>`;
+        c.appendChild(d);
+      });
+      c.querySelectorAll('[data-arr]').forEach(el => {
+        el.addEventListener('input', () => {
+          const [root, sub] = el.dataset.arr.split('.');
+          content[root][sub][parseInt(el.dataset.idx)][el.dataset.key] = el.value;
+        });
+      });
+      c.querySelectorAll('[data-rm]').forEach(el => {
+        el.addEventListener('click', () => {
+          const [root, sub] = el.dataset.rm.split('.');
+          content[root][sub].splice(parseInt(el.dataset.idx), 1);
+          renderShowcaseSlides();
+        });
+      });
+      setupDropZones();
+    }
+
+    document.getElementById('add-slide')?.addEventListener('click', () => {
+      content.showcase.slides.push({ title:'New Slide', category:'Category', description:'Description', icon:'✨', gradient:'linear-gradient(135deg, #667eea, #764ba2)', dotColor:'#667eea', href:'/' });
+      renderShowcaseSlides();
+    });
+
+    // ========== DISCIPLINES ==========
+    function renderDisciplines() {
+      const c = document.getElementById('discipline-items'); c.innerHTML = '';
+      (content.disciplines || []).forEach((d, i) => {
+        const el = document.createElement('div'); el.className = 'card slide-item';
+        el.innerHTML = `
+          <div class="card-header"><h3>${esc(d.number)} ${esc(d.title)}</h3><span class="card-number">#${i+1}</span></div>
+          <div class="field-row">
+            <div class="field"><label>Title</label><input type="text" value="${esc(d.title)}" data-disc="${i}" data-key="title"></div>
+            <div class="field"><label>Number</label><input type="text" value="${esc(d.number)}" data-disc="${i}" data-key="number"></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label>Tagline</label><input type="text" value="${esc(d.tagline)}" data-disc="${i}" data-key="tagline"></div>
+            <div class="field"><label>Link</label><input type="text" value="${esc(d.href)}" data-disc="${i}" data-key="href"></div>
+          </div>
+          <div class="field"><label>Color</label><div class="color-input"><input type="color" value="${d.color}" data-disc="${i}" data-key="color"><input type="text" value="${esc(d.color)}" data-disc="${i}" data-key="color"></div></div>
+          <button class="btn btn-danger remove-btn" data-rm-disc="${i}">✕ Remove</button>`;
+        c.appendChild(el);
+      });
+      c.querySelectorAll('[data-disc]').forEach(el => {
+        el.addEventListener('input', () => { content.disciplines[parseInt(el.dataset.disc)][el.dataset.key] = el.value; });
+      });
+      c.querySelectorAll('[data-rm-disc]').forEach(el => {
+        el.addEventListener('click', () => { content.disciplines.splice(parseInt(el.dataset.rmDisc), 1); renderDisciplines(); });
+      });
+    }
+
+    document.getElementById('add-discipline')?.addEventListener('click', () => {
+      content.disciplines.push({ title:'New Item', tagline:'Tagline', href:'/', color:'#667eea', number: String(content.disciplines.length+1).padStart(2,'0') });
+      renderDisciplines();
+    });
+
+    // ========== ABOUT FACTS ==========
+    function renderAboutFacts() {
+      const c = document.getElementById('about-facts'); c.innerHTML = '';
+      (content.pages?.about?.facts || []).forEach((f, i) => {
+        const el = document.createElement('div'); el.className = 'card slide-item';
+        el.innerHTML = `<div class="field-row">
+          <div class="field"><label>Text</label><input type="text" value="${esc(f.text)}" data-fact="${i}" data-key="text"></div>
+          <div class="field"><label>Color</label><div class="color-input"><input type="color" value="${f.color}" data-fact="${i}" data-key="color"><input type="text" value="${esc(f.color)}" data-fact="${i}" data-key="color"></div></div>
+        </div><button class="btn btn-danger" style="margin-top:8px" data-rm-fact="${i}">✕ Remove</button>`;
+        c.appendChild(el);
+      });
+      c.querySelectorAll('[data-fact]').forEach(el => {
+        el.addEventListener('input', () => { content.pages.about.facts[parseInt(el.dataset.fact)][el.dataset.key] = el.value; });
+      });
+      c.querySelectorAll('[data-rm-fact]').forEach(el => {
+        el.addEventListener('click', () => { content.pages.about.facts.splice(parseInt(el.dataset.rmFact), 1); renderAboutFacts(); });
+      });
+    }
+
+    document.getElementById('add-fact')?.addEventListener('click', () => {
+      content.pages.about.facts.push({ color:'#3b82f6', text:'New fact' }); renderAboutFacts();
+    });
+
+    // ========== COLLECTIONS (PHOTOGRAPHY) ==========
+    function renderCollections() {
+      const c = document.getElementById('collection-items'); c.innerHTML = '';
+      const collections = content.pages?.photography?.collections || [];
+      collections.forEach((col, ci) => {
+        const el = document.createElement('div'); el.className = 'card slide-item';
+        const photos = col.photos || [];
+        const previewSet = new Set(col.previewPhotos || []);
+
+        let photosHTML = '';
+        photos.forEach((p, pi) => {
+          const isPreview = previewSet.has(pi);
+          photosHTML += `
+            <div class="card" style="margin-bottom:8px; margin-left:16px; border-left: 3px solid var(--border);">
+              <div class="card-header"><h3 style="font-size:13px">📷 ${esc(p.alt)}</h3><span class="card-number">#${pi+1}</span></div>
+              <div class="field" style="margin-bottom:8px"><label>Photo</label>${createDropZone(`${ci}-${pi}`, 'col-photo', p.file || '')}</div>
+              <div class="field-row">
+                <div class="field"><label>Alt Text</label><input type="text" value="${esc(p.alt)}" data-ci="${ci}" data-pi="${pi}" data-pkey="alt"></div>
+                <div class="field"><label>Category</label><input type="text" value="${esc(p.category)}" data-ci="${ci}" data-pi="${pi}" data-pkey="category"></div>
+              </div>
+              <div class="field"><label>Tags (comma-separated)</label><input type="text" value="${esc((p.tags||[]).join(', '))}" data-ci="${ci}" data-pi="${pi}" data-pkey="tags"></div>
+              <div class="field-row">
+                <div class="field"><label>Camera</label><input type="text" value="${esc(p.camera)}" data-ci="${ci}" data-pi="${pi}" data-pkey="camera"></div>
+                <div class="field"><label>Lens</label><input type="text" value="${esc(p.lens)}" data-ci="${ci}" data-pi="${pi}" data-pkey="lens"></div>
+              </div>
+              <div class="field"><label>Location</label><input type="text" value="${esc(p.location)}" data-ci="${ci}" data-pi="${pi}" data-pkey="location"></div>
+              <button class="btn btn-danger" style="margin-top:8px" data-rm-col-photo="${ci}-${pi}">✕ Remove</button>
+            </div>`;
+        });
+
+        el.innerHTML = `
+          <div class="card-header">
+            <h3>${col.featured ? '⭐' : '○'} ${esc(col.title)}</h3>
+            <div style="display:flex; gap:6px; align-items:center;">
+              <button class="btn" style="font-size:11px; padding:4px 8px;" data-star-col="${ci}">${col.featured ? '★ Featured' : '☆ Feature'}</button>
+              <span class="card-number">#${ci+1}</span>
+            </div>
+          </div>
+          <div class="field"><label>Title</label><input type="text" value="${esc(col.title)}" data-col="${ci}" data-key="title"></div>
+          <div class="field"><label>Description</label><textarea data-col="${ci}" data-key="description" rows="2">${esc(col.description)}</textarea></div>
+          <div class="field"><label>ID (auto-generated)</label><input type="text" value="${esc(col.id)}" data-col="${ci}" data-key="id" style="opacity:0.6"></div>
+          ${photos.length > 0 ? `
+          <div class="field"><label>Preview Photos (shown in carousel)</label>
+            <div style="display:flex; flex-direction:column; gap:4px; margin-top:4px;">
+              ${photos.map((p, pi) => `
+                <label style="display:flex; align-items:center; gap:8px; font-size:12px; color:var(--text-dim); cursor:pointer;">
+                  <input type="checkbox" class="preview-check" data-ci="${ci}" data-pi="${pi}" ${isPreview ? 'checked' : ''} />
+                  ${esc(p.alt || 'Photo ' + (pi+1))}
+                </label>
+              `).join('')}
+            </div>
+          </div>` : ''}
+          <div style="margin-top:12px;">
+            <label style="display:block; font-size:12px; font-weight:600; color:var(--text-dim); margin-bottom:8px; text-transform:uppercase; letter-spacing:0.05em;">Photos</label>
+            ${photosHTML}
+            <button class="btn" style="margin-top:8px" data-add-col-photo="${ci}">+ Add Photo</button>
+          </div>
+          <button class="btn btn-danger" style="margin-top:12px" data-rm-col="${ci}">✕ Remove Collection</button>`;
+        c.appendChild(el);
+      });
+
+      // Collection field inputs
+      c.querySelectorAll('[data-col]').forEach(el => {
+        el.addEventListener('input', () => {
+          const ci = parseInt(el.dataset.col); const key = el.dataset.key;
+          if (key === 'description') content.pages.photography.collections[ci][key] = el.value;
+          else content.pages.photography.collections[ci][key] = el.value;
+        });
+      });
+
+      // Star/unstar
+      c.querySelectorAll('[data-star-col]').forEach(el => {
+        el.addEventListener('click', () => {
+          const ci = parseInt(el.dataset.starCol);
+          collections.forEach((col, i) => { col.featured = (i === ci); });
+          renderCollections();
+        });
+      });
+
+      // Photo field inputs
+      c.querySelectorAll('[data-pkey]').forEach(el => {
+        el.addEventListener('input', () => {
+          const ci = parseInt(el.dataset.ci); const pi = parseInt(el.dataset.pi); const key = el.dataset.pkey;
+          if (key === 'tags') content.pages.photography.collections[ci].photos[pi].tags = el.value.split(',').map(t=>t.trim()).filter(Boolean);
+          else content.pages.photography.collections[ci].photos[pi][key] = el.value;
+        });
+      });
+
+      // Preview photo checkboxes
+      c.querySelectorAll('.preview-check').forEach(el => {
+        el.addEventListener('change', () => {
+          const ci = parseInt(el.dataset.ci);
+          const checked = [...c.querySelectorAll(`.preview-check[data-ci="${ci}"]:checked`)].map(ch => parseInt(ch.dataset.pi));
+          content.pages.photography.collections[ci].previewPhotos = checked;
+        });
+      });
+
+      // Remove photo
+      c.querySelectorAll('[data-rm-col-photo]').forEach(el => {
+        el.addEventListener('click', () => {
+          const [ci, pi] = el.dataset.rmColPhoto.split('-').map(Number);
+          content.pages.photography.collections[ci].photos.splice(pi, 1);
+          renderCollections();
+        });
+      });
+
+      // Add photo to collection
+      c.querySelectorAll('[data-add-col-photo]').forEach(el => {
+        el.addEventListener('click', () => {
+          const ci = parseInt(el.dataset.addColPhoto);
+          content.pages.photography.collections[ci].photos.push({ alt:'New photo', category:'landscape', tags:[], camera:'', lens:'', location:'', file:'' });
+          renderCollections();
+        });
+      });
+
+      // Remove collection
+      c.querySelectorAll('[data-rm-col]').forEach(el => {
+        el.addEventListener('click', () => {
+          content.pages.photography.collections.splice(parseInt(el.dataset.rmCol), 1);
+          renderCollections();
+        });
+      });
+
+      setupDropZones();
+    }
+
+    document.getElementById('add-collection')?.addEventListener('click', () => {
+      if (!content.pages.photography.collections) content.pages.photography.collections = [];
+      const id = 'new-collection-' + Date.now();
+      content.pages.photography.collections.push({ id, title:'New Collection', description:'', featured:false, previewPhotos:[], photos:[] });
+      renderCollections();
+    });
+
+    // ========== PROJECTS ==========
+    function renderProjects() {
+      const c = document.getElementById('project-items'); c.innerHTML = '';
+      (content.pages?.code?.projects || []).forEach((p, i) => {
+        const el = document.createElement('div'); el.className = 'card slide-item';
+        el.innerHTML = `
+          <div class="card-header"><h3>${esc(p.icon||'📦')} ${esc(p.title)}</h3><span class="card-number">#${i+1}</span></div>
+          <div class="field"><label>Banner / Preview Image</label>${createDropZone(i, 'proj-banner', p.file || '')}</div>
+          <div class="field-row">
+            <div class="field"><label>Title</label><input type="text" value="${esc(p.title)}" data-proj="${i}" data-key="title"></div>
+            <div class="field"><label>Icon (emoji)</label><input type="text" value="${esc(p.icon)}" data-proj="${i}" data-key="icon"></div>
+          </div>
+          <div class="field"><label>Short Description</label><input type="text" value="${esc(p.description)}" data-proj="${i}" data-key="description"></div>
+          <div class="field"><label>Full Description (for overlay)</label><textarea data-proj="${i}" data-key="longDescription" rows="4">${esc(p.longDescription)}</textarea></div>
+          <div class="field"><label>Tech Details</label><input type="text" value="${esc(p.techDetails)}" data-proj="${i}" data-key="techDetails"></div>
+          <div class="field"><label>Tags (comma-separated)</label><input type="text" value="${esc(p.tags?.join(', '))}" data-proj="${i}" data-key="tags"></div>
+          <div class="field-row">
+            <div class="field"><label>GitHub URL</label><input type="text" value="${esc(p.github)}" data-proj="${i}" data-key="github"></div>
+            <div class="field"><label>Live URL</label><input type="text" value="${esc(p.live)}" data-proj="${i}" data-key="live"></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label>Banner Color</label><div class="color-input"><input type="color" value="${p.bannerColor || '#667eea'}" data-proj="${i}" data-key="bannerColor"><input type="text" value="${esc(p.bannerColor)}" data-proj="${i}" data-key="bannerColor"></div></div>
+            <div class="field"><label>Gradient</label><input type="text" value="${esc(p.gradient)}" data-proj="${i}" data-key="gradient"></div>
+          </div>
+          <button class="btn btn-danger" style="margin-top:8px" data-rm-proj="${i}">✕ Remove</button>`;
+        c.appendChild(el);
+      });
+      c.querySelectorAll('[data-proj]').forEach(el => {
+        el.addEventListener('input', () => {
+          const idx = parseInt(el.dataset.proj); const key = el.dataset.key;
+          if (key === 'tags') content.pages.code.projects[idx].tags = el.value.split(',').map(t=>t.trim()).filter(Boolean);
+          else content.pages.code.projects[idx][key] = el.value;
+        });
+      });
+      c.querySelectorAll('[data-rm-proj]').forEach(el => {
+        el.addEventListener('click', () => { content.pages.code.projects.splice(parseInt(el.dataset.rmProj), 1); renderProjects(); });
+      });
+    }
+
+    document.getElementById('add-project')?.addEventListener('click', () => {
+      content.pages.code.projects.push({ title:'New Project', description:'Description', longDescription:'Detailed description...', tags:[], techDetails:'', github:'#', live:'#', icon:'📦', gradient:'linear-gradient(135deg, #667eea, #764ba2)', bannerColor:'#667eea', file:'' });
+      renderProjects();
+    });
+
+    // ========== CREATIVE WORKS ==========
+    function renderCreativeWorks() {
+      const c = document.getElementById('creative-items'); c.innerHTML = '';
+      (content.pages?.creative?.works || []).forEach((w, i) => {
+        const el = document.createElement('div'); el.className = 'card slide-item';
+        el.innerHTML = `
+          <div class="card-header"><h3>${esc(w.icon||'🎨')} ${esc(w.title)}</h3><span class="card-number">#${i+1}</span></div>
+          <div class="field"><label>Banner / Preview Image</label>${createDropZone(i, 'cre-banner', w.file || '')}</div>
+          <div class="field-row">
+            <div class="field"><label>Title</label><input type="text" value="${esc(w.title)}" data-cre="${i}" data-key="title"></div>
+            <div class="field"><label>Icon</label><input type="text" value="${esc(w.icon)}" data-cre="${i}" data-key="icon"></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label>Type</label><input type="text" value="${esc(w.type)}" data-cre="${i}" data-key="type"></div>
+            <div class="field"><label>Tags (comma-separated)</label><input type="text" value="${esc((w.tags||[]).join(', '))}" data-cre="${i}" data-key="tags"></div>
+          </div>
+          <div class="field"><label>Short Description</label><input type="text" value="${esc(w.description)}" data-cre="${i}" data-key="description"></div>
+          <div class="field"><label>Full Description (for overlay)</label><textarea data-cre="${i}" data-key="longDescription" rows="4">${esc(w.longDescription)}</textarea></div>
+          <div class="field-row">
+            <div class="field"><label>Banner Color</label><div class="color-input"><input type="color" value="${w.bannerColor || '#a18cd1'}" data-cre="${i}" data-key="bannerColor"><input type="text" value="${esc(w.bannerColor)}" data-cre="${i}" data-key="bannerColor"></div></div>
+            <div class="field"><label>Gradient</label><input type="text" value="${esc(w.gradient)}" data-cre="${i}" data-key="gradient"></div>
+          </div>
+          <button class="btn btn-danger" style="margin-top:8px" data-rm-cre="${i}">✕ Remove</button>`;
+        c.appendChild(el);
+      });
+      c.querySelectorAll('[data-cre]').forEach(el => {
+        el.addEventListener('input', () => {
+          const idx = parseInt(el.dataset.cre); const key = el.dataset.key;
+          if (key === 'tags') content.pages.creative.works[idx].tags = el.value.split(',').map(t=>t.trim()).filter(Boolean);
+          else content.pages.creative.works[idx][key] = el.value;
+        });
+      });
+      c.querySelectorAll('[data-rm-cre]').forEach(el => {
+        el.addEventListener('click', () => { content.pages.creative.works.splice(parseInt(el.dataset.rmCre), 1); renderCreativeWorks(); });
+      });
+    }
+
+    document.getElementById('add-creative')?.addEventListener('click', () => {
+      content.pages.creative.works.push({ title:'New Work', description:'Description', type:'art', longDescription:'Detailed description...', tags:[], icon:'🎨', gradient:'linear-gradient(135deg, #a18cd1, #fbc2eb)', bannerColor:'#a18cd1', file:'' });
+      renderCreativeWorks();
+    });
+
+    // ========== AUDIO CLIPS ==========
+    function renderAudioClips() {
+      const c = document.getElementById('audio-clip-items'); c.innerHTML = '';
+      if (!content.pages.music) content.pages.music = {};
+      if (!content.pages.music.audioClips) content.pages.music.audioClips = [];
+      (content.pages.music.audioClips || []).forEach((clip, i) => {
+        const el = document.createElement('div'); el.className = 'card slide-item';
+        el.innerHTML = `
+          <div class="card-header"><h3>🎵 ${esc(clip.title)}</h3><span class="card-number">#${i+1}</span></div>
+          <div class="field"><label>Audio File</label>
+            <div style="display:flex; gap:8px; align-items:center;">
+              <input type="text" value="${esc(clip.file)}" data-audio="${i}" data-key="file" placeholder="/audio/clip.mp3" style="flex:1;" />
+              <label class="btn" style="cursor:pointer; white-space:nowrap;">
+                Browse
+                <input type="file" accept="audio/*" style="display:none;" data-audio-browse="${i}" />
+              </label>
+            </div>
+            ${clip.file ? `<div style="margin-top:8px;"><audio controls preload="none" style="width:100%; height:32px;"><source src="${esc(clip.file)}" /></audio></div>` : ''}
+            <div class="hint">Place audio files in <code>public/audio/</code> and set path as <code>/audio/filename.mp3</code></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label>Title</label><input type="text" value="${esc(clip.title)}" data-audio="${i}" data-key="title"></div>
+            <div class="field"><label>Duration</label><input type="text" value="${esc(clip.duration || '')}" data-audio="${i}" data-key="duration" placeholder="3:45"></div>
+          </div>
+          <div class="field"><label>Description</label><input type="text" value="${esc(clip.description)}" data-audio="${i}" data-key="description"></div>
+          <div class="field"><label>Tags (comma-separated)</label><input type="text" value="${esc((clip.tags||[]).join(', '))}" data-audio="${i}" data-key="tags"></div>
+          <button class="btn btn-danger" style="margin-top:8px" data-rm-audio="${i}">✕ Remove</button>`;
+        c.appendChild(el);
+      });
+      c.querySelectorAll('[data-audio]').forEach(el => {
+        el.addEventListener('input', () => {
+          const idx = parseInt(el.dataset.audio); const key = el.dataset.key;
+          if (key === 'tags') content.pages.music.audioClips[idx].tags = el.value.split(',').map(t=>t.trim()).filter(Boolean);
+          else content.pages.music.audioClips[idx][key] = el.value;
+        });
+      });
+      c.querySelectorAll('[data-rm-audio]').forEach(el => {
+        el.addEventListener('click', () => { content.pages.music.audioClips.splice(parseInt(el.dataset.rmAudio), 1); renderAudioClips(); });
+      });
+      c.querySelectorAll('[data-audio-browse]').forEach(input => {
+        input.addEventListener('change', (e) => {
+          const file = e.target.files[0]; if (!file) return;
+          const idx = parseInt(input.dataset.audioBrowse);
+          if (file.size > 50 * 1024 * 1024) { showToast('File too large (max 50MB)'); return; }
+          const reader = new FileReader();
+          reader.onload = (ev) => {
+            content.pages.music.audioClips[idx].file = ev.target.result;
+            content.pages.music.audioClips[idx].duration = '';
+            renderAudioClips();
+            showToast('Audio loaded — file embedded as data URL');
+          };
+          reader.readAsDataURL(file);
+        });
+      });
+    }
+
+    document.getElementById('add-audio-clip')?.addEventListener('click', () => {
+      content.pages.music.audioClips.push({ title:'New Clip', description:'Description', file:'', duration:'', tags:[] });
+      renderAudioClips();
+    });
+
+    // ========== EXPORT ==========
+    document.getElementById('export-btn')?.addEventListener('click', () => {
+      const json = JSON.stringify(content, null, 2);
+      const blob = new Blob([json], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = 'content.json'; a.click();
+      URL.revokeObjectURL(url); showToast('Downloaded content.json');
+    });
+
+    // ========== IMPORT ==========
+    document.getElementById('import-btn')?.addEventListener('click', () => document.getElementById('import-file')?.click());
+    document.getElementById('import-file')?.addEventListener('change', (e) => {
+      const file = e.target.files[0]; if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        try { content = JSON.parse(ev.target.result); populateAll(); showToast('Imported successfully'); }
+        catch { showToast('Invalid JSON file'); }
+      };
+      reader.readAsText(file);
+    });
+
+    loadContent();
+  </script>
+</body>
+</html>

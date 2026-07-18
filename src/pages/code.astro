@@ -1,0 +1,253 @@
+---
+import Layout from '../layouts/Layout.astro';
+import content from '../../data/content.json';
+
+const code = content.pages.code;
+const allTags = [...new Set(code.projects.flatMap((p: any) => p.tags || []))];
+---
+
+<Layout title="Code — Guru Ankam">
+  <section class="px-6 py-16 max-w-4xl mx-auto" data-debug="code-page">
+    <span class="debug-label" style="top:60px; left:12px; display:none;">CODE — Project cards with detail overlays</span>
+    <div class="flex items-start justify-between gap-4 mb-10">
+      <div class="flex-1 min-w-0">
+        <p class="section-label mb-2 fade-in">Code</p>
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-3 fade-in fade-in-delay-1" style="color: var(--text-primary);">{code.title}</h1>
+        <p class="text-sm leading-relaxed fade-in fade-in-delay-2" style="color: var(--text-secondary);">
+          {code.description}
+        </p>
+      </div>
+      <span class="text-6xl md:text-8xl flex-shrink-0 opacity-[0.08] select-none fade-in fade-in-delay-1">💻</span>
+    </div>
+
+    <!-- Tag dropdown filter -->
+    <div class="fade-in fade-in-delay-3 mb-6 filter-section">
+      <div class="relative inline-block" id="code-tag-dropdown-wrap">
+        <button id="code-tag-dropdown-btn" class="px-4 py-1.5 rounded-full text-xs font-medium border transition-all flex items-center gap-1.5"
+          style="border-color: var(--border); background: var(--bg-card); color: var(--text-muted);">
+          <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z"/></svg>
+          Filter by tag
+          <svg class="w-3 h-3 transition-transform" id="code-tag-dropdown-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <span id="code-active-tag-pill" class="hidden ml-2 inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium" style="background: var(--tag-bg); color: var(--tag-text);">
+          <span id="code-active-tag-text"></span>
+          <button id="code-active-tag-remove" class="ml-0.5 hover:opacity-70 transition-opacity">
+            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </span>
+        <div id="code-tag-dropdown" class="hidden absolute top-full left-0 mt-2 w-56 rounded-xl border z-50 py-2 max-h-64 overflow-y-auto"
+          style="background: var(--bg-card); border-color: var(--border); box-shadow: var(--card-shadow-hover);">
+          {allTags.map(tag => (
+            <button class="code-tag-dropdown-item w-full text-left px-3 py-2 text-xs flex items-center gap-2 transition-colors hover:bg-[var(--bg-card-hover)]"
+              data-tag={tag} style="color: var(--text-secondary);">
+              <span class="px-1.5 py-0.5 rounded text-[10px] font-medium" style="background: var(--tag-bg); color: var(--tag-text);">{tag}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-3 fade-in fade-in-delay-4" id="code-project-list">
+      {code.projects.map((project: any, i: number) => (
+        <div
+          class="group rounded-2xl border overflow-hidden card-hover transition-colors cursor-pointer project-card"
+          style="border-color: var(--border); background: var(--bg-card);"
+          data-index={i}
+          data-project={JSON.stringify(project)}
+          data-tags={JSON.stringify(project.tags || [])}
+        >
+          <div class="relative h-32 overflow-hidden" style={`background: ${project.file ? 'var(--bg-secondary)' : (project.gradient || 'var(--bg-secondary)')};`}>
+            {project.file ? (
+              <img src={project.file} alt={project.title} class="w-full h-full object-cover" />
+            ) : (
+              <div class="flex items-center justify-center h-full">
+                <span class="text-4xl opacity-60">{project.icon || '📦'}</span>
+              </div>
+            )}
+          </div>
+          <div class="p-5">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
+              <div class="flex items-center gap-3">
+                <span class="text-2xl">{project.icon || '📦'}</span>
+                <h3 class="text-base font-semibold" style="color: var(--text-primary);">{project.title}</h3>
+              </div>
+              <div class="flex items-center gap-3">
+                {project.github && project.github !== '#' && (
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" class="text-xs flex items-center gap-1 transition-colors z-10" style="color: var(--text-muted);" onclick="event.stopPropagation()">
+                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    Code
+                  </a>
+                )}
+                {project.live && project.live !== '#' && (
+                  <a href={project.live} target="_blank" rel="noopener noreferrer" class="text-xs flex items-center gap-1 transition-colors z-10" style="color: var(--text-muted);" onclick="event.stopPropagation()">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                    Live
+                  </a>
+                )}
+              </div>
+            </div>
+            <p class="text-xs mb-3" style="color: var(--text-secondary);">{project.description}</p>
+            <div class="flex flex-wrap gap-1.5">
+              {project.tags.map((tag: string) => (
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-medium" style="background: var(--tag-bg); color: var(--tag-text);">{tag}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Detail Overlay -->
+  <div class="detail-overlay" id="project-overlay">
+    <button class="detail-back" id="project-overlay-close">
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+    <div id="project-overlay-banner" class="detail-banner"></div>
+    <div class="detail-content">
+      <div class="detail-main">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="text-3xl" id="overlay-icon"></span>
+          <h1 class="text-2xl md:text-3xl font-bold" style="color: var(--text-primary);" id="overlay-title"></h1>
+        </div>
+        <p class="text-sm mb-6" style="color: var(--text-secondary);" id="overlay-desc"></p>
+
+        <div class="prose prose-sm max-w-none" id="overlay-long-desc" style="color: var(--text-secondary);"></div>
+
+        <div class="mt-8 flex gap-3">
+          <a id="overlay-github" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all" style="background: var(--bg-card); border: 1px solid var(--border); color: var(--text-primary);">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            View Code
+          </a>
+          <a id="overlay-live" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all" style="background: var(--accent-1); color: white;">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            Live Demo
+          </a>
+        </div>
+      </div>
+
+      <div class="detail-sidebar">
+        <div class="rounded-xl border p-4" style="background: var(--bg-card); border-color: var(--border);">
+          <h3 class="text-xs font-semibold uppercase tracking-wider mb-3" style="color: var(--text-muted);">Tech Stack</h3>
+          <div class="flex flex-wrap gap-1.5" id="overlay-tags"></div>
+        </div>
+        <div class="rounded-xl border p-4 mt-3" style="background: var(--bg-card); border-color: var(--border);">
+          <h3 class="text-xs font-semibold uppercase tracking-wider mb-3" style="color: var(--text-muted);">Details</h3>
+          <p class="text-xs leading-relaxed" style="color: var(--text-secondary);" id="overlay-tech"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  const projectCards = document.querySelectorAll('.project-card');
+  const overlay = document.getElementById('project-overlay');
+  const overlayClose = document.getElementById('project-overlay-close');
+
+  // Tag dropdown for Code
+  const codeTagDropdownBtn = document.getElementById('code-tag-dropdown-btn');
+  const codeTagDropdown = document.getElementById('code-tag-dropdown');
+  const codeTagDropdownArrow = document.getElementById('code-tag-dropdown-arrow');
+  const codeActiveTagPill = document.getElementById('code-active-tag-pill');
+  const codeActiveTagText = document.getElementById('code-active-tag-text');
+  const codeActiveTagRemove = document.getElementById('code-active-tag-remove');
+  const codeTagItems = document.querySelectorAll('.code-tag-dropdown-item');
+  let activeCodeTag = '';
+
+  codeTagDropdownBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    codeTagDropdown?.classList.toggle('hidden');
+    codeTagDropdownArrow?.classList.toggle('rotate-180');
+  });
+
+  document.addEventListener('click', () => {
+    codeTagDropdown?.classList.add('hidden');
+    codeTagDropdownArrow?.classList.remove('rotate-180');
+  });
+
+  codeTagItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const tag = (item as HTMLElement).dataset.tag || '';
+      activeCodeTag = tag;
+      if (codeActiveTagPill && codeActiveTagText) {
+        codeActiveTagText.textContent = tag;
+        codeActiveTagPill.classList.remove('hidden');
+      }
+      codeTagDropdown?.classList.add('hidden');
+      codeTagDropdownArrow?.classList.remove('rotate-180');
+      applyCodeFilters();
+    });
+  });
+
+  codeActiveTagRemove?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    activeCodeTag = '';
+    codeActiveTagPill?.classList.add('hidden');
+    applyCodeFilters();
+  });
+
+  function applyCodeFilters() {
+    projectCards.forEach(card => {
+      const el = card as HTMLElement;
+      const tags = JSON.parse(el.dataset.tags || '[]');
+      const match = !activeCodeTag || tags.includes(activeCodeTag);
+      el.style.display = match ? '' : 'none';
+    });
+  }
+
+  // Open project overlay
+  projectCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const project = JSON.parse((card as HTMLElement).dataset.project || '{}');
+      openProject(project);
+    });
+  });
+
+  function openProject(project: any) {
+    document.getElementById('overlay-icon')!.textContent = project.icon || '📦';
+    document.getElementById('overlay-title')!.textContent = project.title || '';
+    document.getElementById('overlay-desc')!.textContent = project.description || '';
+    document.getElementById('overlay-long-desc')!.innerHTML = project.longDescription || '<p>No detailed description yet.</p>';
+    document.getElementById('overlay-tech')!.textContent = project.techDetails || '';
+
+    const banner = document.getElementById('project-overlay-banner')!;
+    if (project.file) {
+      banner.style.background = 'var(--bg-secondary)';
+      banner.innerHTML = `<img src="${project.file}" alt="${project.title}" class="w-full h-full object-cover" />`;
+    } else {
+      banner.style.background = project.gradient || `linear-gradient(135deg, ${project.bannerColor || '#667eea'}, #764ba2)`;
+      banner.innerHTML = '';
+    }
+
+    document.getElementById('overlay-tags')!.innerHTML = (project.tags || []).map((t: string) =>
+      `<span class="px-2 py-0.5 rounded-full text-[10px] font-medium" style="background: var(--tag-bg); color: var(--tag-text);">${t}</span>`
+    ).join('');
+
+    const github = document.getElementById('overlay-github') as HTMLAnchorElement;
+    const live = document.getElementById('overlay-live') as HTMLAnchorElement;
+    github.href = project.github || '#';
+    live.href = project.live || '#';
+    github.style.display = project.github && project.github !== '#' ? '' : 'none';
+    live.style.display = project.live && project.live !== '#' ? '' : 'none';
+
+    overlay?.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeOverlay() {
+    overlay?.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  overlayClose?.addEventListener('click', closeOverlay);
+  overlay?.addEventListener('click', (e) => {
+    if (e.target === overlay) closeOverlay();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeOverlay();
+  });
+</script>

@@ -1,0 +1,217 @@
+---
+import Layout from '../layouts/Layout.astro';
+import content from '../../data/content.json';
+
+const creative = content.pages.creative;
+const allTags = [...new Set(creative.works.flatMap((w: any) => w.tags || []))];
+---
+
+<Layout title="Creative — Guru Ankam">
+  <section class="px-6 py-16 max-w-4xl mx-auto" data-debug="creative-page">
+    <span class="debug-label" style="top:60px; left:12px; display:none;">CREATIVE — Storyboard & art with detail overlays</span>
+    <div class="flex items-start justify-between gap-4 mb-10">
+      <div class="flex-1 min-w-0">
+        <p class="section-label mb-2 fade-in">Creative</p>
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-3 fade-in fade-in-delay-1" style="color: var(--text-primary);">{creative.title}</h1>
+        <p class="text-sm leading-relaxed fade-in fade-in-delay-2" style="color: var(--text-secondary);">
+          {creative.description}
+        </p>
+      </div>
+      <span class="text-6xl md:text-8xl flex-shrink-0 opacity-[0.08] select-none fade-in fade-in-delay-1">🎨</span>
+    </div>
+
+    <!-- Tag dropdown filter -->
+    <div class="fade-in fade-in-delay-3 mb-6 filter-section">
+      <div class="relative inline-block" id="cre-tag-dropdown-wrap">
+        <button id="cre-tag-dropdown-btn" class="px-4 py-1.5 rounded-full text-xs font-medium border transition-all flex items-center gap-1.5"
+          style="border-color: var(--border); background: var(--bg-card); color: var(--text-muted);">
+          <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z"/></svg>
+          Filter by tag
+          <svg class="w-3 h-3 transition-transform" id="cre-tag-dropdown-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <span id="cre-active-tag-pill" class="hidden ml-2 inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium" style="background: var(--tag-bg); color: var(--tag-text);">
+          <span id="cre-active-tag-text"></span>
+          <button id="cre-active-tag-remove" class="ml-0.5 hover:opacity-70 transition-opacity">
+            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </span>
+        <div id="cre-tag-dropdown" class="hidden absolute top-full left-0 mt-2 w-56 rounded-xl border z-50 py-2 max-h-64 overflow-y-auto"
+          style="background: var(--bg-card); border-color: var(--border); box-shadow: var(--card-shadow-hover);">
+          {allTags.map(tag => (
+            <button class="cre-tag-dropdown-item w-full text-left px-3 py-2 text-xs flex items-center gap-2 transition-colors hover:bg-[var(--bg-card-hover)]"
+              data-tag={tag} style="color: var(--text-secondary);">
+              <span class="px-1.5 py-0.5 rounded text-[10px] font-medium" style="background: var(--tag-bg); color: var(--tag-text);">#{tag}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 fade-in fade-in-delay-4" id="cre-works-list">
+      {creative.works.map((work: any, i: number) => (
+        <div
+          class="group rounded-2xl border overflow-hidden card-hover transition-colors cursor-pointer creative-card"
+          style="border-color: var(--border); background: var(--bg-card);"
+          data-index={i}
+          data-work={JSON.stringify(work)}
+          data-tags={JSON.stringify(work.tags || [])}
+        >
+          <div class="aspect-[16/9] relative overflow-hidden" style={`background: ${work.file ? 'var(--bg-secondary)' : (work.gradient || 'var(--bg-secondary)')};`}>
+            {work.file ? (
+              <img src={work.file} alt={work.title} class="w-full h-full object-cover" />
+            ) : (
+              <div class="flex items-center justify-center h-full">
+                <span class="text-4xl opacity-80">{work.icon || '🎨'}</span>
+              </div>
+            )}
+          </div>
+          <div class="p-5">
+            <span class="text-[10px] uppercase tracking-wider font-medium" style="color: var(--text-muted);">{work.type}</span>
+            <h3 class="text-base font-semibold mt-1 mb-1" style="color: var(--text-primary);">{work.title}</h3>
+            <p class="text-xs" style="color: var(--text-secondary);">{work.description}</p>
+            {work.tags && (
+              <div class="flex flex-wrap gap-1 mt-2">
+                {work.tags.map((t: string) => (
+                  <span class="text-[9px] px-1.5 py-0.5 rounded" style="background: var(--tag-bg); color: var(--tag-text);">#{t}</span>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Detail Overlay -->
+  <div class="detail-overlay" id="creative-overlay">
+    <button class="detail-back" id="creative-overlay-close">
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+    <div id="creative-overlay-banner" class="detail-banner"></div>
+    <div class="detail-content">
+      <div class="detail-main">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="text-3xl" id="creative-overlay-icon"></span>
+          <div>
+            <h1 class="text-2xl md:text-3xl font-bold" style="color: var(--text-primary);" id="creative-overlay-title"></h1>
+            <span class="text-xs uppercase tracking-wider" style="color: var(--text-muted);" id="creative-overlay-type"></span>
+          </div>
+        </div>
+        <p class="text-sm mb-6" style="color: var(--text-secondary);" id="creative-overlay-desc"></p>
+        <div class="prose prose-sm max-w-none" id="creative-overlay-long" style="color: var(--text-secondary);"></div>
+      </div>
+
+      <div class="detail-sidebar">
+        <div class="rounded-xl border p-4" style="background: var(--bg-card); border-color: var(--border);">
+          <h3 class="text-xs font-semibold uppercase tracking-wider mb-3" style="color: var(--text-muted);">Tags</h3>
+          <div class="flex flex-wrap gap-1.5" id="creative-overlay-tags"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  const creativeCards = document.querySelectorAll('.creative-card');
+  const overlay = document.getElementById('creative-overlay');
+  const overlayClose = document.getElementById('creative-overlay-close');
+
+  // Tag dropdown for Creative
+  const creTagDropdownBtn = document.getElementById('cre-tag-dropdown-btn');
+  const creTagDropdown = document.getElementById('cre-tag-dropdown');
+  const creTagDropdownArrow = document.getElementById('cre-tag-dropdown-arrow');
+  const creActiveTagPill = document.getElementById('cre-active-tag-pill');
+  const creActiveTagText = document.getElementById('cre-active-tag-text');
+  const creActiveTagRemove = document.getElementById('cre-active-tag-remove');
+  const creTagItems = document.querySelectorAll('.cre-tag-dropdown-item');
+  let activeCreTag = '';
+
+  creTagDropdownBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    creTagDropdown?.classList.toggle('hidden');
+    creTagDropdownArrow?.classList.toggle('rotate-180');
+  });
+
+  document.addEventListener('click', () => {
+    creTagDropdown?.classList.add('hidden');
+    creTagDropdownArrow?.classList.remove('rotate-180');
+  });
+
+  creTagItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const tag = (item as HTMLElement).dataset.tag || '';
+      activeCreTag = tag;
+      if (creActiveTagPill && creActiveTagText) {
+        creActiveTagText.textContent = `#${tag}`;
+        creActiveTagPill.classList.remove('hidden');
+      }
+      creTagDropdown?.classList.add('hidden');
+      creTagDropdownArrow?.classList.remove('rotate-180');
+      applyCreFilters();
+    });
+  });
+
+  creActiveTagRemove?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    activeCreTag = '';
+    creActiveTagPill?.classList.add('hidden');
+    applyCreFilters();
+  });
+
+  function applyCreFilters() {
+    creativeCards.forEach(card => {
+      const el = card as HTMLElement;
+      const tags = JSON.parse(el.dataset.tags || '[]');
+      const match = !activeCreTag || tags.includes(activeCreTag);
+      el.style.display = match ? '' : 'none';
+    });
+  }
+
+  // Open creative overlay
+  creativeCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const work = JSON.parse((card as HTMLElement).dataset.work || '{}');
+      openWork(work);
+    });
+  });
+
+  function openWork(work: any) {
+    document.getElementById('creative-overlay-icon')!.textContent = work.icon || '🎨';
+    document.getElementById('creative-overlay-title')!.textContent = work.title || '';
+    document.getElementById('creative-overlay-type')!.textContent = work.type || '';
+    document.getElementById('creative-overlay-desc')!.textContent = work.description || '';
+    document.getElementById('creative-overlay-long')!.innerHTML = work.longDescription || '<p>Detailed description coming soon.</p>';
+
+    const banner = document.getElementById('creative-overlay-banner')!;
+    if (work.file) {
+      banner.style.background = 'var(--bg-secondary)';
+      banner.innerHTML = `<img src="${work.file}" alt="${work.title}" class="w-full h-full object-cover" />`;
+    } else {
+      banner.style.background = work.gradient || `linear-gradient(135deg, ${work.bannerColor || '#a18cd1'}, #fbc2eb)`;
+      banner.innerHTML = '';
+    }
+
+    document.getElementById('creative-overlay-tags')!.innerHTML = (work.tags || []).map((t: string) =>
+      `<span class="photo-tag text-[10px]">#${t}</span>`
+    ).join('');
+
+    overlay?.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeOverlay() {
+    overlay?.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  overlayClose?.addEventListener('click', closeOverlay);
+  overlay?.addEventListener('click', (e) => {
+    if (e.target === overlay) closeOverlay();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeOverlay();
+  });
+</script>

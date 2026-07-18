@@ -1,0 +1,435 @@
+---
+import Layout from '../layouts/Layout.astro';
+import content from '../../data/content.json';
+
+const showcaseSlides = content.showcase.slides;
+const disciplines = content.disciplines;
+---
+
+<Layout title="Guru Ankam — Portfolio">
+  <!-- RECENTLY ON — full-bleed banner carousel with recent work -->
+  <section class="fade-in" data-debug="showcase-banner">
+    <span class="debug-label" style="top:60px; left:12px; display:none;">SHOWCASE BANNER — Recent work carousel (full-bleed, 28vh)</span>
+    <p class="section-label px-6 pt-5 pb-3 max-w-5xl mx-auto">{content.showcase.label}</p>
+
+    <div class="relative w-full overflow-hidden" style="height: 28vh; min-height: 240px;" id="showcase">
+      {showcaseSlides.map((slide, i) => (
+        <div
+          class:list={['showcase-slide', i === 0 ? 'showcase-slide-active' : 'showcase-slide-inactive']}
+          data-index={i}
+          style={i === 0 ? 'pointer-events: auto;' : ''}
+        >
+          <div class="showcase-bg" style={`background: ${slide.gradient};`}>
+            {slide.imageFile ? (
+              <img src={slide.imageFile} alt={slide.title} class="absolute inset-0 w-full h-full object-cover" />
+            ) : (
+              <>
+                <div class="absolute inset-0 opacity-[0.07]" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;" />
+                <div class="absolute top-1/2 right-[18%] -translate-y-1/2 text-[140px] md:text-[200px] opacity-[0.08] select-none leading-none">{slide.icon}</div>
+              </>
+            )}
+          </div>
+          <div class="showcase-overlay" />
+          <div class="showcase-content" style="pointer-events: none;">
+            <div class="max-w-5xl mx-auto w-full px-6 py-6 md:py-8 lg:py-10">
+              <div class="showcase-text" style="pointer-events: auto;">
+                <div class="flex items-center gap-3 mb-2">
+                  <span class="text-3xl md:text-4xl">{slide.icon}</span>
+                  <h2 class="text-2xl md:text-3xl font-bold text-white">{slide.title}</h2>
+                </div>
+                <span class="inline-block text-xs font-medium px-2.5 py-0.5 rounded-full bg-white/15 text-white/80 mb-2">{slide.category}</span>
+                <p class="text-sm md:text-base text-white/70 leading-relaxed">{slide.description}</p>
+                <a href={slide.href} class="inline-flex items-center gap-1.5 mt-3 text-sm font-medium text-white/90 hover:text-white transition-colors">
+                  Explore
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="showcase-controls py-4">
+      <button class="showcase-arrow showcase-prev" aria-label="Previous" type="button">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <div class="showcase-dots">
+        {showcaseSlides.map((slide, i) => (
+          <button
+            class:list={['showcase-dot', i === 0 ? 'w-6' : 'w-1.5']}
+            style={i === 0 ? `background: ${slide.dotColor};` : `background: ${slide.dotColor}; opacity: 0.35;`}
+            data-index={i}
+            aria-label={slide.title}
+            type="button"
+          />
+        ))}
+      </div>
+      <button class="showcase-arrow showcase-next" aria-label="Next" type="button">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- PERSONAL BRANDING — GA icon + name + tagline + bio -->
+  <section class="px-6 pt-8 pb-4 max-w-5xl mx-auto fade-in fade-in-delay-2" data-debug="branding">
+    <span class="debug-label" style="top:340px; left:12px; display:none;">BRANDING — GA icon + name + bio</span>
+    <div class="flex items-start gap-4">
+      <div class="w-16 h-16 rounded-xl flex items-center justify-center text-xl font-bold flex-shrink-0 transition-colors" style="background: var(--bg-card); border: 2px solid var(--border); color: var(--accent-1); box-shadow: var(--card-shadow);">
+        GA
+      </div>
+      <div>
+        <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight" style="color: var(--text-primary);">Guru Ankam</h1>
+        <p class="text-xs mt-0.5" style="color: var(--text-muted);">{content.site.tagline}</p>
+        <p class="text-sm mt-1.5" style="color: var(--text-secondary);">{content.site.bio}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCOVER MORE — vertical discipline carousel (infinite, double-list) -->
+  <section class="px-6 py-8 max-w-5xl mx-auto" data-debug="discover-carousel">
+    <span class="debug-label" style="top:420px; left:12px; display:none;">DISCOVER CAROUSEL — Vertical infinite discipline picker</span>
+
+    <div class="flex flex-col md:flex-row md:gap-12">
+      <!-- Left: text — centered vertically with the carousel -->
+      <div class="md:w-1/2 mb-6 md:mb-0 fade-in fade-in-delay-3 pt-20 md:pt-22">
+        <h3 class="text-2xl md:text-3xl font-bold mb-2 max-w-sm" style="color: var(--text-primary);">Discover more</h3>
+        <p class="text-sm max-w-sm" style="color: var(--text-secondary);">Swipe through my worlds</p>
+      </div>
+
+      <!-- Right: vertical carousel -->
+      <div class="md:w-1/2" id="discipline-carousel">
+        <div class="discover-container" id="discover-viewport">
+          <div class="discover-track" id="discover-track">
+            {/* Double list: original items repeated for seamless infinite loop */}
+            {[...disciplines, ...disciplines, ...disciplines].map((d, i) => (
+              <a
+                href={d.href}
+                class:list={['discover-item block', i === disciplines.length ? 'discover-item-active' : 'discover-item-inactive']}
+                data-idx={i}
+              >
+                <div class="flex items-center justify-between h-full">
+                  <div class="flex items-center gap-3 min-w-0">
+                    <span class="text-lg font-extrabold flex-shrink-0" style={`color: ${d.color};`}>{d.number}</span>
+                    <div class="min-w-0">
+                      <span class="text-sm font-semibold block" style="color: var(--text-primary);">{d.title}</span>
+                      <span class="text-xs block truncate" style="color: var(--text-muted);">{d.tagline}</span>
+                    </div>
+                  </div>
+                  <span
+                    class="flex-shrink-0 ml-3 inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 discover-go-btn"
+                    style={`background: ${d.color}; color: #0a0a14;`}
+                  >
+                    Go!
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <!-- Controls: prev, play/pause, next -->
+        <div class="flex items-center justify-center gap-3 mt-4">
+          <button class="discover-arrow discover-prev" aria-label="Previous">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+            </svg>
+          </button>
+          <button id="discover-autoplay" class="discover-arrow" aria-label="Play/Pause" style="width: 36px; height: 36px;">
+            <svg id="discover-play-icon" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" style="display: none;">
+              <path d="M6 4l15 8-15 8z"/>
+            </svg>
+            <svg id="discover-pause-icon" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <rect x="6" y="4" width="4" height="16" rx="1"/>
+              <rect x="14" y="4" width="4" height="16" rx="1"/>
+            </svg>
+          </button>
+          <button class="discover-arrow discover-next" aria-label="Next">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Dots -->
+        <div class="flex items-center justify-center gap-2 mt-3">
+          {disciplines.map((d, i) => (
+            <button
+              class:list={['discover-dot h-1.5 rounded-full transition-all duration-500', i === 0 ? 'w-6' : 'w-1.5']}
+              style={i === 0 ? `background: ${d.color};` : 'background: var(--border);'}
+              data-index={i}
+              data-color={d.color}
+              aria-label={d.title}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="px-6 py-16 text-center" data-debug="bottom-cta">
+    <span class="debug-label" style="bottom:120px; left:50%; transform:translateX(-50%); display:none;">BOTTOM CTA — About me link</span>
+    <a href="/about" class="inline-flex items-center gap-2 transition-colors group" style="color: var(--text-secondary);">
+      <span class="text-sm">Want to know the full story?</span>
+      <span class="text-sm font-medium" style="color: var(--accent-1);">About me</span>
+      <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" style="color: var(--accent-1);" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+      </svg>
+    </a>
+  </section>
+</Layout>
+
+<script>
+  // Showcase carousel
+  const showcaseSlides = document.querySelectorAll('#showcase .showcase-slide');
+
+  const dotColors = Array.from(document.querySelectorAll('.showcase-dot')).map(d => {
+    const style = d.getAttribute('style') || '';
+    const match = style.match(/background:\s*(#[0-9a-fA-F]+)/);
+    return match ? match[1] : 'var(--border)';
+  });
+  let showcaseCurrent = 0;
+  let showcaseAutoplay = true;
+  let showcaseInterval: ReturnType<typeof setInterval>;
+
+  function goToShowcase(index: number) {
+    showcaseCurrent = (index + showcaseSlides.length) % showcaseSlides.length;
+    showcaseSlides.forEach((slide, i) => {
+      const el = slide as HTMLElement;
+      if (i === showcaseCurrent) {
+        el.classList.remove('showcase-slide-inactive');
+        el.classList.add('showcase-slide-active');
+        el.style.pointerEvents = 'auto';
+      } else {
+        el.classList.remove('showcase-slide-active');
+        el.classList.add('showcase-slide-inactive');
+        el.style.pointerEvents = 'none';
+      }
+    });
+    document.querySelectorAll('.showcase-dot').forEach((dot, i) => {
+      const el = dot as HTMLElement;
+      if (i === showcaseCurrent) {
+        el.classList.remove('w-1.5');
+        el.classList.add('w-6');
+        el.style.background = dotColors[i];
+        el.style.opacity = '1';
+      } else {
+        el.classList.remove('w-6');
+        el.classList.add('w-1.5');
+        el.style.background = dotColors[i];
+        el.style.opacity = '0.35';
+      }
+    });
+  }
+
+  function nextShowcase() { goToShowcase(showcaseCurrent + 1); }
+  function prevShowcase() { goToShowcase(showcaseCurrent - 1); }
+  function startShowcaseAutoplay() { showcaseInterval = setInterval(nextShowcase, 5000); }
+  function stopShowcaseAutoplay() { clearInterval(showcaseInterval); }
+
+  document.querySelectorAll('.showcase-next').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      nextShowcase();
+      if (showcaseAutoplay) { stopShowcaseAutoplay(); startShowcaseAutoplay(); }
+    });
+  });
+
+  document.querySelectorAll('.showcase-prev').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      prevShowcase();
+      if (showcaseAutoplay) { stopShowcaseAutoplay(); startShowcaseAutoplay(); }
+    });
+  });
+
+  document.querySelectorAll('.showcase-dot').forEach((dot) => {
+    dot.addEventListener('click', () => {
+      goToShowcase(parseInt(dot.getAttribute('data-index') || '0'));
+      if (showcaseAutoplay) { stopShowcaseAutoplay(); startShowcaseAutoplay(); }
+    });
+  });
+
+  startShowcaseAutoplay();
+
+  // Discover vertical carousel — DOUBLE-LIST INFINITE, CENTERED
+  const discoverTrack = document.getElementById('discover-track');
+  const discoverPrevBtn = document.querySelector('.discover-prev');
+  const discoverNextBtn = document.querySelector('.discover-next');
+  const discoverAutoplayBtn = document.getElementById('discover-autoplay');
+  const discoverDots = document.querySelectorAll('.discover-dot');
+
+  const ITEM_HEIGHT = 72;
+  const REAL_COUNT = 4;
+  const VISIBLE_COUNT = 3;
+  const CENTER_POS = 1; // Middle of 3 visible items (0-indexed)
+
+  // Start at index REAL_COUNT so the middle list is centered
+  let currentIndex = REAL_COUNT;
+  let discoverAutoplay = true;
+  let discoverInterval: ReturnType<typeof setInterval>;
+  let isTransitioning = false;
+
+  const dotBtnColors = Array.from(discoverDots).map(d => d.getAttribute('data-color') || 'var(--border)');
+
+  function getOffset(idx: number) {
+    return idx * ITEM_HEIGHT;
+  }
+
+  function updateDiscoverVisual(instant?: boolean) {
+    if (!discoverTrack) return;
+    const offset = getOffset(currentIndex) - CENTER_POS * ITEM_HEIGHT;
+
+    if (instant) {
+      discoverTrack.classList.add('no-transition');
+    } else {
+      discoverTrack.classList.remove('no-transition');
+    }
+    discoverTrack.style.transform = `translateY(${-offset}px)`;
+
+    // Update active states
+    const allItems = discoverTrack.querySelectorAll('.discover-item');
+    allItems.forEach((item) => {
+      const el = item as HTMLElement;
+      const idx = parseInt(el.getAttribute('data-idx') || '0');
+      const realIdx = idx % REAL_COUNT;
+      const currentReal = currentIndex % REAL_COUNT;
+      if (realIdx === currentReal) {
+        el.classList.remove('discover-item-inactive');
+        el.classList.add('discover-item-active');
+      } else {
+        el.classList.remove('discover-item-active');
+        el.classList.add('discover-item-inactive');
+      }
+    });
+
+    // Update Go button visibility
+    allItems.forEach((item) => {
+      const btn = item.querySelector('.discover-go-btn') as HTMLElement;
+      if (btn) {
+        const idx = parseInt(item.getAttribute('data-idx') || '0');
+        const realIdx = idx % REAL_COUNT;
+        const currentReal = currentIndex % REAL_COUNT;
+        btn.style.opacity = realIdx === currentReal ? '1' : '0';
+      }
+    });
+
+    // Update dots
+    const currentReal = currentIndex % REAL_COUNT;
+    discoverDots.forEach((dot, i) => {
+      const el = dot as HTMLElement;
+      if (i === currentReal) {
+        el.classList.remove('w-1.5');
+        el.classList.add('w-6');
+        el.style.background = dotBtnColors[i];
+      } else {
+        el.classList.remove('w-6');
+        el.classList.add('w-1.5');
+        el.style.background = 'var(--border)';
+      }
+    });
+  }
+
+  function nextDiscover() {
+    if (isTransitioning) return;
+    currentIndex++;
+    updateDiscoverVisual();
+    isTransitioning = true;
+    setTimeout(() => {
+      // If we've scrolled past the second copy, jump back to first copy
+      if (currentIndex >= REAL_COUNT * 2) {
+        currentIndex = currentIndex - REAL_COUNT;
+        updateDiscoverVisual(true);
+      }
+      isTransitioning = false;
+    }, 520);
+  }
+
+  function prevDiscover() {
+    if (isTransitioning) return;
+    currentIndex--;
+    updateDiscoverVisual();
+    isTransitioning = true;
+    setTimeout(() => {
+      // If we've scrolled before the first copy, jump to second copy
+      if (currentIndex < REAL_COUNT) {
+        currentIndex = currentIndex + REAL_COUNT;
+        updateDiscoverVisual(true);
+      }
+      isTransitioning = false;
+    }, 520);
+  }
+
+  function goToDiscover(realIdx: number) {
+    if (isTransitioning) return;
+    currentIndex = realIdx + CENTER_POS;
+    updateDiscoverVisual();
+  }
+
+  function startDiscoverAutoplay() { discoverInterval = setInterval(nextDiscover, 5000); }
+  function stopDiscoverAutoplay() { clearInterval(discoverInterval); }
+
+  discoverNextBtn?.addEventListener('click', () => {
+    nextDiscover();
+    if (discoverAutoplay) { stopDiscoverAutoplay(); startDiscoverAutoplay(); }
+  });
+
+  discoverPrevBtn?.addEventListener('click', () => {
+    prevDiscover();
+    if (discoverAutoplay) { stopDiscoverAutoplay(); startDiscoverAutoplay(); }
+  });
+
+  discoverDots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+      goToDiscover(parseInt(dot.getAttribute('data-index') || '0'));
+      if (discoverAutoplay) { stopDiscoverAutoplay(); startDiscoverAutoplay(); }
+    });
+  });
+
+  discoverAutoplayBtn?.addEventListener('click', () => {
+    discoverAutoplay = !discoverAutoplay;
+    const playIcon = document.getElementById('discover-play-icon');
+    const pauseIcon = document.getElementById('discover-pause-icon');
+    if (discoverAutoplay) {
+      startDiscoverAutoplay();
+      if (playIcon) playIcon.style.display = 'none';
+      if (pauseIcon) pauseIcon.style.display = '';
+    } else {
+      stopDiscoverAutoplay();
+      if (playIcon) playIcon.style.display = '';
+      if (pauseIcon) pauseIcon.style.display = 'none';
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowUp') { prevDiscover(); if (discoverAutoplay) { stopDiscoverAutoplay(); startDiscoverAutoplay(); } }
+    if (e.key === 'ArrowDown') { nextDiscover(); if (discoverAutoplay) { stopDiscoverAutoplay(); startDiscoverAutoplay(); } }
+  });
+
+  let touchStartY = 0;
+  const carouselEl = document.getElementById('discipline-carousel');
+  carouselEl?.addEventListener('touchstart', (e) => { touchStartY = e.touches[0].clientY; }, { passive: true });
+  carouselEl?.addEventListener('touchend', (e) => {
+    const diff = touchStartY - e.changedTouches[0].clientY;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) nextDiscover(); else prevDiscover();
+      if (discoverAutoplay) { stopDiscoverAutoplay(); startDiscoverAutoplay(); }
+    }
+  }, { passive: true });
+
+  updateDiscoverVisual(true);
+  startDiscoverAutoplay();
+</script>

@@ -1,0 +1,534 @@
+---
+import Layout from '../layouts/Layout.astro';
+import content from '../../data/content.json';
+
+const photo = content.pages.photography;
+const collections = photo.collections || [];
+const featured = collections.find((c: any) => c.featured) || collections[0];
+const others = collections.filter((c: any) => c !== featured);
+const allTags = [...new Set(collections.flatMap((c: any) => (c.photos || []).flatMap((p: any) => p.tags || [])))];
+const allPhotos = collections.flatMap((c: any) => (c.photos || []).map((p: any) => ({...p, _collection: c.title})));
+---
+
+<Layout title="Photography — Guru Ankam">
+  <section class="px-6 py-12 max-w-7xl mx-auto" data-debug="photography-page">
+    <span class="debug-label" style="top:60px; left:12px; display:none;">PHOTOGRAPHY — Apple-style collections layout</span>
+
+    <!-- Page Header with emoji -->
+    <div class="flex items-start justify-between gap-4 mb-10">
+      <div class="flex-1 min-w-0">
+        <p class="section-label mb-2 fade-in">Photography</p>
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-3 fade-in fade-in-delay-1" style="color: var(--text-primary);">{photo.title}</h1>
+        <p class="max-w-xl text-sm leading-relaxed mt-3 fade-in fade-in-delay-2" style="color: var(--text-secondary);">
+          {photo.description}
+        </p>
+      </div>
+      <span class="text-6xl md:text-8xl flex-shrink-0 opacity-[0.08] select-none fade-in">📷</span>
+    </div>
+
+    <!-- Featured Collection Hero -->
+    {featured && (
+      <div class="collection-hero mb-12 fade-in fade-in-delay-2" id="featured-hero">
+        <div class="px-6 pt-6 pb-4">
+          <h2 class="text-xl md:text-2xl font-bold tracking-tight" style="color: var(--text-primary);">{featured.title}</h2>
+          <p class="text-sm mt-1 max-w-lg" style="color: var(--text-secondary);">{featured.description}</p>
+        </div>
+        <div class="collection-hero-grid px-3 pb-3">
+          {(featured.photos || []).slice(0, 6).map((p: any, i: number) => (
+            <div
+              class="collection-hero-item group"
+              data-collection={featured.id}
+              data-index={i}
+              data-photo={JSON.stringify(p)}
+              onclick="openViewerFromData(this)"
+            >
+              {p.file ? (
+                <img src={p.file} alt={p.alt} loading="lazy" />
+              ) : (
+                <div class="collection-hero-placeholder">
+                  <svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                </div>
+              )}
+              <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-3 z-10"
+                style="background: linear-gradient(transparent 40%, rgba(0,0,0,0.7));">
+                <p class="text-xs font-semibold text-white">{p.alt}</p>
+                <p class="text-[10px] text-white/70 capitalize">{p.category}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="px-6 pb-5">
+          <button
+            class="text-sm font-medium flex items-center gap-1.5 transition-colors duration-200"
+            style="color: var(--accent-1);"
+            onclick="expandCollection(this)"
+            data-collection-id={featured.id}
+          >
+            View all
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    )}
+
+    <!-- Unified Collection Cards (2-column grid) -->
+    {others.length > 0 && (
+      <div class="collection-grid fade-in fade-in-delay-3">
+        {others.map((col: any) => {
+          const previewIndices = (col.previewPhotos && col.previewPhotos.length > 0)
+            ? col.previewPhotos
+            : (col.photos || []).slice(0, 6).map((_: any, i: number) => i);
+          const previewPhotos = previewIndices.map((idx: number) => col.photos[idx]).filter(Boolean);
+          const colTags = [...new Set((col.photos || []).flatMap((p: any) => p.tags || []))];
+
+          return (
+            <div class="collection-card group" data-collection-id={col.id}>
+              <!-- Card header: title + view all -->
+              <div class="flex items-center justify-between px-4 pt-4 pb-2">
+                <h4 class="text-base font-bold tracking-tight" style="color: var(--text-primary);">{col.title}</h4>
+                <button
+                  class="text-xs font-medium flex items-center gap-1 transition-colors duration-200"
+                  style="color: var(--accent-1);"
+                  onclick="expandCollection(this)"
+                  data-collection-id={col.id}
+                >
+                  View all
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Carousel inside card -->
+              <div class="collection-card-cover">
+                <div class="carousel-viewport" data-carousel={col.id}>
+                  <div class="carousel-track">
+                    {previewPhotos.map((p: any, i: number) => (
+                      <div
+                        class="carousel-item"
+                        data-index={i}
+                        data-photo={JSON.stringify(p)}
+                        onclick="openViewerFromData(this)"
+                      >
+                        {p.file ? (
+                          <img src={p.file} alt={p.alt} loading="lazy" />
+                        ) : (
+                          <div class="carousel-item-placeholder">
+                            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                  <button class="carousel-arrow carousel-arrow-prev" data-carousel={col.id} aria-label="Previous">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  <button class="carousel-arrow carousel-arrow-next" data-carousel={col.id} aria-label="Next">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Tags (visible on hover) -->
+              {colTags.length > 0 && (
+                <div class="collection-tags px-4 pb-4">
+                  {colTags.slice(0, 5).map((tag: string) => (
+                    <span
+                      class="collection-tag"
+                      data-tag={tag}
+                      onclick="event.stopPropagation(); expandWithFilter('{col.id}', '{tag}')"
+                    >#{tag}</span>
+                  ))}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    )}
+
+    <!-- View All Photos button -->
+    {allPhotos.length > 0 && (
+      <div class="mt-10 text-center fade-in fade-in-delay-4">
+        <button
+          class="px-6 py-3 rounded-full text-sm font-medium transition-all duration-300"
+          style="background: var(--bg-card); border: 1px solid var(--border); color: var(--text-primary); box-shadow: var(--card-shadow);"
+          onmouseover="this.style.boxShadow='var(--card-shadow-hover)'; this.style.transform='translateY(-2px)'"
+          onmouseout="this.style.boxShadow='var(--card-shadow)'; this.style.transform='translateY(0)'"
+          onclick="expandAllPhotos()"
+        >
+          View All Photos
+          <svg class="w-4 h-4 inline-block ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </button>
+      </div>
+    )}
+
+    <p class="text-center text-xs mt-10 fade-in fade-in-delay-4" style="color: var(--text-muted);">
+      Add photos in <code class="px-1.5 py-0.5 rounded text-[10px]" style="background: var(--bg-secondary);">data/content.json</code> or through the <a href="/admin.html" style="color: var(--accent-1);">admin panel</a>
+    </p>
+  </section>
+
+  <!-- Expand Overlay (Liquid Glass) -->
+  <div class="expand-overlay" id="expand-overlay">
+    <div class="expand-backdrop" id="expand-backdrop"></div>
+    <div class="expand-panel" id="expand-panel">
+      <div class="expand-header">
+        <h2 class="expand-title" id="expand-title"></h2>
+        <p class="expand-desc" id="expand-desc"></p>
+      </div>
+      <div class="expand-filter-bar" id="expand-filter-bar"></div>
+      <div class="expand-photo-grid" id="expand-photo-grid"></div>
+    </div>
+    <button class="expand-close" id="expand-close" aria-label="Close">
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Photo Viewer Overlay -->
+  <div class="photo-viewer-overlay" id="photo-viewer">
+    <button class="photo-viewer-back" id="photo-viewer-close">
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+      <span class="text-sm font-medium">Back</span>
+    </button>
+    <div class="photo-viewer-main">
+      <div class="photo-viewer-img" id="viewer-img-container"></div>
+    </div>
+    <div class="photo-viewer-info">
+      <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+        <div>
+          <h2 class="text-xl font-bold" style="color: var(--text-primary);" id="viewer-title"></h2>
+          <p class="text-sm mt-1" style="color: var(--text-secondary);" id="viewer-desc"></p>
+        </div>
+        <div class="text-right text-xs space-y-1" style="color: var(--text-muted);">
+          <p id="viewer-camera"></p>
+          <p id="viewer-lens"></p>
+          <p id="viewer-location"></p>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-2 mb-8" id="viewer-tags"></div>
+      <h3 class="text-sm font-semibold mb-4" style="color: var(--text-primary);">Similar photos</h3>
+      <div class="photo-viewer-similar" id="viewer-similar"></div>
+    </div>
+  </div>
+
+  <!-- Hidden data for client-side JS -->
+  <script type="application/json" id="collections-data" set:html={JSON.stringify(collections)}></script>
+  <script type="application/json" id="all-photos-data" set:html={JSON.stringify(allPhotos)}></script>
+</Layout>
+
+<script is:inline>
+(function() {
+  // ============================================
+  // STATE
+  // ============================================
+  window._photoCollections = JSON.parse(document.getElementById('collections-data')?.textContent || '[]');
+  window._allPhotos = JSON.parse(document.getElementById('all-photos-data')?.textContent || '[]');
+  let activeExpandFilter = '';
+
+  // ============================================
+  // HORIZONTAL INFINITE CAROUSEL
+  // ============================================
+  function initCarousels() {
+    document.querySelectorAll('.carousel-viewport').forEach(viewport => {
+      const track = viewport.querySelector('.carousel-track');
+      const items = track.querySelectorAll('.carousel-item');
+      if (items.length === 0) return;
+
+      const REAL_COUNT = items.length;
+      if (REAL_COUNT <= 3) return;
+
+      // Triple the items for infinite loop
+      for (let copy = 0; copy < 2; copy++) {
+        items.forEach(item => {
+          track.appendChild(item.cloneNode(true));
+        });
+      }
+
+      const ITEM_WIDTH = items[0].offsetWidth + 12;
+      let currentIndex = REAL_COUNT;
+      let isTransitioning = false;
+
+      function updateCarousel(instant) {
+        if (instant) track.classList.add('no-transition');
+        else track.classList.remove('no-transition');
+        track.style.transform = 'translateX(' + (-(currentIndex * ITEM_WIDTH)) + 'px)';
+      }
+
+      function next() {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        currentIndex++;
+        updateCarousel(false);
+        setTimeout(() => {
+          isTransitioning = false;
+          if (currentIndex >= REAL_COUNT * 2) {
+            currentIndex -= REAL_COUNT;
+            updateCarousel(true);
+          }
+        }, 520);
+      }
+
+      function prev() {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        currentIndex--;
+        updateCarousel(false);
+        setTimeout(() => {
+          isTransitioning = false;
+          if (currentIndex < REAL_COUNT) {
+            currentIndex += REAL_COUNT;
+            updateCarousel(true);
+          }
+        }, 520);
+      }
+
+      // Arrow buttons
+      viewport.parentElement.querySelector('.carousel-arrow-prev')?.addEventListener('click', prev);
+      viewport.parentElement.querySelector('.carousel-arrow-next')?.addEventListener('click', next);
+
+      // Touch swipe
+      let touchStartX = 0;
+      viewport.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+      viewport.addEventListener('touchend', e => {
+        const diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); }
+      }, { passive: true });
+
+      // Auto-advance
+      let autoplayInterval = setInterval(next, 4000);
+      viewport.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+      viewport.addEventListener('mouseleave', () => { autoplayInterval = setInterval(next, 4000); });
+
+      updateCarousel(true);
+    });
+  }
+
+  // ============================================
+  // EXPAND OVERLAY
+  // ============================================
+  window.expandCollection = function(el) {
+    const collectionId = el.dataset.collectionId || el.closest('[data-collection-id]')?.dataset.collectionId;
+    if (!collectionId) return;
+    const collections = window._photoCollections || [];
+    const col = collections.find(c => c.id === collectionId);
+    if (!col) return;
+    openExpandOverlay(col, el, '');
+  };
+
+  window.expandWithFilter = function(collectionId, tag) {
+    const collections = window._photoCollections || [];
+    const col = collections.find(c => c.id === collectionId);
+    if (!col) return;
+    const sourceEl = document.querySelector('[data-collection-id="' + collectionId + '"]');
+    openExpandOverlay(col, sourceEl, tag);
+  };
+
+  window.expandAllPhotos = function() {
+    const allPhotos = window._allPhotos || [];
+    const virtualCol = {
+      id: 'all-photos',
+      title: 'All Photos',
+      description: 'Every photo from every collection.',
+      photos: allPhotos
+    };
+    const sourceEl = document.querySelector('.collection-grid') || document.querySelector('.collection-hero');
+    openExpandOverlay(virtualCol, sourceEl, '');
+  };
+
+  function openExpandOverlay(col, sourceEl, filterTag) {
+    const overlay = document.getElementById('expand-overlay');
+    const panel = document.getElementById('expand-panel');
+    const title = document.getElementById('expand-title');
+    const desc = document.getElementById('expand-desc');
+    const filterBar = document.getElementById('expand-filter-bar');
+    const closeBtn = document.getElementById('expand-close');
+
+    // Set source position
+    if (sourceEl) {
+      const rect = sourceEl.getBoundingClientRect();
+      panel.style.top = rect.top + 'px';
+      panel.style.left = rect.left + 'px';
+      panel.style.width = rect.width + 'px';
+      panel.style.height = rect.height + 'px';
+    }
+
+    // Populate content
+    title.textContent = col.title;
+    desc.textContent = col.description;
+
+    // Build filter bar
+    const colTags = [...new Set((col.photos || []).flatMap(p => p.tags || []))];
+    filterBar.innerHTML = '';
+    if (colTags.length > 0) {
+      const allBtn = document.createElement('button');
+      allBtn.className = 'expand-filter-btn' + (!filterTag ? ' active' : '');
+      allBtn.textContent = 'All';
+      allBtn.onclick = () => filterExpandPhotos(col, '');
+      filterBar.appendChild(allBtn);
+
+      colTags.forEach(tag => {
+        const btn = document.createElement('button');
+        btn.className = 'expand-filter-btn' + (filterTag === tag ? ' active' : '');
+        btn.textContent = '#' + tag;
+        btn.onclick = () => filterExpandPhotos(col, tag);
+        filterBar.appendChild(btn);
+      });
+    }
+
+    // Build photo grid
+    renderExpandPhotos(col, filterTag);
+
+    // Show overlay, then animate open
+    overlay.style.display = 'block';
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        overlay.classList.add('open');
+      });
+    });
+
+    // Close handlers
+    closeBtn.onclick = closeExpandOverlay;
+    document.getElementById('expand-backdrop').onclick = closeExpandOverlay;
+    activeExpandFilter = filterTag;
+  }
+
+  function renderExpandPhotos(col, filterTag) {
+    const photoGrid = document.getElementById('expand-photo-grid');
+    const photos = (col.photos || []).filter(p => {
+      if (!filterTag) return true;
+      return (p.tags || []).includes(filterTag);
+    });
+
+    photoGrid.innerHTML = '';
+    photos.forEach((p, i) => {
+      const div = document.createElement('div');
+      div.className = 'expand-photo';
+      div.style.animationDelay = (i * 60) + 'ms';
+      div.dataset.photo = JSON.stringify(p);
+      div.onclick = () => { closeExpandOverlay(); setTimeout(() => openViewer(p), 400); };
+
+      if (p.file) {
+        div.innerHTML = '<img src="' + p.file + '" alt="' + (p.alt || '') + '" loading="lazy" />' +
+          '<div class="expand-photo-overlay">' +
+            '<p class="expand-photo-title">' + (p.alt || '') + '</p>' +
+            '<p class="expand-photo-meta">' + (p.category || '') + (p._collection ? ' · ' + p._collection : '') + '</p>' +
+          '</div>';
+      } else {
+        div.innerHTML = '<div class="expand-photo-placeholder">' +
+          '<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">' +
+            '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />' +
+          '</svg>' +
+        '</div>';
+      }
+      photoGrid.appendChild(div);
+    });
+  }
+
+  function filterExpandPhotos(col, tag) {
+    activeExpandFilter = tag;
+    document.querySelectorAll('.expand-filter-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.textContent === (tag ? '#' + tag : 'All'));
+    });
+    renderExpandPhotos(col, tag);
+  }
+
+  function closeExpandOverlay() {
+    const overlay = document.getElementById('expand-overlay');
+    overlay.classList.remove('open');
+    setTimeout(() => { overlay.style.display = 'none'; }, 500);
+  }
+
+  // ============================================
+  // PHOTO VIEWER
+  // ============================================
+  window.openViewerFromData = function(el) {
+    const p = JSON.parse(el.dataset.photo || '{}');
+    openViewer(p);
+  };
+
+  function openViewer(photo) {
+    const viewer = document.getElementById('photo-viewer');
+    document.getElementById('viewer-title').textContent = photo.alt || '';
+    document.getElementById('viewer-desc').textContent = photo.category || '';
+    document.getElementById('viewer-camera').textContent = photo.camera ? '📷 ' + photo.camera : '';
+    document.getElementById('viewer-lens').textContent = photo.lens ? '🔍 ' + photo.lens : '';
+    document.getElementById('viewer-location').textContent = photo.location ? '📍 ' + photo.location : '';
+
+    const imgContainer = document.getElementById('viewer-img-container');
+    if (photo.file) {
+      imgContainer.innerHTML = '<img src="' + photo.file + '" alt="' + (photo.alt || '') + '" style="max-height: 75vh;" />';
+    } else {
+      imgContainer.innerHTML = '<div style="padding: 64px; color: var(--text-muted);"><svg class="w-16 h-16 opacity-30" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg></div>';
+    }
+
+    const tagsEl = document.getElementById('viewer-tags');
+    tagsEl.innerHTML = (photo.tags || []).map(t =>
+      '<span class="photo-tag cursor-pointer" data-viewer-tag="' + t + '">#' + t + '</span>'
+    ).join('');
+
+    // Build similar photos from all collections
+    const allPhotos = [];
+    document.querySelectorAll('[data-photo]').forEach(el => {
+      try {
+        const p2 = JSON.parse(el.dataset.photo);
+        if (p2.alt !== photo.alt) allPhotos.push(p2);
+      } catch(e) {}
+    });
+
+    const similarContainer = document.getElementById('viewer-similar');
+    let similarHTML = '';
+    allPhotos.forEach(p2 => {
+      const sharedTags = (p2.tags || []).filter(t => (photo.tags || []).includes(t));
+      if (p2.category === photo.category || sharedTags.length > 0) {
+        if (p2.file) {
+          similarHTML += '<div class="aspect-square rounded-lg overflow-hidden cursor-pointer gallery-similar-item" data-photo=\'' + JSON.stringify(p2) + '\'><img src="' + p2.file + '" alt="' + (p2.alt || '') + '" class="w-full h-full object-cover" /></div>';
+        } else {
+          similarHTML += '<div class="aspect-square rounded-lg overflow-hidden cursor-pointer gallery-similar-item" data-photo=\'' + JSON.stringify(p2) + '\' style="background: var(--bg-secondary);"><div class="w-full h-full flex items-center justify-center" style="color: var(--text-muted); opacity: 0.3;"><svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg></div></div>';
+        }
+      }
+    });
+    similarContainer.innerHTML = similarHTML || '<p class="text-xs" style="color: var(--text-muted);">No similar photos found</p>';
+
+    similarContainer.querySelectorAll('.gallery-similar-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const p2 = JSON.parse(item.dataset.photo || '{}');
+        openViewer(p2);
+      });
+    });
+
+    viewer.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeViewer() {
+    document.getElementById('photo-viewer').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('photo-viewer-close')?.addEventListener('click', closeViewer);
+  document.getElementById('photo-viewer')?.addEventListener('click', (e) => {
+    if (e.target.id === 'photo-viewer') closeViewer();
+  });
+
+  // ============================================
+  // INIT
+  // ============================================
+  initCarousels();
+})();
+</script>
