@@ -1,0 +1,42 @@
+---
+import content from '../../../data/content.json';
+const collections = content.pages.photography.collections || [];
+---
+
+<template data-app="photos">
+  <div class="os-window" data-app-id="photos" data-tb-label="Photos" style="--w: 880px; --h: 580px;">
+    <div class="os-titlebar">
+      <span class="os-title-icon">📁</span>
+      <span class="os-title-text">Photos — File Explorer</span>
+      <span class="os-title-btns">
+        <button class="os-btn os-min" aria-label="Minimize">─</button>
+        <button class="os-btn os-max" aria-label="Maximize">▢</button>
+        <button class="os-btn os-close" aria-label="Close">✕</button>
+      </span>
+    </div>
+    <div class="os-body ex-body">
+      <div class="ex-toolbar">
+        <span class="ex-crumb"><span style="color: var(--accent-1);">$</span> ~/photography<span class="ex-crumb-path">/all</span></span>
+        <span class="ex-count"></span>
+      </div>
+      <div class="ex-main">
+        <aside class="ex-side">
+          <button class="ex-folder active" type="button" data-col="__all">
+            <span>🖼 All Photos</span>
+            <span class="ex-folder-count">{collections.reduce((n: number, c: any) => n + (c.photos || []).length, 0)}</span>
+          </button>
+          {collections.map((c: any) => (
+            <button class="ex-folder" type="button" data-col={c.id}>
+              <span>📂 {c.title}</span>
+              <span class="ex-folder-count">{(c.photos || []).length}</span>
+            </button>
+          ))}
+        </aside>
+        <div class="ex-grid" aria-live="polite"></div>
+      </div>
+      <div class="ex-statusbar">$ click a photo to open it in Photo Viewer · photos stay untouched ✓</div>
+    </div>
+    <script type="application/json" class="os-json" set:html={JSON.stringify(collections)} />
+    <div class="os-resize" aria-hidden="true"></div>
+  </div>
+</template>

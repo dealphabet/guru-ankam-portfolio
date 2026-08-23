@@ -1,0 +1,35 @@
+<template data-app="viewer">
+  <div class="os-window" data-app-id="viewer" data-tb-label="Photo Viewer" style="--w: 900px; --h: 560px;">
+    <div class="os-titlebar">
+      <span class="os-title-icon">🖼</span>
+      <span class="os-title-text">Photo Viewer</span>
+      <span class="os-title-btns">
+        <button class="os-btn os-min" aria-label="Minimize">─</button>
+        <button class="os-btn os-max" aria-label="Maximize">▢</button>
+        <button class="os-btn os-close" aria-label="Close">✕</button>
+      </span>
+    </div>
+    <div class="os-body pv-body">
+      <div class="pv-imgwrap">
+        <button class="pv-nav pv-prev" aria-label="Previous photo">‹</button>
+        <div class="pv-img"></div>
+        <button class="pv-nav pv-next" aria-label="Next photo">›</button>
+      </div>
+      <aside class="pv-info">
+        <p class="os-prompt-line">$ view --exif</p>
+        <h2 class="pv-title"></h2>
+        <p class="pv-cat"></p>
+        <div class="pv-exif font-mono">
+          <p class="pv-camera"></p>
+          <p class="pv-lens"></p>
+          <p class="pv-exifline"></p>
+          <p class="pv-loc"></p>
+        </div>
+        <div class="pv-tags"></div>
+        <h3 class="pv-related-h"><span style="color: var(--accent-1);">$</span> related/</h3>
+        <div class="pv-similar"></div>
+      </aside>
+    </div>
+    <div class="os-resize" aria-hidden="true"></div>
+  </div>
+</template>

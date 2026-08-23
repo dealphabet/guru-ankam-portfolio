@@ -1,0 +1,34 @@
+<template data-app="welcome">
+  <div class="os-window" data-app-id="welcome" data-tb-label="Welcome" data-pos="center" style="--w: 460px; --h: 380px;">
+    <div class="os-titlebar">
+      <span class="os-title-icon">⊞</span>
+      <span class="os-title-text">welcome.txt — PortfolioOS</span>
+      <span class="os-title-btns">
+        <button class="os-btn os-min" aria-label="Minimize">─</button>
+        <button class="os-btn os-max" aria-label="Maximize">▢</button>
+        <button class="os-btn os-close" aria-label="Close">✕</button>
+      </span>
+    </div>
+    <div class="os-body">
+      <div class="os-app-pad">
+        <p class="os-prompt-line">$ boot portfolio-os --user guru ...done ✓</p>
+        <h1>Welcome to PortfolioOS</h1>
+        <p style="margin-top: 8px;">
+          This desktop is my portfolio. Everything is an app — drag windows around,
+          resize them, run a few at once. The basics:
+        </p>
+        <div class="os-welcome-keys">
+          <div class="os-welcome-key"><span class="os-kbd">click</span> single-click any desktop icon to open its app</div>
+          <div class="os-welcome-key"><span class="os-kbd">start</span> the ⊞ start menu lists all disciplines</div>
+          <div class="os-welcome-key"><span class="os-kbd">t</span> toggle night session / daylight studio</div>
+          <div class="os-welcome-key"><span class="os-kbd">s</span> open Settings — skins &amp; wallpapers live there</div>
+        </div>
+        <p style="margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          Prefer traditional pages? Every app also has a classic single-page version
+          linked in the start menu footer.
+        </p>
+      </div>
+    </div>
+    <div class="os-resize" aria-hidden="true"></div>
+  </div>
+</template>

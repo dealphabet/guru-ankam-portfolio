@@ -40,7 +40,7 @@ const canonicalPath = classic ? currentPath.replace(/^\/classic/, "") || "/" : c
     <nav class="fixed top-0 left-0 right-0 z-50 border-b transition-colors duration-300" style="background: var(--nav-bg); border-color: var(--border); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);" data-debug="nav">
       <span class="debug-label" style="top:4px; left:12px; display:none;">NAV — Sticky top bar with links, theme toggle, mobile menu</span>
       <div class="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
-        <a href="/" class="text-base font-bold tracking-tight transition-colors duration-300" style="color: var(--text-primary);">
+        <a href={classic ? "/classic/" : "/"} class="text-base font-bold tracking-tight transition-colors duration-300" style="color: var(--text-primary);">
           Guru Ankam
         </a>
         <div class="hidden md:flex items-center gap-6">

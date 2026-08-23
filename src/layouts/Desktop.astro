@@ -1,16 +1,50 @@
 ---
 import '../styles/global.css';
 import '../styles/os.css';
+import content from '../../data/content.json';
 
 interface Props {
   title?: string;
   description?: string;
+  initialApp?: string;
 }
 
 const {
   title = 'Guru Ankam',
   description = 'Portfolio of Guru Ankam — photography, music, code & creative work, presented as a desktop operating system.',
+  initialApp = '',
 } = Astro.props;
+
+const site = content.site;
+const disciplines = content.disciplines || [];
+
+const apps = [
+  { id: 'photos', label: 'Photos', glyph: '📷' },
+  { id: 'player', label: 'Player', glyph: '🎵' },
+  { id: 'code', label: 'Code', glyph: '💻' },
+  { id: 'studio', label: 'Studio', glyph: '🎨' },
+  { id: 'about', label: 'About', glyph: '👤' },
+  { id: 'mail', label: 'Mail', glyph: '✉️' },
+  { id: 'welcome', label: 'Welcome', glyph: '⊞' },
+  { id: 'settings', label: 'Settings', glyph: '⚙️' },
+];
+
+const classicPages = [
+  { href: '/classic/', label: 'home' },
+  { href: '/classic/photography', label: 'photography' },
+  { href: '/classic/music', label: 'music' },
+  { href: '/classic/code', label: 'code' },
+  { href: '/classic/creative', label: 'creative' },
+  { href: '/classic/about', label: 'about' },
+  { href: '/classic/contact', label: 'contact' },
+];
+
+const launchMap: Record<string, string> = {
+  '/photography': 'photos',
+  '/music': 'player',
+  '/code': 'code',
+  '/creative': 'studio',
+};
 ---
 
 <!doctype html>
@@ -39,9 +73,7 @@ const {
     </script>
   </head>
 
-  <body class="os-desktop-root">
-    <a class="sr-only" href="#os-windows">Skip to windows</a>
-
+  <body class="os-desktop-root" data-initial-app={initialApp}>
     <noscript>
       <div class="os-noscript">
         <p>PortfolioOS needs JavaScript to boot the desktop.</p>
@@ -60,12 +92,17 @@ const {
     <div id="os-wallpaper" aria-hidden="true"></div>
 
     <div class="os-nameplate" aria-hidden="true">
-      <strong>guru@portfolio</strong><br />
-      PortfolioOS v1.0 · <span id="os-uptime">uptime 0s</span>
+      <strong>{site.name?.toLowerCase().replace(/\s+/g, '') || 'guru'}@portfolio</strong><br />
+      PortfolioOS v1.1 · <span id="os-uptime">uptime 0s</span>
     </div>
 
     <div id="os-icons">
-      <slot name="desktop-icons" />
+      {apps.map((app) => (
+        <button class="os-icon" type="button" data-launch={app.id} aria-label={`Open ${app.label}`}>
+          <span class="os-icon-glyph">{app.glyph}</span>
+          <span class="os-icon-label">{app.label}</span>
+        </button>
+      ))}
     </div>
 
     <div id="os-windows" role="main"></div>
@@ -80,11 +117,40 @@ const {
         <strong>guru@portfolio</strong><br />~/disciplines — select an application
       </div>
       <div class="os-sm-list">
-        <slot name="start-menu-items" />
+        {disciplines.map((d: any) => {
+          return (
+            <button class="os-sm-item" type="button" data-launch={launchMap[d.href] || d.href}>
+              <span class="os-sm-num">{d.number}</span>
+              <span class="os-sm-dot" style={`background: ${d.color};`} />
+              <span class="os-sm-txt">
+                <span class="os-sm-title">{d.title}</span><br />
+                <span class="os-sm-tagline">{d.tagline}</span>
+              </span>
+            </button>
+          );
+        })}
+        <button class="os-sm-item" type="button" data-launch="welcome">
+          <span class="os-sm-num">⊞</span>
+          <span class="os-sm-dot" style="background: var(--accent-1);" />
+          <span class="os-sm-txt">
+            <span class="os-sm-title">Welcome</span><br />
+            <span class="os-sm-tagline">Quick guide to PortfolioOS</span>
+          </span>
+        </button>
+        <button class="os-sm-item" type="button" data-launch="settings">
+          <span class="os-sm-num">⚙</span>
+          <span class="os-sm-dot" style="background: var(--accent-2);" />
+          <span class="os-sm-txt">
+            <span class="os-sm-title">Settings</span><br />
+            <span class="os-sm-tagline">Skins, wallpapers &amp; system</span>
+          </span>
+        </button>
       </div>
       <div class="os-sm-foot">
         <span class="os-sm-foot-label">$ ls /classic — traditional single pages</span>
-        <slot name="start-menu-foot" />
+        {classicPages.map((p) => (
+          <a class="os-sm-foot-link" href={p.href}>{p.label}</a>
+        ))}
       </div>
     </aside>
 

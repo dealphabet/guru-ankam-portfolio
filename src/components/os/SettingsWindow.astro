@@ -1,0 +1,105 @@
+---
+const chromeOpts = [
+  { id: 'tui', label: 'warm tui' },
+  { id: 'win95', label: 'retro 95' },
+  { id: 'win11', label: 'frost 11' },
+];
+
+const wallpaperGroups = [
+  { group: 'general', items: ['aurora', 'midnight', 'dusk', 'ocean', 'blueprint', 'plain'] },
+  { group: 'for warm tui', items: ['phosphor', 'amber'] },
+  { group: 'for retro 95', items: ['retro-teal', 'bliss'] },
+  { group: 'for frost 11', items: ['bloom', 'sunrise'] },
+  { group: 'live · animated', items: ['flow', 'starfield', 'rainfall', 'orbs'] },
+];
+
+const wallpaperLabels: Record<string, string> = {
+  aurora: 'aurora',
+  midnight: 'midnight',
+  dusk: 'dusk',
+  ocean: 'ocean',
+  blueprint: 'blueprint',
+  plain: 'plain',
+  phosphor: 'phosphor',
+  amber: 'amber crt',
+  'retro-teal': 'classic teal',
+  bliss: 'bliss hills',
+  bloom: 'bloom dark',
+  sunrise: 'sunrise bloom',
+  flow: 'aurora flow ▶',
+  starfield: 'starfield ▶',
+  rainfall: 'rainfall ▶',
+  orbs: 'floating orbs ▶',
+};
+---
+
+<template data-app="settings">
+  <div class="os-window" data-app-id="settings" data-tb-label="Settings" data-pos="center" style="--w: 580px; --h: 620px;">
+    <div class="os-titlebar">
+      <span class="os-title-icon">⚙️</span>
+      <span class="os-title-text">control-panel — Settings</span>
+      <span class="os-title-btns">
+        <button class="os-btn os-min" aria-label="Minimize">─</button>
+        <button class="os-btn os-max" aria-label="Maximize">▢</button>
+        <button class="os-btn os-close" aria-label="Close">✕</button>
+      </span>
+    </div>
+    <div class="os-body">
+      <div class="os-app-pad">
+        <p class="os-prompt-line">$ open settings --panel appearance</p>
+
+        <div class="os-set-section">
+          <h3 class="os-set-heading">Window skin</h3>
+          <div class="os-set-cards">
+            {chromeOpts.map((c) => (
+              <button class={`os-set-opt pv-${c.id}`} type="button" data-set-chrome={c.id}>
+                <span class="os-set-preview"><span class="pv-tb"></span></span>
+                <span class="os-set-opt-label">{c.label}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {wallpaperGroups.map((g) => (
+          <div class="os-set-section">
+            <h3 class="os-set-heading">Wallpaper — {g.group}</h3>
+            <div class="os-swatches">
+              {g.items.map((id) => (
+                <button class="os-swatch" type="button" data-set-wall={id}>
+                  <span class={`os-swatch-art sw-${id}`}></span>
+                  <span class="os-swatch-label">{wallpaperLabels[id] || id}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        ))}
+
+        <div class="os-set-section">
+          <h3 class="os-set-heading">Custom wallpaper</h3>
+          <div class="os-custom-wall">
+            <div class="os-url-row">
+              <input class="os-input os-url-input" type="url" placeholder="https://…/image.jpg" aria-label="Wallpaper image URL" />
+              <button class="os-btn-accent os-url-apply" type="button">apply</button>
+            </div>
+            <div class="os-drop-zone" role="button" tabindex="0">
+              …or drag &amp; drop an image here / click to browse
+            </div>
+            <input class="os-file-input" type="file" accept="image/*" hidden />
+            <div>
+              <button class="os-btn-danger-ghost os-wall-reset" type="button">reset to preset</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="os-system-foot">
+          <div class="os-sys-info">
+            PortfolioOS v1.1 · kernel: astro-static<br />
+            theme: <span id="os-sys-theme">—</span> · uptime tracked in tray
+          </div>
+          <a class="os-btn-ghost" href="/admin.html" target="_blank" rel="noopener noreferrer">Admin Panel ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="os-resize" aria-hidden="true"></div>
+  </div>
+</template>

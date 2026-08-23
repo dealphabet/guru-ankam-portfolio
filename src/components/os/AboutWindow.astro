@@ -1,0 +1,44 @@
+---
+import content from '../../../data/content.json';
+const about = content.pages.about;
+---
+
+<template data-app="about">
+  <div class="os-window" data-app-id="about" data-tb-label="readme.txt" style="--w: 520px; --h: 500px;">
+    <div class="os-titlebar">
+      <span class="os-title-icon">📄</span>
+      <span class="os-title-text">readme.txt — About</span>
+      <span class="os-title-btns">
+        <button class="os-btn os-min" aria-label="Minimize">─</button>
+        <button class="os-btn os-max" aria-label="Maximize">▢</button>
+        <button class="os-btn os-close" aria-label="Close">✕</button>
+      </span>
+    </div>
+    <div class="os-body">
+      <div class="os-app-pad">
+        <p class="os-prompt-line">$ cat ~/readme.txt</p>
+        <h1>{about.title}</h1>
+        <div style="margin-top: 10px; display: grid; gap: 10px;">
+          {about.bio.map((paragraph: string) => (
+            <p set:html={paragraph} />
+          ))}
+        </div>
+        <div style="margin-top: 16px; border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; background: var(--bg-card);">
+          <h3>Quick Facts</h3>
+          <ul style="margin-top: 8px; display: grid; gap: 6px; font-size: 13px;">
+            {about.facts.map((fact: any) => (
+              <li class="os-fact-row">
+                <span class="os-fact-dot" style={`background: ${fact.color};`} />
+                <span set:html={fact.text} />
+              </li>
+            ))}
+          </ul>
+        </div>
+        <p style="margin-top: 14px; font-size: 11px; color: var(--text-muted);">
+          classic view: <a href="/classic/about" style="color: var(--accent-1);">/classic/about</a>
+        </p>
+      </div>
+    </div>
+    <div class="os-resize" aria-hidden="true"></div>
+  </div>
+</template>

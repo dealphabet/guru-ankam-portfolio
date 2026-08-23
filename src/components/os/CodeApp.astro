@@ -1,0 +1,65 @@
+---
+import content from '../../../data/content.json';
+const code = content.pages.code;
+const allTags = [...new Set(code.projects.flatMap((p: any) => p.tags || []))];
+---
+
+<template data-app="code">
+  <div class="os-window" data-app-id="code" data-tb-label="Dev" style="--w: 680px; --h: 540px;">
+    <div class="os-titlebar">
+      <span class="os-title-icon">💻</span>
+      <span class="os-title-text">Dev — {code.title}</span>
+      <span class="os-title-btns">
+        <button class="os-btn os-min" aria-label="Minimize">─</button>
+        <button class="os-btn os-max" aria-label="Maximize">▢</button>
+        <button class="os-btn os-close" aria-label="Close">✕</button>
+      </span>
+    </div>
+    <div class="os-body cd-body">
+      <div class="cd-listview">
+        <p class="cd-desc">{code.description}</p>
+        <div class="mp-chips cd-chips" role="group" aria-label="Filter by tag">
+          <button class="mp-chip active" type="button" data-tag="">all</button>
+          {allTags.map((tag: string) => (
+            <button class="mp-chip" type="button" data-tag={tag}>#{tag}</button>
+          ))}
+        </div>
+        <div class="cd-list">
+          {code.projects.map((project: any, i: number) => (
+            <div class="cd-card" data-index={i} data-tags={JSON.stringify(project.tags || [])}>
+              <div class="cd-card-icon" style={`background: ${project.gradient || 'var(--bg-secondary)'};`}>
+                <span>{project.icon || '📦'}</span>
+              </div>
+              <div class="cd-card-main">
+                <span class="cd-card-title">{project.title}</span>
+                <p class="cd-card-desc">{project.description}</p>
+                <div class="m-tags">
+                  {(project.tags || []).map((t: string) => <span>{t}</span>)}
+                </div>
+              </div>
+              <span class="cd-card-open">$ open ›</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="cd-detailview" hidden>
+        <button class="os-btn-ghost cd-back" type="button">← back to projects</button>
+        <div class="cd-detail-banner"></div>
+        <div class="os-app-pad" style="padding: 14px 4px 0;">
+          <h1 class="cd-d-title"></h1>
+          <p class="cd-d-desc"></p>
+          <div class="prose prose-sm max-w-none cd-d-long" style="color: var(--text-secondary);"></div>
+          <div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px;" class="cd-d-tags"></div>
+          <p class="cd-d-tech" style="margin-top: 10px; font-size: 12px;"></p>
+          <div style="margin-top: 14px; display: flex; gap: 8px;">
+            <a class="os-btn-ghost cd-d-github" href="#" target="_blank" rel="noopener noreferrer">View Code ↗</a>
+            <a class="os-btn-accent cd-d-live" href="#" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="application/json" class="os-json" set:html={JSON.stringify(code.projects)} />
+    <div class="os-resize" aria-hidden="true"></div>
+  </div>
+</template>

@@ -1,0 +1,66 @@
+---
+import content from '../../../data/content.json';
+const music = content.pages.music;
+const clips = music.audioClips || [];
+const allTags = [...new Set(clips.flatMap((c: any) => c.tags || []))];
+---
+
+<template data-app="player">
+  <div class="os-window" data-app-id="player" data-tb-label="Player" style="--w: 620px; --h: 520px;">
+    <div class="os-titlebar">
+      <span class="os-title-icon">🎵</span>
+      <span class="os-title-text">Media Player — {music.title}</span>
+      <span class="os-title-btns">
+        <button class="os-btn os-min" aria-label="Minimize">─</button>
+        <button class="os-btn os-max" aria-label="Maximize">▢</button>
+        <button class="os-btn os-close" aria-label="Close">✕</button>
+      </span>
+    </div>
+    <div class="os-body mp-body">
+      <p class="mp-desc">{music.description}</p>
+
+      {allTags.length > 0 && (
+        <div class="mp-chips" role="group" aria-label="Filter by tag">
+          <button class="mp-chip active" type="button" data-tag="">all</button>
+          {allTags.map((tag: string) => (
+            <button class="mp-chip" type="button" data-tag={tag}>#{tag}</button>
+          ))}
+        </div>
+      )}
+
+      <div class="mp-list">
+        {clips.length > 0 ? clips.map((clip: any, i: number) => (
+          <div class="m-row" data-index={i} data-tags={JSON.stringify(clip.tags || [])}>
+            <button class="m-play" type="button" data-index={i} aria-label={`Play ${clip.title}`}>
+              <svg class="m-ic-play" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              <svg class="m-ic-pause" style="display:none;" fill="currentColor" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+            </button>
+            <div class="m-info">
+              <div class="m-titlerow">
+                <span class="m-title">{clip.title}</span>
+                <span class="m-time">0:00{clip.duration ? ` / ${clip.duration}` : ''}</span>
+              </div>
+              <p class="m-sub">{clip.description}</p>
+              {clip.tags && clip.tags.length > 0 && (
+                <div class="m-tags">
+                  {clip.tags.map((t: string) => <span>#{t}</span>)}
+                </div>
+              )}
+            </div>
+          </div>
+        )) : (
+          <p class="m-empty">$ no tracks found — add audio in the admin panel</p>
+        )}
+      </div>
+
+      <div class="mp-nowbar">
+        <span class="mp-nowtitle">— nothing playing</span>
+        <div class="mp-seek"><div class="mp-seekfill"></div></div>
+        <span class="mp-nowtime">0:00</span>
+      </div>
+      <audio class="mp-audio" preload="metadata"></audio>
+    </div>
+    <script type="application/json" class="os-json" set:html={JSON.stringify(clips)} />
+    <div class="os-resize" aria-hidden="true"></div>
+  </div>
+</template>

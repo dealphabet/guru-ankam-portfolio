@@ -1,0 +1,61 @@
+---
+import content from '../../../data/content.json';
+const site = content.site;
+---
+
+<template data-app="mail">
+  <div class="os-window" data-app-id="mail" data-tb-label="new-message" style="--w: 480px; --h: 430px;">
+    <div class="os-titlebar">
+      <span class="os-title-icon">✉️</span>
+      <span class="os-title-text">new-message — Contact</span>
+      <span class="os-title-btns">
+        <button class="os-btn os-min" aria-label="Minimize">─</button>
+        <button class="os-btn os-max" aria-label="Maximize">▢</button>
+        <button class="os-btn os-close" aria-label="Close">✕</button>
+      </span>
+    </div>
+    <div class="os-body">
+      <div class="os-app-pad">
+        <p class="os-prompt-line">$ mail --compose guru</p>
+        <h1>Let's Connect</h1>
+        <p style="margin-top: 6px; margin-bottom: 14px;">
+          Whether it's a collaboration, a project idea, or just a hello — I'd love to hear from you.
+        </p>
+        <div style="display: grid; gap: 8px;">
+          <a class="os-mail-link" href={`mailto:${site.email}`}>
+            <span class="os-mail-glyph">📧</span>
+            <span>
+              <span class="os-mail-name">Email</span><br />
+              <span class="os-mail-sub">{site.email}</span>
+            </span>
+          </a>
+          <a class="os-mail-link" href={site.github} target="_blank" rel="noopener noreferrer">
+            <span class="os-mail-glyph">🐙</span>
+            <span>
+              <span class="os-mail-name">GitHub</span><br />
+              <span class="os-mail-sub">{site.github.replace('https://', '')}</span>
+            </span>
+          </a>
+          <a class="os-mail-link" href={site.instagram} target="_blank" rel="noopener noreferrer">
+            <span class="os-mail-glyph">📸</span>
+            <span>
+              <span class="os-mail-name">Instagram</span><br />
+              <span class="os-mail-sub">{site.instagram.replace('https://', '')}</span>
+            </span>
+          </a>
+          <a class="os-mail-link" href={site.linkedin} target="_blank" rel="noopener noreferrer">
+            <span class="os-mail-glyph">💼</span>
+            <span>
+              <span class="os-mail-name">LinkedIn</span><br />
+              <span class="os-mail-sub">{site.linkedin.replace('https://', '')}</span>
+            </span>
+          </a>
+        </div>
+        <p style="margin-top: 14px; font-size: 11px; color: var(--text-muted);">
+          classic view: <a href="/classic/contact" style="color: var(--accent-1);">/classic/contact</a>
+        </p>
+      </div>
+    </div>
+    <div class="os-resize" aria-hidden="true"></div>
+  </div>
+</template>
