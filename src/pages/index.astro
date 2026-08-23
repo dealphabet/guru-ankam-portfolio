@@ -10,7 +10,7 @@ const disciplines = content.disciplines;
   <!-- RECENTLY ON — full-bleed banner carousel with recent work -->
   <section class="fade-in" data-debug="showcase-banner">
     <span class="debug-label" style="top:60px; left:12px; display:none;">SHOWCASE BANNER — Recent work carousel (full-bleed, 28vh)</span>
-    <p class="section-label px-6 pt-5 pb-3 max-w-5xl mx-auto">{content.showcase.label}</p>
+    <p class="section-label px-6 pt-5 pb-3 max-w-5xl mx-auto font-mono">{content.showcase.label}</p>
 
     <div class="relative w-full overflow-hidden" style="height: 28vh; min-height: 240px;" id="showcase">
       {showcaseSlides.map((slide, i) => (
@@ -86,7 +86,8 @@ const disciplines = content.disciplines;
         GA
       </div>
       <div>
-        <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight" style="color: var(--text-primary);">Guru Ankam</h1>
+        <p class="font-mono text-[11px] mb-1.5" style="color: var(--text-muted);"><span style="color: var(--accent-1);">$</span> whoami</p>
+        <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight" style="color: var(--text-primary);" data-type-text="Guru Ankam">Guru Ankam</h1>
         <p class="text-xs mt-0.5" style="color: var(--text-muted);">{content.site.tagline}</p>
         <p class="text-sm mt-1.5" style="color: var(--text-secondary);">{content.site.bio}</p>
       </div>
@@ -100,6 +101,7 @@ const disciplines = content.disciplines;
     <div class="flex flex-col md:flex-row md:gap-12">
       <!-- Left: text — centered vertically with the carousel -->
       <div class="md:w-1/2 mb-6 md:mb-0 fade-in fade-in-delay-3 pt-20 md:pt-22">
+        <p class="font-mono text-[11px] mb-1.5" style="color: var(--text-muted);"><span style="color: var(--accent-1);">$</span> ls ~/disciplines</p>
         <h3 class="text-2xl md:text-3xl font-bold mb-2 max-w-sm" style="color: var(--text-primary);">Discover more</h3>
         <p class="text-sm max-w-sm" style="color: var(--text-secondary);">Swipe through my worlds</p>
       </div>

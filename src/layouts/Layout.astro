@@ -6,6 +6,8 @@ interface Props {
 
 const { title, description = "Guru Ankam — Photographer · Drummer · Developer · Creative" } = Astro.props;
 const currentPath = Astro.url.pathname;
+const isProto = currentPath === "/" || currentPath.startsWith("/photography");
+const pathSeg = currentPath === "/" ? "~" : "~" + currentPath.replace(/\/$/, "");
 ---
 
 <!doctype html>
@@ -30,7 +32,7 @@ const currentPath = Astro.url.pathname;
       }
     </script>
   </head>
-  <body class="min-h-screen flex flex-col">
+  <body class:list={["min-h-screen flex flex-col", isProto && "pb-7"]}>
     <nav class="fixed top-0 left-0 right-0 z-50 border-b transition-colors duration-300" style="background: var(--nav-bg); border-color: var(--border); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);" data-debug="nav">
       <span class="debug-label" style="top:4px; left:12px; display:none;">NAV — Sticky top bar with links, theme toggle, mobile menu</span>
       <div class="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
@@ -97,6 +99,21 @@ const currentPath = Astro.url.pathname;
       </div>
     </footer>
 
+    {isProto && (
+      <div id="statusline" class="fixed bottom-0 inset-x-0 z-40 h-7 flex items-center justify-between px-3 md:px-4 font-mono text-[11px] transition-colors duration-300" style="background: var(--nav-bg); border-top: 1px solid var(--border); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);" aria-hidden="true">
+        <div class="flex items-center gap-2 min-w-0">
+          <span class="metronome-dot flex-shrink-0"></span>
+          <span class="truncate" style="color: var(--text-primary);">guru@portfolio</span>
+          <span class="truncate hidden sm:inline" style="color: var(--text-muted);">{pathSeg}</span>
+          <span class="hidden lg:inline" style="color: var(--text-muted); opacity: 0.6;">$</span>
+        </div>
+        <div class="flex items-center gap-3 flex-shrink-0">
+          <span id="status-theme" style="color: var(--text-muted);"></span>
+          <span id="status-clock" style="color: var(--text-secondary);">--:--</span>
+        </div>
+      </div>
+    )}
+
     <script>
       const toggle = document.getElementById('menu-toggle');
       const menu = document.getElementById('mobile-menu');
@@ -160,6 +177,72 @@ const currentPath = Astro.url.pathname;
         localStorage.setItem('debug', String(debugMode));
         updateDebug();
       });
+
+      // Typed headings with persistent block cursor
+      document.querySelectorAll<HTMLElement>('[data-type-text]').forEach((el) => {
+        const txt = el.getAttribute('data-type-text') || '';
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        el.classList.add('type-cursor');
+        if (reduce || !txt) return;
+        let i = 0;
+        el.textContent = '';
+        (function tick() {
+          if (i <= txt.length) {
+            el.textContent = txt.slice(0, i++);
+            setTimeout(tick, 42);
+          }
+        })();
+      });
+
+      // TUI statusline + keyboard shortcuts (prototype pages only)
+      if (document.getElementById('statusline')) {
+        const clockEl = document.getElementById('status-clock');
+        const themeEl = document.getElementById('status-theme');
+
+        const two = (n: number) => (n < 10 ? '0' + n : '' + n);
+        function tickClock() {
+          const d = new Date();
+          if (clockEl) clockEl.textContent = two(d.getHours()) + ':' + two(d.getMinutes());
+        }
+        function updateThemeLabel() {
+          if (themeEl) {
+            themeEl.textContent = document.documentElement.classList.contains('dark')
+              ? 'night session'
+              : 'daylight studio';
+          }
+        }
+
+        tickClock();
+        updateThemeLabel();
+        setInterval(tickClock, 15000);
+
+        themeToggle?.addEventListener('click', () => setTimeout(updateThemeLabel, 0));
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => setTimeout(updateThemeLabel, 0));
+
+        const routes: Record<string, string> = {
+          h: '/',
+          p: '/photography',
+          m: '/music',
+          c: '/code',
+          o: '/creative',
+          a: '/about',
+        };
+
+        document.addEventListener('keydown', (e) => {
+          if (e.metaKey || e.ctrlKey || e.altKey || e.key === 'Tab') return;
+          const t = e.target as HTMLElement | null;
+          if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+          const k = e.key.toLowerCase();
+          if (k === 't') {
+            themeToggle?.click();
+            return;
+          }
+          const dest = routes[k];
+          if (dest && dest !== window.location.pathname) {
+            window.location.href = dest;
+          }
+        });
+      }
     </script>
 
     <!-- Debug toggle button -->

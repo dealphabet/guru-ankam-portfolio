@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,6 +7,7 @@
 
 @layer base {
   :root {
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
     --bg-primary: #f8fafc;
     --bg-secondary: #eef2f7;
     --bg-card: #ffffff;
@@ -919,4 +921,94 @@
 @keyframes scrollBounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(6px); }
+}
+
+/* ============================================
+   TUI CHROME — "one OS, many apps" prototype
+   Terminal-style frame elements. Photos and
+   rich content are never touched by these.
+   ============================================ */
+@layer components {
+  /* Window titlebar strip for collection frames */
+  .tui-titlebar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 1rem;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    color: var(--text-muted);
+    user-select: none;
+  }
+
+  .tui-slug {
+    color: var(--accent-1);
+    font-weight: 500;
+  }
+
+  .tui-count {
+    margin-left: auto;
+    font-size: 10px;
+    opacity: 0.8;
+  }
+
+  .tui-dots {
+    display: inline-flex;
+    gap: 4px;
+    margin-right: 2px;
+  }
+
+  .tui-dots span {
+    width: 7px;
+    height: 7px;
+    border-radius: 9999px;
+    background: var(--border-hover);
+  }
+
+  /* Blinking block cursor for typed headings */
+  .type-cursor::after {
+    content: '▌';
+    margin-left: 0.12em;
+    color: var(--accent-1);
+    animation: blinkCursor 1.05s steps(1) infinite;
+  }
+
+  @keyframes blinkCursor {
+    50% { opacity: 0; }
+  }
+
+  /* Metronome pulse — 72 BPM drummer heartbeat */
+  .metronome-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 9999px;
+    background: var(--accent-1);
+    display: inline-block;
+    animation: metroPulse 0.833s ease-in-out infinite;
+  }
+
+  @keyframes metroPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.35; transform: scale(0.82); }
+  }
+
+  /* Mono treatment for interactive metadata chips */
+  .collection-tag,
+  .photo-tag,
+  .expand-filter-btn,
+  .expand-photo-meta {
+    font-family: var(--font-mono);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .type-cursor::after {
+    animation: none;
+  }
+  .metronome-dot {
+    animation: none;
+  }
 }
