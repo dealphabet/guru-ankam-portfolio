@@ -58,6 +58,8 @@ const allTags = [...new Set(clips.flatMap((c: any) => c.tags || []))];
         <div class="mp-seek"><div class="mp-seekfill"></div></div>
         <span class="mp-nowtime">0:00</span>
       </div>
+
+      <p class="app-classic-note">$ prefer traditional pages? <a href="/classic/music" data-nav>/classic/music ↗</a></p>
       <audio class="mp-audio" preload="metadata"></audio>
     </div>
     <script type="application/json" class="os-json" set:html={JSON.stringify(clips)} />

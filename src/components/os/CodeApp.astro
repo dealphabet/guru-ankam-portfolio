@@ -41,6 +41,7 @@ const allTags = [...new Set(code.projects.flatMap((p: any) => p.tags || []))];
             </button>
           ))}
         </div>
+        <p class="app-classic-note">$ prefer traditional pages? <a href="/classic/code" data-nav>/classic/code ↗</a></p>
       </div>
     </div>
     <script type="application/json" class="os-json" set:html={JSON.stringify(code.projects)} />

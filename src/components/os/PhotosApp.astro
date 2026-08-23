@@ -5,36 +5,50 @@ const totalCount = collections.reduce((n: number, c: any) => n + (c.photos || []
 ---
 
 <template data-app="photos">
-  <div class="os-window" data-app-id="photos" data-tb-label="Photos" style="--w: 900px; --h: 620px;">
+  <div class="os-window" data-app-id="photos" data-tb-label="Photos" style="--w: 880px; --h: 560px;">
     <div class="os-titlebar">
       <span class="os-title-icon">🖼</span>
-      <span class="os-title-text">Photos — Filmstrip</span>
+      <span class="os-title-text">File Explorer — Photos</span>
       <span class="os-title-btns">
         <button class="os-btn os-min" aria-label="Minimize">─</button>
         <button class="os-btn os-max" aria-label="Maximize">▢</button>
         <button class="os-btn os-close" aria-label="Close">✕</button>
       </span>
     </div>
-    <div class="os-body ph-body">
-      <div class="ph-tabs" role="tablist">
-        <button class="ph-tab active" type="button" data-col="__all">All Photos · {totalCount}</button>
-        {collections.map((c: any) => (
-          <button class="ph-tab" type="button" data-col={c.id}>{c.title} · {(c.photos || []).length}</button>
-        ))}
+    <div class="os-body" style="display:flex; flex-direction:column; overflow:hidden;">
+      <div class="ex-toolbar">
+        <span class="ex-crumb">$ ls ~/photos<span class="ex-crumb-path">/all</span></span>
+        <span class="ex-views" role="group" aria-label="View mode">
+          <button class="ex-vbtn active" type="button" data-view="grid" title="Large icons">▦</button>
+          <button class="ex-vbtn" type="button" data-view="list" title="Details">☰</button>
+        </span>
       </div>
-
-      <div class="ph-stage">
-        <button class="pv-nav ph-prev" aria-label="Previous photo">‹</button>
-        <div class="ph-stage-img"></div>
-        <div class="ph-stage-cap">
-          <span class="ph-cap-alt"></span>
-          <span class="ph-cap-meta"></span>
+      <div class="ex-main">
+        <aside class="ex-side">
+          <p class="ex-side-title">collections</p>
+          <button class="ex-folder active" type="button" data-col="__all">
+            <span>📁 All Photos</span><span class="ex-folder-count">{totalCount}</span>
+          </button>
+          {collections.map((c: any) => (
+            <button class="ex-folder" type="button" data-col={c.id}>
+              <span>📁 {c.title}</span><span class="ex-folder-count">{(c.photos || []).length}</span>
+            </button>
+          ))}
+        </aside>
+        <div class="ex-content">
+          <div class="ex-grid"></div>
+          <table class="ex-table" hidden>
+            <thead>
+              <tr><th></th><th>name</th><th>kind</th><th>collection</th><th>camera</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
         </div>
-        <button class="pv-nav ph-next" aria-label="Next photo">›</button>
       </div>
-
-      <div class="ph-strip" aria-label="Filmstrip"></div>
-      <div class="ex-statusbar">$ hover the strip to preview · click to open Photo Viewer · scroll wheel scrubs ✓</div>
+      <div class="ex-statusbar">
+        <span class="ex-count"></span>
+        <span>click a photo to open it in Photo Viewer ✓</span>
+      </div>
     </div>
     <script type="application/json" class="os-json" set:html={JSON.stringify(collections)} />
     <div class="os-resize" aria-hidden="true"></div>

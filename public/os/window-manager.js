@@ -379,97 +379,50 @@
   }
 
   function bindSettings(root) {
-    var crt = root.querySelector('.wp-crt-screen');
-    var applyBtn = root.querySelector('.wp-apply');
-    var resetBtn = root.querySelector('.wp-reset');
     var items = Array.prototype.slice.call(root.querySelectorAll('.wp-item'));
+    var resetBtn = root.querySelector('.wp-reset');
     var customArea = root.querySelector('.wp-custom');
+    var customItem = root.querySelector('.wp-item[data-wall="__custom"]');
     var urlInput = root.querySelector('.os-url-input');
     var urlApply = root.querySelector('.os-url-apply');
     var dropZone = root.querySelector('.os-drop-zone');
     var fileInput = root.querySelector('.os-file-input');
-    var pendingCustom = null;
 
-    function appliedState() {
-      var s = loadSettings();
-      return s.customWallpaper ? { type: 'custom' } : { type: 'preset', id: s.wallpaper || 'aurora' };
-    }
-    var pending = null;
+    /* window skin cards */
+    root.querySelectorAll('[data-set-chrome]').forEach(function (b) {
+      b.addEventListener('click', function () { setChrome(b.dataset.setChrome); });
+    });
 
-    function paintCrt(st) {
-      if (!crt) return;
-      if (st.type === 'custom' && st.previewUrl) crt.style.backgroundImage = 'url("' + st.previewUrl + '")';
-      else if (st.type === 'custom') crt.style.backgroundImage = '';
-      else crt.style.backgroundImage = '';
-      crt.className = 'wp-crt-screen ' + (st.type === 'custom' ? 'sw-custom-crt' : 'sw-' + st.id);
-    }
+    function appliedCustom() { return !!loadSettings().customWallpaper; }
 
     function reflect() {
-      var applied = appliedState();
+      var s = loadSettings();
       items.forEach(function (it) {
         var isSel;
-        if (it.dataset.wall === '__custom') isSel = pending.type === 'custom';
-        else isSel = pending.type === 'preset' && pending.id === it.dataset.wall;
+        if (it.dataset.wall === '__custom') isSel = !!s.customWallpaper;
+        else isSel = !s.customWallpaper && it.dataset.wall === (s.wallpaper || 'aurora');
         it.classList.toggle('selected', isSel);
       });
-      if (customArea) customArea.hidden = !(pending.type === 'custom');
-      paintCrt(pending);
-      var changed = pending.type !== applied.type ||
-        (pending.type === 'preset' && pending.id !== applied.id) ||
-        (pending.type === 'custom' && !!pending.newData);
-      if (applyBtn) applyBtn.disabled = !changed;
+      if (customArea) customArea.hidden = !appliedCustom();
     }
 
     items.forEach(function (it) {
       it.addEventListener('click', function () {
         if (it.dataset.wall === '__custom') {
-          pending = { type: 'custom', newData: null };
-          var s = loadSettings();
-          if (s.customWallpaper) { urlInput.value = ''; }
+          if (!appliedCustom()) toast('paste a URL or drop an image below ↓');
         } else {
-          pending = { type: 'preset', id: it.dataset.wall };
+          setWallpaper(it.dataset.wall);
+          toast('$ wallpaper --set ' + it.dataset.wall + ' ✓');
         }
         reflect();
       });
     });
 
-    if (applyBtn) {
-      applyBtn.addEventListener('click', function () {
-        if (pending.type === 'preset') {
-          setWallpaper(pending.id);
-          toast('$ wallpaper --set ' + pending.id + ' ✓');
-        } else {
-          if (pending.newData) {
-            applyCustomWallpaper(pending.newData);
-            saveSettings({ customWallpaper: pending.newData, wallpaper: pending.id || appliedState().id });
-            toast('$ wallpaper --set custom ✓');
-          } else {
-            var s = loadSettings();
-            if (s.customWallpaper) toast('custom wallpaper already applied');
-            else toast('✗ pick an image or paste a URL first');
-          }
-        }
-        pending = appliedState();
-        if (pending.type === 'custom') pending = { type: 'custom', newData: null };
-        reflect();
-      });
-    }
-
-    if (resetBtn) {
-      resetBtn.addEventListener('click', function () {
-        saveSettings({ wallpaper: 'aurora', customWallpaper: null });
-        html.dataset.wallpaper = 'aurora';
-        applyCustomWallpaper(null);
-        pending = { type: 'preset', id: 'aurora' };
-        reflect();
-        toast('$ wallpaper --reset ✓');
-      });
-    }
-
     function commitCustom(dataUrl) {
-      pending = { type: 'custom', newData: dataUrl };
-      if (crt && dataUrl) { crt.className = 'wp-crt-screen sw-custom-crt'; crt.style.backgroundImage = 'url("' + dataUrl + '")'; }
+      applyCustomWallpaper(dataUrl);
+      saveSettings({ customWallpaper: dataUrl });
       reflect();
+      toast('$ wallpaper --set custom ✓');
     }
 
     if (urlApply && urlInput) {
@@ -502,11 +455,18 @@
       });
     }
 
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function () {
+        saveSettings({ wallpaper: 'aurora', customWallpaper: null });
+        html.dataset.wallpaper = 'aurora';
+        applyCustomWallpaper(null);
+        reflect();
+        toast('$ wallpaper --reset ✓');
+      });
+    }
+
     var sysTheme = root.querySelector('#os-sys-theme');
     if (sysTheme) sysTheme.textContent = html.classList.contains('dark') ? 'night session' : 'daylight studio';
-
-    var ap = appliedState();
-    pending = ap.type === 'custom' ? { type: 'custom', newData: null } : { type: 'preset', id: ap.id };
     reflect();
   }
 
@@ -533,103 +493,105 @@
   function bindPhotos(inst) {
     var el = inst.el;
     var collections = getAppJSON(el);
-    var strip = el.querySelector('.ph-strip');
-    var stageImg = el.querySelector('.ph-stage-img');
-    var capAlt = el.querySelector('.ph-cap-alt');
-    var capMeta = el.querySelector('.ph-cap-meta');
-    var tabs = el.querySelectorAll('.ph-tab');
+    var grid = el.querySelector('.ex-grid');
+    var tbody = el.querySelector('.ex-table tbody');
+    var table = el.querySelector('.ex-table');
+    var crumbPath = el.querySelector('.ex-crumb-path');
+    var countEl = el.querySelector('.ex-count');
+    var folders = el.querySelectorAll('.ex-folder');
+    var vbtns = el.querySelectorAll('.ex-vbtn');
     var list = [];
-    var idx = 0;
-    var wheelLock = 0;
+    var view = 'grid';
+    try { view = localStorage.getItem('photos-view') || 'grid'; } catch (e) {}
 
     function flatAll() {
       var out = [];
       collections.forEach(function (c) {
-        (c.photos || []).forEach(function (p) { out.push(Object.assign({}, p, { _col: c.title, _colId: c.id })); });
+        (c.photos || []).forEach(function (p) { out.push(Object.assign({}, p, { _col: c.title })); });
       });
       return out;
     }
 
-    function setIdx(i, opts) {
-      if (!list.length) return;
-      idx = ((i % list.length) + list.length) % list.length;
-      var p = list[idx];
-      stageImg.innerHTML = pictureHTML(p, true) || '';
-      if (capAlt) capAlt.textContent = p.alt || '';
-      if (capMeta) capMeta.textContent = [p.category, p._col].filter(Boolean).join(' · ');
-      var thumbs = strip.children;
-      for (var t = 0; t < thumbs.length; t++) thumbs[t].classList.toggle('active', t === idx);
-      var act = thumbs[idx];
-      if (act && act.scrollIntoView) act.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: reduceMotion ? 'auto' : 'smooth' });
-      if (!(opts && opts.silentToast)) {
-        /* no toast spam while scrubbing */
-      }
-    }
+    function openAt(i) { OS.openViewer(list[i], list, i); }
 
-    /* progressive strip rendering — keeps the app snappy with 160+ photos */
-    function renderStrip(colId) {
-      if (colId === '__all') list = flatAll();
-      else {
-        var col = collections.find(function (c) { return c.id === colId; }) || { photos: [] };
-        list = (col.photos || []).slice();
-      }
-      strip.innerHTML = '';
+    /* progressive thumbnail rendering — keeps 160+ photos snappy */
+    function renderGrid() {
+      grid.innerHTML = '';
+      table.hidden = true;
+      grid.style.display = '';
       var i = 0;
       (function chunk() {
         var end = Math.min(i + 24, list.length);
         for (; i < end; i++) {
           (function (n) {
             var p = list[n];
-            var b = document.createElement('button');
-            b.className = 'ph-thumb';
-            b.type = 'button';
-            b.innerHTML = pictureHTML(p);
-            b.addEventListener('mouseenter', function () { setIdx(n); });
-            b.addEventListener('focus', function () { setIdx(n); });
-            b.addEventListener('click', function () { OS.openViewer(list[n], list, n); });
-            strip.appendChild(b);
+            var cell = document.createElement('button');
+            cell.className = 'ex-thumb';
+            cell.type = 'button';
+            cell.setAttribute('title', p.alt || '');
+            cell.innerHTML = pictureHTML(p) +
+              '<span class="ex-thumb-ov"><span class="ex-thumb-alt">' + escHtml(p.alt || '') + '</span>' +
+              '<span class="ex-thumb-cat">' + escHtml(p.category || '') + '</span></span>';
+            cell.addEventListener('click', function () { openAt(n); });
+            grid.appendChild(cell);
           })(i);
         }
         if (i < list.length) requestAnimationFrame(chunk);
-        else setIdx(idx, {});
       })();
     }
 
-    tabs.forEach(function (tab) {
-      tab.addEventListener('click', function () {
-        tabs.forEach(function (t2) { t2.classList.remove('active'); });
-        tab.classList.add('active');
-        idx = 0;
-        renderStrip(tab.dataset.col);
+    function renderList() {
+      grid.style.display = 'none';
+      table.hidden = false;
+      var rows = list.map(function (p, n) {
+        return '<tr class="ex-row" data-i="' + n + '">' +
+          '<td class="ex-row-thumb">' + pictureHTML(p) + '</td>' +
+          '<td class="ex-row-name">' + escHtml(p.alt || 'untitled') + '</td>' +
+          '<td class="ex-row-kind">' + escHtml(p.category || '\u2014') + '</td>' +
+          '<td class="ex-row-kind">' + escHtml(p._col || '\u2014') + '</td>' +
+          '<td class="ex-row-meta">' + escHtml(p.camera || '\u2014') + '</td>' +
+          '</tr>';
+      }).join('');
+      tbody.innerHTML = rows;
+    }
+
+    function applyView() {
+      vbtns.forEach(function (b) { b.classList.toggle('active', b.dataset.view === view); });
+      if (view === 'list') renderList();
+      else renderGrid();
+    }
+
+    function selectFolder(colId) {
+      if (colId === '__all') list = flatAll();
+      else {
+        var col = collections.find(function (c) { return c.id === colId; }) || { photos: [] };
+        list = (col.photos || []).slice();
+      }
+      folders.forEach(function (f) { f.classList.toggle('active', f.dataset.col === colId); });
+      if (crumbPath) crumbPath.textContent = '/' + (colId === '__all' ? 'all' : colId);
+      if (countEl) countEl.textContent = list.length + ' items';
+      applyView();
+    }
+
+    folders.forEach(function (f) {
+      f.addEventListener('click', function () { selectFolder(f.dataset.col); });
+    });
+    vbtns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        view = b.dataset.view;
+        try { localStorage.setItem('photos-view', view); } catch (e) {}
+        applyView();
       });
     });
-
-    var prevB = el.querySelector('.ph-prev'), nextB = el.querySelector('.ph-next');
-    if (prevB) prevB.addEventListener('click', function () { setIdx(idx - 1); });
-    if (nextB) nextB.addEventListener('click', function () { setIdx(idx + 1); });
-
-    /* vertical wheel scrolls the strip horizontally */
-    if (strip) {
-      strip.addEventListener('wheel', function (e) {
-        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-          e.preventDefault();
-          strip.scrollLeft += e.deltaY;
-        }
-      }, { passive: false });
-    }
-    /* wheel over the big preview scrubs through photos */
-    var stage = el.querySelector('.ph-stage');
-    if (stage) {
-      stage.addEventListener('wheel', function (e) {
-        e.preventDefault();
-        var now = Date.now();
-        if (now - wheelLock < 180) return;
-        wheelLock = now;
-        setIdx(idx + (e.deltaY > 0 ? 1 : -1));
-      }, { passive: false });
+    if (tbody) {
+      tbody.addEventListener('click', function (e) {
+        var row = e.target.closest('.ex-row');
+        if (row) openAt(parseInt(row.dataset.i, 10));
+      });
     }
 
-    renderStrip('__all');
+    vbtns.forEach(function (b) { b.classList.toggle('active', b.dataset.view === view); });
+    selectFolder('__all');
   }
 
   /* ============================================================
@@ -741,7 +703,9 @@
     el.querySelector('.pv-loc').textContent = p.location ? 'LOC     ' + p.location : '';
 
     var imgWrap = el.querySelector('.pv-img');
-    imgWrap.innerHTML = pictureHTML(p, true) || '<div style="padding:60px;color:var(--text-muted)">no preview</div>';
+    var blurUrl = p.fileJpeg || p.fileWebp || p.fileAvif || p.file || '';
+    var blurHTML = blurUrl ? '<div class="pv-blur" style="background-image:url(\'' + blurUrl + '\')"></div>' : '';
+    imgWrap.innerHTML = blurHTML + (pictureHTML(p, true) || '<div style="padding:60px;color:var(--text-muted)">no preview</div>');
     var img = imgWrap.querySelector('img');
     if (img) {
       img.style.transform = 'translate(0px,0px) scale(1)';

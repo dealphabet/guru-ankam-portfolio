@@ -34,7 +34,7 @@ const wallpaperLabels: Record<string, string> = {
 ---
 
 <template data-app="settings">
-  <div class="os-window" data-app-id="settings" data-tb-label="Settings" data-pos="center" style="--w: 600px; --h: 640px;">
+  <div class="os-window" data-app-id="settings" data-tb-label="Settings" data-pos="center" style="--w: 560px; --h: 600px;">
     <div class="os-titlebar">
       <span class="os-title-icon">⚙️</span>
       <span class="os-title-text">control-panel — Settings</span>
@@ -61,14 +61,8 @@ const wallpaperLabels: Record<string, string> = {
         </div>
 
         <div class="os-set-section">
-          <h3 class="os-set-heading">Wallpaper — pick, preview on the CRT, apply</h3>
+          <h3 class="os-set-heading">Wallpaper — pick, preview and apply!</h3>
           <div class="wp-picker">
-            <div class="wp-monitor">
-              <div class="wp-crt">
-                <div class="wp-crt-screen sw-aurora"></div>
-              </div>
-              <span class="wp-monitor-stand"></span>
-            </div>
             <div class="wp-list" role="listbox" aria-label="Wallpapers">
               {wallpaperGroups.map((g) => (
                 <div class="wp-group">
@@ -79,16 +73,15 @@ const wallpaperLabels: Record<string, string> = {
                       <span>{wallpaperLabels[id] || id}</span>
                     </button>
                   ))}
-                  <button class="wp-item" type="button" role="option" data-wall="__custom">
-                    <span class="wp-item-art wp-item-custom">🖼</span>
-                    <span>Custom…</span>
-                  </button>
                 </div>
               ))}
-            </div>
-            <div class="wp-actions">
-              <button class="os-btn-accent wp-apply" type="button" disabled>apply</button>
-              <button class="os-btn-danger-ghost wp-reset" type="button">reset to default</button>
+              <div class="wp-group">
+                <div class="wp-group-title">your own</div>
+                <button class="wp-item" type="button" role="option" data-wall="__custom">
+                  <span class="wp-item-art wp-item-custom">🖼</span>
+                  <span>Custom…</span>
+                </button>
+              </div>
             </div>
             <div class="wp-custom" hidden>
               <div class="os-url-row">
@@ -100,12 +93,15 @@ const wallpaperLabels: Record<string, string> = {
               </div>
               <input class="os-file-input" type="file" accept="image/*" hidden />
             </div>
+            <div class="wp-actions">
+              <button class="os-btn-danger-ghost wp-reset" type="button">reset to default</button>
+            </div>
           </div>
         </div>
 
         <div class="os-system-foot">
           <div class="os-sys-info">
-            PortfolioOS v1.2 · kernel: astro-static<br />
+            PortfolioOS v1.3 · kernel: astro-static<br />
             theme: <span id="os-sys-theme">—</span> · preferences saved locally ✓
           </div>
           <a class="os-btn-ghost" href="/admin.html" target="_blank" rel="noopener noreferrer">Admin Panel ↗</a>

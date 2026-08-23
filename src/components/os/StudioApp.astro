@@ -41,6 +41,7 @@ const allTags = [...new Set(creative.works.flatMap((w: any) => w.tags || []))];
             </button>
           ))}
         </div>
+        <p class="app-classic-note">$ prefer traditional pages? <a href="/classic/creative" data-nav>/classic/creative ↗</a></p>
       </div>
     </div>
     <script type="application/json" class="os-json" set:html={JSON.stringify(creative.works)} />
