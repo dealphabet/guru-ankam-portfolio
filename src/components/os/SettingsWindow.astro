@@ -14,27 +14,27 @@ const wallpaperGroups = [
 ];
 
 const wallpaperLabels: Record<string, string> = {
-  aurora: 'aurora',
-  midnight: 'midnight',
-  dusk: 'dusk',
-  ocean: 'ocean',
-  blueprint: 'blueprint',
-  plain: 'plain',
-  phosphor: 'phosphor',
-  amber: 'amber crt',
-  'retro-teal': 'classic teal',
-  bliss: 'bliss hills',
-  bloom: 'bloom dark',
-  sunrise: 'sunrise bloom',
-  flow: 'aurora flow ▶',
-  starfield: 'starfield ▶',
-  rainfall: 'rainfall ▶',
-  orbs: 'floating orbs ▶',
+  aurora: 'Aurora (default)',
+  midnight: 'Midnight',
+  dusk: 'Dusk',
+  ocean: 'Ocean',
+  blueprint: 'Blueprint Grid',
+  plain: 'Plain Solid',
+  phosphor: 'Phosphor Terminal',
+  amber: 'Amber CRT',
+  'retro-teal': 'Classic Teal',
+  bliss: 'Bliss Hills',
+  bloom: 'Bloom Dark',
+  sunrise: 'Sunrise Bloom',
+  flow: 'Aurora Flow ▶',
+  starfield: 'Starfield ▶',
+  rainfall: 'Rainfall ▶',
+  orbs: 'Floating Orbs ▶',
 };
 ---
 
 <template data-app="settings">
-  <div class="os-window" data-app-id="settings" data-tb-label="Settings" data-pos="center" style="--w: 580px; --h: 620px;">
+  <div class="os-window" data-app-id="settings" data-tb-label="Settings" data-pos="center" style="--w: 600px; --h: 640px;">
     <div class="os-titlebar">
       <span class="os-title-icon">⚙️</span>
       <span class="os-title-text">control-panel — Settings</span>
@@ -46,7 +46,7 @@ const wallpaperLabels: Record<string, string> = {
     </div>
     <div class="os-body">
       <div class="os-app-pad">
-        <p class="os-prompt-line">$ open settings --panel appearance</p>
+        <p class="os-prompt-line">$ open settings --panel display-properties</p>
 
         <div class="os-set-section">
           <h3 class="os-set-heading">Window skin</h3>
@@ -60,41 +60,53 @@ const wallpaperLabels: Record<string, string> = {
           </div>
         </div>
 
-        {wallpaperGroups.map((g) => (
-          <div class="os-set-section">
-            <h3 class="os-set-heading">Wallpaper — {g.group}</h3>
-            <div class="os-swatches">
-              {g.items.map((id) => (
-                <button class="os-swatch" type="button" data-set-wall={id}>
-                  <span class={`os-swatch-art sw-${id}`}></span>
-                  <span class="os-swatch-label">{wallpaperLabels[id] || id}</span>
-                </button>
+        <div class="os-set-section">
+          <h3 class="os-set-heading">Wallpaper — pick, preview on the CRT, apply</h3>
+          <div class="wp-picker">
+            <div class="wp-monitor">
+              <div class="wp-crt">
+                <div class="wp-crt-screen sw-aurora"></div>
+              </div>
+              <span class="wp-monitor-stand"></span>
+            </div>
+            <div class="wp-list" role="listbox" aria-label="Wallpapers">
+              {wallpaperGroups.map((g) => (
+                <div class="wp-group">
+                  <div class="wp-group-title">{g.group}</div>
+                  {g.items.map((id) => (
+                    <button class="wp-item" type="button" role="option" data-wall={id}>
+                      <span class={`wp-item-art sw-${id}`}></span>
+                      <span>{wallpaperLabels[id] || id}</span>
+                    </button>
+                  ))}
+                  <button class="wp-item" type="button" role="option" data-wall="__custom">
+                    <span class="wp-item-art wp-item-custom">🖼</span>
+                    <span>Custom…</span>
+                  </button>
+                </div>
               ))}
             </div>
-          </div>
-        ))}
-
-        <div class="os-set-section">
-          <h3 class="os-set-heading">Custom wallpaper</h3>
-          <div class="os-custom-wall">
-            <div class="os-url-row">
-              <input class="os-input os-url-input" type="url" placeholder="https://…/image.jpg" aria-label="Wallpaper image URL" />
-              <button class="os-btn-accent os-url-apply" type="button">apply</button>
+            <div class="wp-actions">
+              <button class="os-btn-accent wp-apply" type="button" disabled>apply</button>
+              <button class="os-btn-danger-ghost wp-reset" type="button">reset to default</button>
             </div>
-            <div class="os-drop-zone" role="button" tabindex="0">
-              …or drag &amp; drop an image here / click to browse
-            </div>
-            <input class="os-file-input" type="file" accept="image/*" hidden />
-            <div>
-              <button class="os-btn-danger-ghost os-wall-reset" type="button">reset to preset</button>
+            <div class="wp-custom" hidden>
+              <div class="os-url-row">
+                <input class="os-input os-url-input" type="url" placeholder="https://…/image.jpg" aria-label="Wallpaper image URL" />
+                <button class="os-btn-accent os-url-apply" type="button">set</button>
+              </div>
+              <div class="os-drop-zone" role="button" tabindex="0">
+                …or drag &amp; drop an image here / click to browse
+              </div>
+              <input class="os-file-input" type="file" accept="image/*" hidden />
             </div>
           </div>
         </div>
 
         <div class="os-system-foot">
           <div class="os-sys-info">
-            PortfolioOS v1.1 · kernel: astro-static<br />
-            theme: <span id="os-sys-theme">—</span> · uptime tracked in tray
+            PortfolioOS v1.2 · kernel: astro-static<br />
+            theme: <span id="os-sys-theme">—</span> · preferences saved locally ✓
           </div>
           <a class="os-btn-ghost" href="/admin.html" target="_blank" rel="noopener noreferrer">Admin Panel ↗</a>
         </div>

@@ -1,40 +1,40 @@
 ---
 import content from '../../../data/content.json';
 const collections = content.pages.photography.collections || [];
+const totalCount = collections.reduce((n: number, c: any) => n + (c.photos || []).length, 0);
 ---
 
 <template data-app="photos">
-  <div class="os-window" data-app-id="photos" data-tb-label="Photos" style="--w: 880px; --h: 580px;">
+  <div class="os-window" data-app-id="photos" data-tb-label="Photos" style="--w: 900px; --h: 620px;">
     <div class="os-titlebar">
-      <span class="os-title-icon">📁</span>
-      <span class="os-title-text">Photos — File Explorer</span>
+      <span class="os-title-icon">🖼</span>
+      <span class="os-title-text">Photos — Filmstrip</span>
       <span class="os-title-btns">
         <button class="os-btn os-min" aria-label="Minimize">─</button>
         <button class="os-btn os-max" aria-label="Maximize">▢</button>
         <button class="os-btn os-close" aria-label="Close">✕</button>
       </span>
     </div>
-    <div class="os-body ex-body">
-      <div class="ex-toolbar">
-        <span class="ex-crumb"><span style="color: var(--accent-1);">$</span> ~/photography<span class="ex-crumb-path">/all</span></span>
-        <span class="ex-count"></span>
+    <div class="os-body ph-body">
+      <div class="ph-tabs" role="tablist">
+        <button class="ph-tab active" type="button" data-col="__all">All Photos · {totalCount}</button>
+        {collections.map((c: any) => (
+          <button class="ph-tab" type="button" data-col={c.id}>{c.title} · {(c.photos || []).length}</button>
+        ))}
       </div>
-      <div class="ex-main">
-        <aside class="ex-side">
-          <button class="ex-folder active" type="button" data-col="__all">
-            <span>🖼 All Photos</span>
-            <span class="ex-folder-count">{collections.reduce((n: number, c: any) => n + (c.photos || []).length, 0)}</span>
-          </button>
-          {collections.map((c: any) => (
-            <button class="ex-folder" type="button" data-col={c.id}>
-              <span>📂 {c.title}</span>
-              <span class="ex-folder-count">{(c.photos || []).length}</span>
-            </button>
-          ))}
-        </aside>
-        <div class="ex-grid" aria-live="polite"></div>
+
+      <div class="ph-stage">
+        <button class="pv-nav ph-prev" aria-label="Previous photo">‹</button>
+        <div class="ph-stage-img"></div>
+        <div class="ph-stage-cap">
+          <span class="ph-cap-alt"></span>
+          <span class="ph-cap-meta"></span>
+        </div>
+        <button class="pv-nav ph-next" aria-label="Next photo">›</button>
       </div>
-      <div class="ex-statusbar">$ click a photo to open it in Photo Viewer · photos stay untouched ✓</div>
+
+      <div class="ph-strip" aria-label="Filmstrip"></div>
+      <div class="ex-statusbar">$ hover the strip to preview · click to open Photo Viewer · scroll wheel scrubs ✓</div>
     </div>
     <script type="application/json" class="os-json" set:html={JSON.stringify(collections)} />
     <div class="os-resize" aria-hidden="true"></div>

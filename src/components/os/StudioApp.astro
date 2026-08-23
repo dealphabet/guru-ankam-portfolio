@@ -5,7 +5,7 @@ const allTags = [...new Set(creative.works.flatMap((w: any) => w.tags || []))];
 ---
 
 <template data-app="studio">
-  <div class="os-window" data-app-id="studio" data-tb-label="Studio" style="--w: 680px; --h: 540px;">
+  <div class="os-window" data-app-id="studio" data-tb-label="Studio" style="--w: 720px; --h: 520px;">
     <div class="os-titlebar">
       <span class="os-title-icon">🎨</span>
       <span class="os-title-text">Studio — {creative.title}</span>
@@ -16,7 +16,7 @@ const allTags = [...new Set(creative.works.flatMap((w: any) => w.tags || []))];
       </span>
     </div>
     <div class="os-body cd-body">
-      <div class="cd-listview">
+      <div class="cd-listview" style="padding-top: 10px;">
         <p class="cd-desc">{creative.description}</p>
         <div class="mp-chips cd-chips" role="group" aria-label="Filter by tag">
           <button class="mp-chip active" type="button" data-tag="">all</button>
@@ -24,28 +24,43 @@ const allTags = [...new Set(creative.works.flatMap((w: any) => w.tags || []))];
             <button class="mp-chip" type="button" data-tag={tag}>#{tag}</button>
           ))}
         </div>
-        <div class="cd-grid">
+        <div class="st-grid">
           {creative.works.map((work: any, i: number) => (
-            <div class="st-card" data-index={i} data-tags={JSON.stringify(work.tags || [])}>
-              <div class="st-card-art" style={`background: ${work.gradient || 'var(--bg-secondary)'};`}>
+            <button class="st-card" type="button" data-index={i} data-tags={JSON.stringify(work.tags || [])}>
+              <span class="st-card-art" style={`background: ${work.gradient || 'var(--bg-secondary)'};`}>
                 {work.file ? (
                   <img src={work.file} alt={work.title} loading="lazy" />
                 ) : (
                   <span>{work.icon || '🎨'}</span>
                 )}
-              </div>
-              <div class="st-card-body">
+              </span>
+              <span class="st-card-body">
                 <span class="st-card-type">{work.type}</span>
                 <span class="cd-card-title">{work.title}</span>
-                <p class="cd-card-desc">{work.description}</p>
-              </div>
-            </div>
+              </span>
+            </button>
           ))}
         </div>
       </div>
+    </div>
+    <script type="application/json" class="os-json" set:html={JSON.stringify(creative.works)} />
+    <div class="os-resize" aria-hidden="true"></div>
+  </div>
+</template>
 
-      <div class="cd-detailview" hidden>
-        <button class="os-btn-ghost cd-back" type="button">← back to works</button>
+<template data-app="work">
+  <div class="os-window" data-app-kind="work" style="--w: 620px; --h: 540px;">
+    <div class="os-titlebar">
+      <span class="os-title-icon">🎨</span>
+      <span class="os-title-text pd-title-text">Work</span>
+      <span class="os-title-btns">
+        <button class="os-btn os-min" aria-label="Minimize">─</button>
+        <button class="os-btn os-max" aria-label="Maximize">▢</button>
+        <button class="os-btn os-close" aria-label="Close">✕</button>
+      </span>
+    </div>
+    <div class="os-body" style="display:flex; flex-direction:column;">
+      <div class="cd-detailview" style="padding-top:12px;">
         <div class="cd-detail-banner"></div>
         <div class="os-app-pad" style="padding: 14px 4px 0;">
           <span class="st-card-type cd-d-type"></span>

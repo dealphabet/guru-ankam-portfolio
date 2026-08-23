@@ -1,5 +1,13 @@
+---
+import content from '../../../data/content.json';
+const collections = content.pages.photography.collections || [];
+const allPhotos = collections.flatMap((c: any) =>
+  (c.photos || []).map((p: any) => ({ ...p, _collection: c.title, _colId: c.id }))
+);
+---
+
 <template data-app="viewer">
-  <div class="os-window" data-app-id="viewer" data-tb-label="Photo Viewer" style="--w: 900px; --h: 560px;">
+  <div class="os-window" data-app-id="viewer" data-tb-label="Photo Viewer" style="--w: 920px; --h: 600px;">
     <div class="os-titlebar">
       <span class="os-title-icon">🖼</span>
       <span class="os-title-text">Photo Viewer</span>
@@ -11,9 +19,17 @@
     </div>
     <div class="os-body pv-body">
       <div class="pv-imgwrap">
+        <div class="pv-zoombar">
+          <button class="pv-zbtn" data-zoom="out" aria-label="Zoom out">−</button>
+          <span class="pv-zpct">100%</span>
+          <button class="pv-zbtn" data-zoom="in" aria-label="Zoom in">+</button>
+          <button class="pv-zbtn" data-zoom="fit" aria-label="Fit to window">fit</button>
+          <button class="pv-zbtn" data-zoom="actual" aria-label="Actual size">1:1</button>
+        </div>
         <button class="pv-nav pv-prev" aria-label="Previous photo">‹</button>
         <div class="pv-img"></div>
         <button class="pv-nav pv-next" aria-label="Next photo">›</button>
+        <p class="pv-hint">scroll = zoom · drag = pan · double-click = toggle 100%</p>
       </div>
       <aside class="pv-info">
         <p class="os-prompt-line">$ view --exif</p>
@@ -30,6 +46,7 @@
         <div class="pv-similar"></div>
       </aside>
     </div>
+    <script type="application/json" class="os-json" set:html={JSON.stringify(allPhotos)} />
     <div class="os-resize" aria-hidden="true"></div>
   </div>
 </template>
