@@ -25,7 +25,6 @@ const apps = [
   { id: 'studio', label: 'Studio', glyph: '🎨' },
   { id: 'about', label: 'About', glyph: '👤' },
   { id: 'mail', label: 'Mail', glyph: '✉️' },
-  { id: 'welcome', label: 'Welcome', glyph: '⊞' },
   { id: 'settings', label: 'Settings', glyph: '⚙️' },
 ];
 
@@ -129,14 +128,6 @@ const launchMap: Record<string, string> = {
             </button>
           );
         })}
-        <button class="os-sm-item" type="button" data-launch="welcome">
-          <span class="os-sm-num">⊞</span>
-          <span class="os-sm-dot" style="background: var(--accent-1);" />
-          <span class="os-sm-txt">
-            <span class="os-sm-title">Welcome</span><br />
-            <span class="os-sm-tagline">Quick guide to PortfolioOS</span>
-          </span>
-        </button>
         <button class="os-sm-item" type="button" data-launch="settings">
           <span class="os-sm-num">⚙</span>
           <span class="os-sm-dot" style="background: var(--accent-2);" />

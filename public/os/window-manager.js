@@ -430,6 +430,7 @@
         var v = urlInput.value.trim();
         if (!v) { toast('✗ paste an image URL first'); return; }
         commitCustom(v);
+        urlInput.value = '';
       });
     }
     if (dropZone) {
@@ -475,14 +476,15 @@
      ============================================================ */
   function pictureHTML(p, eager) {
     var lazy = eager ? '' : ' loading="lazy" decoding="async"';
+    var nodrag = ' draggable="false"';
     if (p.fileAvif || p.fileWebp || p.fileJpeg) {
       var h = '<picture>';
       if (p.fileAvif) h += '<source srcset="' + p.fileAvif + '" type="image/avif" />';
       if (p.fileWebp) h += '<source srcset="' + p.fileWebp + '" type="image/webp" />';
-      h += '<img src="' + (p.fileJpeg || p.fileWebp || p.fileAvif || p.file || '') + '" alt="' + escHtml(p.alt || '') + '"' + lazy + ' /></picture>';
+      h += '<img src="' + (p.fileJpeg || p.fileWebp || p.fileAvif || p.file || '') + '" alt="' + escHtml(p.alt || '') + '"' + nodrag + lazy + ' /></picture>';
       return h;
     }
-    if (p.file) return '<img src="' + p.file + '" alt="' + escHtml(p.alt || '') + '"' + lazy + ' />';
+    if (p.file) return '<img src="' + p.file + '" alt="' + escHtml(p.alt || '') + '"' + nodrag + lazy + ' />';
     return '<div class="ex-thumb-ph">🖼</div>';
   }
 
@@ -615,7 +617,18 @@
 
     function applyZoom() {
       var img = imgBox.querySelector('img');
-      if (img) img.style.transform = 'translate(' + vz.tx + 'px,' + vz.ty + 'px) scale(' + vz.scale + ')';
+      if (img) {
+        /* clamp pan so the photo can never leave the frame */
+        var iw = img.offsetWidth * vz.scale;
+        var ih = img.offsetHeight * vz.scale;
+        var bw = imgBox.clientWidth;
+        var bh = imgBox.clientHeight;
+        var mx = Math.max(0, (iw - bw) / 2);
+        var my = Math.max(0, (ih - bh) / 2);
+        vz.tx = Math.max(-mx, Math.min(mx, vz.tx));
+        vz.ty = Math.max(-my, Math.min(my, vz.ty));
+        img.style.transform = 'translate(' + vz.tx + 'px,' + vz.ty + 'px) scale(' + vz.scale + ')';
+      }
       if (zPct) zPct.textContent = Math.round(vz.scale * 100) + '%';
     }
     function resetZoom() { vz = { scale: 1, tx: 0, ty: 0 }; applyZoom(); }
@@ -674,6 +687,18 @@
     el.querySelector('.pv-next').addEventListener('click', function () {
       if (inst._list.length) { inst._idx = (inst._idx + 1) % inst._list.length; showViewerPhoto(inst); }
     });
+
+    /* arrow keys flip photos while the viewer is the active window */
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      if (!inst.el.classList.contains('active') || inst.minimized) return;
+      var t = e.target, tag = (t.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || t.isContentEditable) return;
+      if (!inst._list.length) return;
+      if (e.key === 'ArrowLeft') inst._idx = (inst._idx - 1 + inst._list.length) % inst._list.length;
+      else inst._idx = (inst._idx + 1) % inst._list.length;
+      showViewerPhoto(inst);
+    });
   }
 
   function relatedScore(p, q) {
@@ -704,8 +729,17 @@
 
     var imgWrap = el.querySelector('.pv-img');
     var blurUrl = p.fileJpeg || p.fileWebp || p.fileAvif || p.file || '';
-    var blurHTML = blurUrl ? '<div class="pv-blur" style="background-image:url(\'' + blurUrl + '\')"></div>' : '';
-    imgWrap.innerHTML = blurHTML + (pictureHTML(p, true) || '<div style="padding:60px;color:var(--text-muted)">no preview</div>');
+    var oldBlur = wrap.querySelector('.pv-blur');
+    if (oldBlur) oldBlur.remove();
+    if (blurUrl) {
+      var bl = document.createElement('div');
+      bl.className = 'pv-blur';
+      bl.style.backgroundImage = 'url("' + blurUrl + '")';
+      wrap.insertBefore(bl, imgBox);
+    }
+    imgWrap.innerHTML = pictureHTML(p, true) || '<div style="padding:60px;color:var(--text-muted)">no preview</div>';
+    /* native image drag would yank the file out of the browser */
+    wrap.addEventListener('dragstart', function (e) { e.preventDefault(); });
     var img = imgWrap.querySelector('img');
     if (img) {
       img.style.transform = 'translate(0px,0px) scale(1)';
@@ -833,10 +867,13 @@
     }
 
     el.querySelectorAll('.m-play').forEach(function (btn) {
-      btn.addEventListener('click', function () { playIndex(parseInt(btn.dataset.index, 10)); });
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        playIndex(parseInt(btn.dataset.index, 10));
+      });
     });
     rows.forEach(function (row) {
-      row.addEventListener('dblclick', function () { playIndex(parseInt(row.dataset.index, 10)); });
+      row.addEventListener('click', function () { playIndex(parseInt(row.dataset.index, 10)); });
     });
 
     audio.addEventListener('timeupdate', function () {
@@ -846,11 +883,17 @@
       if (nowTime) nowTime.textContent = fmtTime(audio.currentTime);
     });
     audio.addEventListener('ended', function () {
+      var nxt = current + 1;
       if (current >= 0) setRowState(current, false);
       current = -1;
-      if (nowTitle) nowTitle.textContent = '— nothing playing';
       if (seekFill) seekFill.style.width = '0%';
       if (nowTime) nowTime.textContent = '0:00';
+      /* auto-advance through the playlist */
+      if (nxt >= 0 && nxt < clips.length && clips[nxt].file) {
+        playIndex(nxt);
+      } else {
+        if (nowTitle) nowTitle.textContent = '— nothing playing';
+      }
     });
     if (seekBar) {
       seekBar.addEventListener('click', function (e) {

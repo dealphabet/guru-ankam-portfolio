@@ -3200,33 +3200,33 @@
       "influences": "From the polyrhythmic complexity of jazz to the raw energy of rock, and the intricate patterns of Indian percussion \u2014 rhythm knows no boundaries.",
       "audioClips": [
         {
-          "title": "Pocket Groove",
-          "description": "A tight funk groove with ghost notes on the snare.",
-          "file": "",
+          "title": "Coffee",
+          "description": "Placeholder track — Coffee (Can We Hang Out Sometime?).",
+          "file": "/media/audio/coffee.mp3",
           "duration": "",
           "tags": [
-            "funk",
-            "groove"
+            "placeholder",
+            "chill"
           ]
         },
         {
-          "title": "Polyrhythm Study",
-          "description": "Exploring 3 over 4 polyrhythmic patterns on the kit.",
-          "file": "",
+          "title": "Tea Leaves",
+          "description": "Placeholder track — Tea Leaves (Can We Hang Out Sometime?).",
+          "file": "/media/audio/tea-leaves.mp3",
           "duration": "",
           "tags": [
-            "jazz",
-            "polyrhythm"
+            "placeholder",
+            "acoustic"
           ]
         },
         {
-          "title": "Indian Taal",
-          "description": "Tintal cycle adapted for the drum kit.",
-          "file": "",
+          "title": "Ghost Keeper",
+          "description": "Placeholder track — Ghost Keeper (Can We Hang Out Sometime?).",
+          "file": "/media/audio/ghost-keeper.mp3",
           "duration": "",
           "tags": [
-            "indian",
-            "taal"
+            "placeholder",
+            "indie"
           ]
         }
       ]
