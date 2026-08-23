@@ -1,12 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import content from '../../data/content.json';
+import Layout from '../../layouts/Layout.astro';
+import content from '../../../data/content.json';
 
 const code = content.pages.code;
 const allTags = [...new Set(code.projects.flatMap((p: any) => p.tags || []))];
 ---
 
-<Layout title="Code — Guru Ankam">
+<Layout classic title="Code — Guru Ankam">
   <section class="px-6 py-16 max-w-4xl mx-auto" data-debug="code-page">
     <span class="debug-label" style="top:60px; left:12px; display:none;">CODE — Project cards with detail overlays</span>
     <div class="flex items-start justify-between gap-4 mb-10">

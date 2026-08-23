@@ -1,13 +1,13 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import content from '../../data/content.json';
+import Layout from '../../layouts/Layout.astro';
+import content from '../../../data/content.json';
 
 const music = content.pages.music;
 const audioClips = music.audioClips || [];
 const allTags = [...new Set(audioClips.flatMap((c: any) => c.tags || []))];
 ---
 
-<Layout title="Music — Guru Ankam">
+<Layout classic title="Music — Guru Ankam">
   <section class="px-6 py-16 max-w-3xl mx-auto" data-debug="music-page">
     <span class="debug-label" style="top:60px; left:12px; display:none;">MUSIC — Drummer intro, gear, audio demos</span>
     <div class="flex items-start justify-between gap-4 mb-10">

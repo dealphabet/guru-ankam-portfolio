@@ -1,0 +1,118 @@
+---
+import '../styles/global.css';
+import '../styles/os.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Guru Ankam',
+  description = 'Portfolio of Guru Ankam — photography, music, code & creative work, presented as a desktop operating system.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" data-chrome="tui" data-wallpaper="aurora">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <script is:inline>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+          if (t === 'light') document.documentElement.classList.remove('dark');
+          else document.documentElement.classList.add('dark');
+
+          var os = JSON.parse(localStorage.getItem('portfolio-os') || '{}');
+          if (os.chrome) document.documentElement.dataset.chrome = os.chrome;
+          if (os.wallpaper) document.documentElement.dataset.wallpaper = os.wallpaper;
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+
+  <body class="os-desktop-root">
+    <a class="sr-only" href="#os-windows">Skip to windows</a>
+
+    <noscript>
+      <div class="os-noscript">
+        <p>PortfolioOS needs JavaScript to boot the desktop.</p>
+        <p>
+          Classic pages work without it:
+          <a href="/classic/photography">Photography</a> ·
+          <a href="/classic/music">Music</a> ·
+          <a href="/classic/code">Code</a> ·
+          <a href="/classic/creative">Creative</a> ·
+          <a href="/classic/about">About</a> ·
+          <a href="/classic/contact">Contact</a>
+        </p>
+      </div>
+    </noscript>
+
+    <div id="os-wallpaper" aria-hidden="true"></div>
+
+    <div class="os-nameplate" aria-hidden="true">
+      <strong>guru@portfolio</strong><br />
+      PortfolioOS v1.0 · <span id="os-uptime">uptime 0s</span>
+    </div>
+
+    <div id="os-icons">
+      <slot name="desktop-icons" />
+    </div>
+
+    <div id="os-windows" role="main"></div>
+
+    <!-- App window templates are provided by the page via this slot -->
+    <div hidden id="os-templates">
+      <slot name="app-templates" />
+    </div>
+
+    <aside id="os-startmenu" aria-label="Start menu">
+      <div class="os-sm-head">
+        <strong>guru@portfolio</strong><br />~/disciplines — select an application
+      </div>
+      <div class="os-sm-list">
+        <slot name="start-menu-items" />
+      </div>
+      <div class="os-sm-foot">
+        <span class="os-sm-foot-label">$ ls /classic — traditional single pages</span>
+        <slot name="start-menu-foot" />
+      </div>
+    </aside>
+
+    <footer id="os-taskbar">
+      <button class="os-tb-start" id="os-start-btn" aria-expanded="false" aria-controls="os-startmenu">
+        <span class="os-tb-start-glyph">⊞</span>
+        <span>start</span>
+      </button>
+      <div class="os-tb-apps" id="os-tb-apps"></div>
+      <div class="os-tb-right">
+        <button class="os-tb-tray-btn" id="os-theme-btn" aria-label="Toggle theme" title="Toggle theme (t)">☾</button>
+        <span class="metronome-dot" aria-hidden="true" title="72 BPM"></span>
+        <div class="os-tb-clock" id="os-clock">
+          <span class="os-tb-time">--:--</span>
+          <span class="os-tb-date">---</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/os/window-manager.js" defer></script>
+  </body>
+</html>
+
+<style is:global>
+  html.os-desktop-root,
+  html:has(body.os-desktop-root) { height: 100%; }
+  body.os-desktop-root {
+    height: 100vh;
+    margin: 0;
+  }
+</style>

@@ -1,12 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import content from '../../data/content.json';
+import Layout from '../../layouts/Layout.astro';
+import content from '../../../data/content.json';
 
 const creative = content.pages.creative;
 const allTags = [...new Set(creative.works.flatMap((w: any) => w.tags || []))];
 ---
 
-<Layout title="Creative — Guru Ankam">
+<Layout classic title="Creative — Guru Ankam">
   <section class="px-6 py-16 max-w-4xl mx-auto" data-debug="creative-page">
     <span class="debug-label" style="top:60px; left:12px; display:none;">CREATIVE — Storyboard & art with detail overlays</span>
     <div class="flex items-start justify-between gap-4 mb-10">

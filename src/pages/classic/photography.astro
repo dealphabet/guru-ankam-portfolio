@@ -1,6 +1,6 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import content from '../../data/content.json';
+import Layout from '../../layouts/Layout.astro';
+import content from '../../../data/content.json';
 
 const photo = content.pages.photography;
 const collections = photo.collections || [];
@@ -10,7 +10,7 @@ const allTags = [...new Set(collections.flatMap((c: any) => (c.photos || []).fla
 const allPhotos = collections.flatMap((c: any) => (c.photos || []).map((p: any) => ({...p, _collection: c.title})));
 ---
 
-<Layout title="Photography — Guru Ankam">
+<Layout classic title="Photography — Guru Ankam">
   <section class="px-6 py-12 max-w-7xl mx-auto" data-debug="photography-page">
     <span class="debug-label" style="top:60px; left:12px; display:none;">PHOTOGRAPHY — Apple-style collections layout</span>
 

@@ -2,12 +2,15 @@
 interface Props {
   title: string;
   description?: string;
+  classic?: boolean;
 }
 
-const { title, description = "Guru Ankam — Photographer · Drummer · Developer · Creative" } = Astro.props;
+const { title, description = "Guru Ankam — Photographer · Drummer · Developer · Creative", classic = false } = Astro.props;
 const currentPath = Astro.url.pathname;
-const isProto = currentPath === "/" || currentPath.startsWith("/photography");
+const isProto = !classic && (currentPath === "/" || currentPath.startsWith("/photography"));
 const pathSeg = currentPath === "/" ? "~" : "~" + currentPath.replace(/\/$/, "");
+const base = classic ? "/classic" : "";
+const canonicalPath = classic ? currentPath.replace(/^\/classic/, "") || "/" : currentPath;
 ---
 
 <!doctype html>
@@ -18,6 +21,7 @@ const pathSeg = currentPath === "/" ? "~" : "~" + currentPath.replace(/\/$/, "")
     <meta name="description" content={description} />
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {classic && <link rel="canonical" href={new URL(canonicalPath, Astro.site ?? Astro.url.origin).href} />}
     <script is:inline>
       const theme = (() => {
         if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
@@ -40,13 +44,13 @@ const pathSeg = currentPath === "/" ? "~" : "~" + currentPath.replace(/\/$/, "")
           Guru Ankam
         </a>
         <div class="hidden md:flex items-center gap-6">
-          <a href="/" class:list={["nav-link", currentPath === "/" && "nav-link-active"]}>Home</a>
-          <a href="/photography" class:list={["nav-link", currentPath === "/photography" && "nav-link-active"]}>Photography</a>
-          <a href="/music" class:list={["nav-link", currentPath === "/music" && "nav-link-active"]}>Music</a>
-          <a href="/code" class:list={["nav-link", currentPath === "/code" && "nav-link-active"]}>Code</a>
-          <a href="/creative" class:list={["nav-link", currentPath === "/creative" && "nav-link-active"]}>Creative</a>
-          <a href="/about" class:list={["nav-link", currentPath === "/about" && "nav-link-active"]}>About</a>
-          <a href="/contact" class:list={["nav-link", currentPath === "/contact" && "nav-link-active"]}>Contact</a>
+          <a href="/" class:list={["nav-link", currentPath === "/" && "nav-link-active"]}>Desktop</a>
+          <a href={`${base}/photography`} class:list={["nav-link", currentPath === `${base}/photography` && "nav-link-active"]}>Photography</a>
+          <a href={`${base}/music`} class:list={["nav-link", currentPath === `${base}/music` && "nav-link-active"]}>Music</a>
+          <a href={`${base}/code`} class:list={["nav-link", currentPath === `${base}/code` && "nav-link-active"]}>Code</a>
+          <a href={`${base}/creative`} class:list={["nav-link", currentPath === `${base}/creative` && "nav-link-active"]}>Creative</a>
+          <a href={`${base}/about`} class:list={["nav-link", currentPath === `${base}/about` && "nav-link-active"]}>About</a>
+          <a href={`${base}/contact`} class:list={["nav-link", currentPath === `${base}/contact` && "nav-link-active"]}>Contact</a>
         </div>
         <div class="flex items-center gap-3">
           <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
@@ -66,18 +70,25 @@ const pathSeg = currentPath === "/" ? "~" : "~" + currentPath.replace(/\/$/, "")
       </div>
       <div id="mobile-menu" class="hidden md:hidden border-t transition-colors" style="border-color: var(--border);">
         <div class="px-6 py-3 flex flex-col gap-2">
-          <a href="/" class:list={["nav-link", currentPath === "/" && "nav-link-active"]}>Home</a>
-          <a href="/photography" class:list={["nav-link", currentPath === "/photography" && "nav-link-active"]}>Photography</a>
-          <a href="/music" class:list={["nav-link", currentPath === "/music" && "nav-link-active"]}>Music</a>
-          <a href="/code" class:list={["nav-link", currentPath === "/code" && "nav-link-active"]}>Code</a>
-          <a href="/creative" class:list={["nav-link", currentPath === "/creative" && "nav-link-active"]}>Creative</a>
-          <a href="/about" class:list={["nav-link", currentPath === "/about" && "nav-link-active"]}>About</a>
-          <a href="/contact" class:list={["nav-link", currentPath === "/contact" && "nav-link-active"]}>Contact</a>
+          <a href="/" class:list={["nav-link", currentPath === "/" && "nav-link-active"]}>Desktop</a>
+          <a href={`${base}/photography`} class:list={["nav-link", currentPath === `${base}/photography` && "nav-link-active"]}>Photography</a>
+          <a href={`${base}/music`} class:list={["nav-link", currentPath === `${base}/music` && "nav-link-active"]}>Music</a>
+          <a href={`${base}/code`} class:list={["nav-link", currentPath === `${base}/code` && "nav-link-active"]}>Code</a>
+          <a href={`${base}/creative`} class:list={["nav-link", currentPath === `${base}/creative` && "nav-link-active"]}>Creative</a>
+          <a href={`${base}/about`} class:list={["nav-link", currentPath === `${base}/about` && "nav-link-active"]}>About</a>
+          <a href={`${base}/contact`} class:list={["nav-link", currentPath === `${base}/contact` && "nav-link-active"]}>Contact</a>
         </div>
       </div>
     </nav>
 
     <main class="flex-1 pt-14">
+      {classic && (
+        <div class="w-full border-b px-6 py-2 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs font-mono text-center" style="background: var(--tag-bg); color: var(--tag-text); border-color: var(--border);">
+          <a href="/" class="underline hover:opacity-80">← Return to Desktop</a>
+          <span style="opacity: 0.55;">·</span>
+          <span>Classic Mode — traditional single page</span>
+        </div>
+      )}
       <slot />
     </main>
 
